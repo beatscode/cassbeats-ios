@@ -1,0 +1,338 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		789ACB031558A59200E6C53A /* SubmissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789ACB011558A59200E6C53A /* SubmissionViewController.m */; };
+		789ACB041558A59200E6C53A /* SubmissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789ACB021558A59200E6C53A /* SubmissionViewController.xib */; };
+		78DFDF5115500177008FF2FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78DFDF5015500177008FF2FF /* UIKit.framework */; };
+		78DFDF5315500177008FF2FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78DFDF5215500177008FF2FF /* Foundation.framework */; };
+		78DFDF5515500177008FF2FF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78DFDF5415500177008FF2FF /* CoreGraphics.framework */; };
+		78DFDF5B15500178008FF2FF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78DFDF5915500178008FF2FF /* InfoPlist.strings */; };
+		78DFDF5D15500178008FF2FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DFDF5C15500178008FF2FF /* main.m */; };
+		78DFDF6115500178008FF2FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DFDF6015500178008FF2FF /* AppDelegate.m */; };
+		78DFDF68155001E0008FF2FF /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78DFDF67155001E0008FF2FF /* MainWindow.xib */; };
+		78DFDF6F155004CE008FF2FF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DFDF6D155004CE008FF2FF /* LoginViewController.m */; };
+		78DFDF70155004CE008FF2FF /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78DFDF6E155004CE008FF2FF /* LoginViewController.xib */; };
+		78DFDF7315500738008FF2FF /* AppModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DFDF7215500738008FF2FF /* AppModel.m */; };
+		78DFDFAB155286A2008FF2FF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78DFDFAA155286A2008FF2FF /* CoreData.framework */; };
+		78DFDFB015528C15008FF2FF /* CassBeatsPro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 78DFDFAE15528C15008FF2FF /* CassBeatsPro.xcdatamodeld */; };
+		78DFDFB315528CD8008FF2FF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DFDFB215528CD8008FF2FF /* User.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		789ACB001558A59200E6C53A /* SubmissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmissionViewController.h; sourceTree = "<group>"; };
+		789ACB011558A59200E6C53A /* SubmissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmissionViewController.m; sourceTree = "<group>"; };
+		789ACB021558A59200E6C53A /* SubmissionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubmissionViewController.xib; sourceTree = "<group>"; };
+		78DFDF4C15500177008FF2FF /* cassbeats1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cassbeats1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		78DFDF5015500177008FF2FF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		78DFDF5215500177008FF2FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		78DFDF5415500177008FF2FF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		78DFDF5815500177008FF2FF /* cassbeats1-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "cassbeats1-Info.plist"; sourceTree = "<group>"; };
+		78DFDF5A15500178008FF2FF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		78DFDF5C15500178008FF2FF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		78DFDF5E15500178008FF2FF /* cassbeats1-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "cassbeats1-Prefix.pch"; sourceTree = "<group>"; };
+		78DFDF5F15500178008FF2FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		78DFDF6015500178008FF2FF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		78DFDF67155001E0008FF2FF /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		78DFDF6C155004CE008FF2FF /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		78DFDF6D155004CE008FF2FF /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		78DFDF6E155004CE008FF2FF /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		78DFDF7115500738008FF2FF /* AppModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppModel.h; sourceTree = "<group>"; };
+		78DFDF7215500738008FF2FF /* AppModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppModel.m; sourceTree = "<group>"; };
+		78DFDFAA155286A2008FF2FF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		78DFDFAF15528C15008FF2FF /* CassBeatsPro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CassBeatsPro.xcdatamodel; sourceTree = "<group>"; };
+		78DFDFB115528CD8008FF2FF /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		78DFDFB215528CD8008FF2FF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		78DFDF4915500177008FF2FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78DFDFAB155286A2008FF2FF /* CoreData.framework in Frameworks */,
+				78DFDF5115500177008FF2FF /* UIKit.framework in Frameworks */,
+				78DFDF5315500177008FF2FF /* Foundation.framework in Frameworks */,
+				78DFDF5515500177008FF2FF /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		78111DFF155C7597000A3337 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				78DFDF6C155004CE008FF2FF /* LoginViewController.h */,
+				78DFDF6D155004CE008FF2FF /* LoginViewController.m */,
+				78DFDF6E155004CE008FF2FF /* LoginViewController.xib */,
+				789ACB001558A59200E6C53A /* SubmissionViewController.h */,
+				789ACB011558A59200E6C53A /* SubmissionViewController.m */,
+				789ACB021558A59200E6C53A /* SubmissionViewController.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		78DFDF4115500177008FF2FF = {
+			isa = PBXGroup;
+			children = (
+				78DFDF5615500177008FF2FF /* cassbeats1 */,
+				78DFDF4F15500177008FF2FF /* Frameworks */,
+				78DFDF4D15500177008FF2FF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		78DFDF4D15500177008FF2FF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				78DFDF4C15500177008FF2FF /* cassbeats1.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		78DFDF4F15500177008FF2FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				78DFDFAA155286A2008FF2FF /* CoreData.framework */,
+				78DFDF5015500177008FF2FF /* UIKit.framework */,
+				78DFDF5215500177008FF2FF /* Foundation.framework */,
+				78DFDF5415500177008FF2FF /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		78DFDF5615500177008FF2FF /* cassbeats1 */ = {
+			isa = PBXGroup;
+			children = (
+				78DFDF5F15500178008FF2FF /* AppDelegate.h */,
+				78DFDF6015500178008FF2FF /* AppDelegate.m */,
+				78DFDF5715500177008FF2FF /* Supporting Files */,
+				78DFDF67155001E0008FF2FF /* MainWindow.xib */,
+				78111DFF155C7597000A3337 /* View */,
+				78DFDFAD15528BD5008FF2FF /* Model */,
+			);
+			path = cassbeats1;
+			sourceTree = "<group>";
+		};
+		78DFDF5715500177008FF2FF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				78DFDF5815500177008FF2FF /* cassbeats1-Info.plist */,
+				78DFDF5915500178008FF2FF /* InfoPlist.strings */,
+				78DFDF5C15500178008FF2FF /* main.m */,
+				78DFDF5E15500178008FF2FF /* cassbeats1-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		78DFDFAD15528BD5008FF2FF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				78DFDF7115500738008FF2FF /* AppModel.h */,
+				78DFDF7215500738008FF2FF /* AppModel.m */,
+				78DFDFAE15528C15008FF2FF /* CassBeatsPro.xcdatamodeld */,
+				78DFDFB115528CD8008FF2FF /* User.h */,
+				78DFDFB215528CD8008FF2FF /* User.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		78DFDF4B15500177008FF2FF /* cassbeats1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78DFDF6415500178008FF2FF /* Build configuration list for PBXNativeTarget "cassbeats1" */;
+			buildPhases = (
+				78DFDF4815500177008FF2FF /* Sources */,
+				78DFDF4915500177008FF2FF /* Frameworks */,
+				78DFDF4A15500177008FF2FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = cassbeats1;
+			productName = cassbeats1;
+			productReference = 78DFDF4C15500177008FF2FF /* cassbeats1.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		78DFDF4315500177008FF2FF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "CassBeats LLC";
+			};
+			buildConfigurationList = 78DFDF4615500177008FF2FF /* Build configuration list for PBXProject "cassbeats1" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 78DFDF4115500177008FF2FF;
+			productRefGroup = 78DFDF4D15500177008FF2FF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				78DFDF4B15500177008FF2FF /* cassbeats1 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		78DFDF4A15500177008FF2FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78DFDF5B15500178008FF2FF /* InfoPlist.strings in Resources */,
+				78DFDF68155001E0008FF2FF /* MainWindow.xib in Resources */,
+				78DFDF70155004CE008FF2FF /* LoginViewController.xib in Resources */,
+				789ACB041558A59200E6C53A /* SubmissionViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		78DFDF4815500177008FF2FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78DFDF5D15500178008FF2FF /* main.m in Sources */,
+				78DFDF6115500178008FF2FF /* AppDelegate.m in Sources */,
+				78DFDF6F155004CE008FF2FF /* LoginViewController.m in Sources */,
+				78DFDF7315500738008FF2FF /* AppModel.m in Sources */,
+				78DFDFB015528C15008FF2FF /* CassBeatsPro.xcdatamodeld in Sources */,
+				78DFDFB315528CD8008FF2FF /* User.m in Sources */,
+				789ACB031558A59200E6C53A /* SubmissionViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		78DFDF5915500178008FF2FF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78DFDF5A15500178008FF2FF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		78DFDF6215500178008FF2FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		78DFDF6315500178008FF2FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		78DFDF6515500178008FF2FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "cassbeats1/cassbeats1-Prefix.pch";
+				INFOPLIST_FILE = "cassbeats1/cassbeats1-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		78DFDF6615500178008FF2FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "cassbeats1/cassbeats1-Prefix.pch";
+				INFOPLIST_FILE = "cassbeats1/cassbeats1-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		78DFDF4615500177008FF2FF /* Build configuration list for PBXProject "cassbeats1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78DFDF6215500178008FF2FF /* Debug */,
+				78DFDF6315500178008FF2FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78DFDF6415500178008FF2FF /* Build configuration list for PBXNativeTarget "cassbeats1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78DFDF6515500178008FF2FF /* Debug */,
+				78DFDF6615500178008FF2FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		78DFDFAE15528C15008FF2FF /* CassBeatsPro.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				78DFDFAF15528C15008FF2FF /* CassBeatsPro.xcdatamodel */,
+			);
+			currentVersion = 78DFDFAF15528C15008FF2FF /* CassBeatsPro.xcdatamodel */;
+			path = CassBeatsPro.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 78DFDF4315500177008FF2FF /* Project object */;
+}
