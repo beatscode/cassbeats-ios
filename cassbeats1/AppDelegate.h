@@ -15,4 +15,6 @@
 @property (strong) LoginViewController *loginController;
 @property (nonatomic,strong) IBOutlet UITabBarController *tabBarController;
 @property(nonatomic,strong) IBOutlet UINavigationController *navController;
+
+-(void)customizeAppearance;
 @end

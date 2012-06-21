@@ -1,5 +1,5 @@
 //
-//  User.h
+//  Contact.h
 //  cassbeats1
 //
 //  Created by Alexander Casanova on 5/28/12.
@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class Submission;
 
-@interface User : NSManagedObject
+@interface Contact : NSManagedObject
 
 @property (nonatomic, retain) NSString * email;
-@property (nonatomic, retain) NSString * server_id;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) Submission *contactToSubmission;
 
 @end

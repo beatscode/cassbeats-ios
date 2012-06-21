@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "AppModel.h"
+#import "CreateSubmissionViewController.h"
 
 @interface LoginViewController : UIViewController<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
+@property (weak, nonatomic) IBOutlet UIButton *registerBtn;
 
 - (IBAction)login:(id)sender;
 -(void)authenticateUser:(NSString *)email:(NSString *)password;

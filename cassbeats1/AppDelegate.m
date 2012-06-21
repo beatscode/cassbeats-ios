@@ -27,9 +27,37 @@
     _loginController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
     [_window.rootViewController presentModalViewController:_loginController animated:YES];
     [self.window makeKeyAndVisible];
+    [self customizeAppearance];
     return YES;
 }
 
+-(void)customizeAppearance{
+    
+    //Background
+    _loginController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
+    
+    //Tab Bar
+    UIImage *tabBackground = [[UIImage imageNamed:@"tabbar_bg"] 
+                              resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [[UITabBar appearance] setBackgroundImage:tabBackground];
+    
+    UIImage *gradientImage44 = [[UIImage imageNamed:@"navbar2_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(0,0,0,0)];
+ 
+    //Navigation
+    [[UINavigationBar appearance] setBackgroundImage:gradientImage44
+                                       forBarMetrics:UIBarMetricsDefault];
+    
+    //Right side nav button
+    UIImage *button30 = [[UIImage imageNamed:@"right_nav_button"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5 )];
+    [[UIBarButtonItem appearance] setBackgroundImage:button30 forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    
+    //Left Side nav button
+    UIImage *buttonBack30 = [[UIImage imageNamed:@"left_nav_button"] 
+                             resizableImageWithCapInsets:UIEdgeInsetsMake(0, 13, 0, 5)];
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:buttonBack30 
+                                                      forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    
+}
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     /*

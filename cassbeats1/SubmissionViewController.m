@@ -12,11 +12,13 @@
 @implementation SubmissionViewController
 
 @synthesize menuData;
+@synthesize cvController;
+@synthesize vpsController;
 
 -(void)viewDidLoad{
     [super viewDidLoad];
     self.menuData = [NSArray arrayWithObjects:@"Create Submission",@"View Past Submissions", nil];
-    [self setTitle:@"Submissions"];
+    [self setTitle:@"Submission Options"];
     
 }
 
@@ -51,10 +53,12 @@
     
     switch (row) {
         case createsubmission:
-            
+            self.cvController = [[CreateSubmissionViewController alloc] initWithNibName:@"CreateSubmissionViewController" bundle:nil];
+            [self.navigationController pushViewController:self.cvController animated:YES];
             break;
         case viewpastsubmissions:
-            
+            self.vpsController = [[ViewPastSubmissionsController alloc] initWithNibName:@"ViewPastSubmissionsController" bundle:nil];
+            [self.navigationController pushViewController:self.vpsController animated:YES];        
             break;
         default:
             break;

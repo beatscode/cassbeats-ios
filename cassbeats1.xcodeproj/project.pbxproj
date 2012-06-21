@@ -7,6 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78111E09155D12B7000A3337 /* CreateSubmissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78111E07155D12B7000A3337 /* CreateSubmissionViewController.m */; };
+		78111E0A155D12B7000A3337 /* CreateSubmissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78111E08155D12B7000A3337 /* CreateSubmissionViewController.xib */; };
+		78111E0C155D14D6000A3337 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78111E0B155D14D6000A3337 /* AddressBook.framework */; };
+		78111E0E155D14DB000A3337 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78111E0D155D14DB000A3337 /* AddressBookUI.framework */; };
+		781B0EAA156671AC00FB45D3 /* MyContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 781B0EA9156671AC00FB45D3 /* MyContact.m */; };
+		782CF391158D488600AE702D /* background_w_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 782CF390158D488600AE702D /* background_w_logo.png */; };
+		782CF39B158D4FF500AE702D /* textbox_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 782CF396158D4FF500AE702D /* textbox_bg.png */; };
+		782CF39C158D4FF500AE702D /* navbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 782CF397158D4FF500AE702D /* navbar.png */; };
+		782CF39D158D4FF500AE702D /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 782CF398158D4FF500AE702D /* logo.png */; };
+		782CF39E158D4FF500AE702D /* tabbar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 782CF399158D4FF500AE702D /* tabbar_bg.png */; };
+		782CF39F158D4FF500AE702D /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 782CF39A158D4FF500AE702D /* background.png */; };
+		782CF3A1158D527D00AE702D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 782CF3A0158D527D00AE702D /* Default.png */; };
+		782CF3A4158D571200AE702D /* left_nav_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 782CF3A2158D571200AE702D /* left_nav_button.png */; };
+		782CF3A5158D571200AE702D /* right_nav_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 782CF3A3158D571200AE702D /* right_nav_button.png */; };
+		782CF3A7158D590B00AE702D /* navbar2_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 782CF3A6158D590B00AE702D /* navbar2_bg.png */; };
+		782CF3AB158D5C9100AE702D /* white_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 782CF3AA158D5C9100AE702D /* white_button.png */; };
+		782CF3AD158D61E800AE702D /* blue_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 782CF3AC158D61E800AE702D /* blue_button.png */; };
+		782CF3AF158D64D100AE702D /* orange_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 782CF3AE158D64D100AE702D /* orange_button.png */; };
+		782CF3B1158D72DF00AE702D /* background_plain.png in Resources */ = {isa = PBXBuildFile; fileRef = 782CF3B0158D72DF00AE702D /* background_plain.png */; };
+		782CF3B3158DB6F900AE702D /* icon_folder_bookmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 782CF3B2158DB6F800AE702D /* icon_folder_bookmark.png */; };
+		782CF3B5158DB75A00AE702D /* icon_graph_bars_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 782CF3B4158DB75A00AE702D /* icon_graph_bars_down.png */; };
+		783BFD051573FE4E00D4CC1E /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 783BFD041573FE4E00D4CC1E /* Track.m */; };
+		783BFD081573FE4F00D4CC1E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 783BFD071573FE4F00D4CC1E /* User.m */; };
+		783BFD0E1573FE5000D4CC1E /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 783BFD0D1573FE5000D4CC1E /* Contact.m */; };
+		783BFD1215741CD000D4CC1E /* WriteSubmissionMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 783BFD1015741CCF00D4CC1E /* WriteSubmissionMessage.m */; };
+		783BFD1315741CD000D4CC1E /* WriteSubmissionMessage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783BFD1115741CD000D4CC1E /* WriteSubmissionMessage.xib */; };
+		783BFD1D15744A3500D4CC1E /* ViewPastSubmissionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 783BFD1B15744A3400D4CC1E /* ViewPastSubmissionsController.m */; };
+		783BFD1E15744A3500D4CC1E /* ViewPastSubmissionsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783BFD1C15744A3500D4CC1E /* ViewPastSubmissionsController.xib */; };
+		78759F3E156C5E4700E24826 /* SelectTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78759F3C156C5E4700E24826 /* SelectTrackViewController.m */; };
+		78759F3F156C5E4700E24826 /* SelectTrackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78759F3D156C5E4700E24826 /* SelectTrackViewController.xib */; };
+		78759F49156C685000E24826 /* MyTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 78759F48156C685000E24826 /* MyTrack.m */; };
+		789545D2157C5574009C1D0A /* Submission.m in Sources */ = {isa = PBXBuildFile; fileRef = 789545D1157C5574009C1D0A /* Submission.m */; };
 		789ACB031558A59200E6C53A /* SubmissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789ACB011558A59200E6C53A /* SubmissionViewController.m */; };
 		789ACB041558A59200E6C53A /* SubmissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789ACB021558A59200E6C53A /* SubmissionViewController.xib */; };
 		78DFDF5115500177008FF2FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78DFDF5015500177008FF2FF /* UIKit.framework */; };
@@ -21,10 +53,53 @@
 		78DFDF7315500738008FF2FF /* AppModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DFDF7215500738008FF2FF /* AppModel.m */; };
 		78DFDFAB155286A2008FF2FF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78DFDFAA155286A2008FF2FF /* CoreData.framework */; };
 		78DFDFB015528C15008FF2FF /* CassBeatsPro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 78DFDFAE15528C15008FF2FF /* CassBeatsPro.xcdatamodeld */; };
-		78DFDFB315528CD8008FF2FF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DFDFB215528CD8008FF2FF /* User.m */; };
+		78E4B16815611D6100B0074A /* SelectContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E4B16615611D6100B0074A /* SelectContactViewController.m */; };
+		78E4B16915611D6100B0074A /* SelectContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E4B16715611D6100B0074A /* SelectContactViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		78111E06155D12B7000A3337 /* CreateSubmissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateSubmissionViewController.h; sourceTree = "<group>"; };
+		78111E07155D12B7000A3337 /* CreateSubmissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateSubmissionViewController.m; sourceTree = "<group>"; };
+		78111E08155D12B7000A3337 /* CreateSubmissionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateSubmissionViewController.xib; sourceTree = "<group>"; };
+		78111E0B155D14D6000A3337 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		78111E0D155D14DB000A3337 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		781B0EA8156671AC00FB45D3 /* MyContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyContact.h; sourceTree = "<group>"; };
+		781B0EA9156671AC00FB45D3 /* MyContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyContact.m; sourceTree = "<group>"; };
+		782CF390158D488600AE702D /* background_w_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_w_logo.png; sourceTree = "<group>"; };
+		782CF396158D4FF500AE702D /* textbox_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textbox_bg.png; sourceTree = "<group>"; };
+		782CF397158D4FF500AE702D /* navbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar.png; sourceTree = "<group>"; };
+		782CF398158D4FF500AE702D /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		782CF399158D4FF500AE702D /* tabbar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_bg.png; sourceTree = "<group>"; };
+		782CF39A158D4FF500AE702D /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		782CF3A0158D527D00AE702D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		782CF3A2158D571200AE702D /* left_nav_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_nav_button.png; sourceTree = "<group>"; };
+		782CF3A3158D571200AE702D /* right_nav_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_nav_button.png; sourceTree = "<group>"; };
+		782CF3A6158D590B00AE702D /* navbar2_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar2_bg.png; sourceTree = "<group>"; };
+		782CF3AA158D5C9100AE702D /* white_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_button.png; sourceTree = "<group>"; };
+		782CF3AC158D61E800AE702D /* blue_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_button.png; sourceTree = "<group>"; };
+		782CF3AE158D64D100AE702D /* orange_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orange_button.png; sourceTree = "<group>"; };
+		782CF3B0158D72DF00AE702D /* background_plain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_plain.png; sourceTree = "<group>"; };
+		782CF3B2158DB6F800AE702D /* icon_folder_bookmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_folder_bookmark.png; sourceTree = "<group>"; };
+		782CF3B4158DB75A00AE702D /* icon_graph_bars_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_graph_bars_down.png; sourceTree = "<group>"; };
+		783BFD031573FE4E00D4CC1E /* Track.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Track.h; sourceTree = "<group>"; };
+		783BFD041573FE4E00D4CC1E /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
+		783BFD061573FE4F00D4CC1E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		783BFD071573FE4F00D4CC1E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		783BFD0C1573FE4F00D4CC1E /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
+		783BFD0D1573FE5000D4CC1E /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+		783BFD0F15741CCF00D4CC1E /* WriteSubmissionMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WriteSubmissionMessage.h; sourceTree = "<group>"; };
+		783BFD1015741CCF00D4CC1E /* WriteSubmissionMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WriteSubmissionMessage.m; sourceTree = "<group>"; };
+		783BFD1115741CD000D4CC1E /* WriteSubmissionMessage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WriteSubmissionMessage.xib; sourceTree = "<group>"; };
+		783BFD1A15744A3400D4CC1E /* ViewPastSubmissionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPastSubmissionsController.h; sourceTree = "<group>"; };
+		783BFD1B15744A3400D4CC1E /* ViewPastSubmissionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPastSubmissionsController.m; sourceTree = "<group>"; };
+		783BFD1C15744A3500D4CC1E /* ViewPastSubmissionsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewPastSubmissionsController.xib; sourceTree = "<group>"; };
+		78759F3B156C5E4700E24826 /* SelectTrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTrackViewController.h; sourceTree = "<group>"; };
+		78759F3C156C5E4700E24826 /* SelectTrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTrackViewController.m; sourceTree = "<group>"; };
+		78759F3D156C5E4700E24826 /* SelectTrackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectTrackViewController.xib; sourceTree = "<group>"; };
+		78759F47156C685000E24826 /* MyTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTrack.h; sourceTree = "<group>"; };
+		78759F48156C685000E24826 /* MyTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTrack.m; sourceTree = "<group>"; };
+		789545D0157C5574009C1D0A /* Submission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Submission.h; sourceTree = "<group>"; };
+		789545D1157C5574009C1D0A /* Submission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Submission.m; sourceTree = "<group>"; };
 		789ACB001558A59200E6C53A /* SubmissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmissionViewController.h; sourceTree = "<group>"; };
 		789ACB011558A59200E6C53A /* SubmissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmissionViewController.m; sourceTree = "<group>"; };
 		789ACB021558A59200E6C53A /* SubmissionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubmissionViewController.xib; sourceTree = "<group>"; };
@@ -46,8 +121,9 @@
 		78DFDF7215500738008FF2FF /* AppModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppModel.m; sourceTree = "<group>"; };
 		78DFDFAA155286A2008FF2FF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		78DFDFAF15528C15008FF2FF /* CassBeatsPro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CassBeatsPro.xcdatamodel; sourceTree = "<group>"; };
-		78DFDFB115528CD8008FF2FF /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		78DFDFB215528CD8008FF2FF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		78E4B16515611D6100B0074A /* SelectContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectContactViewController.h; sourceTree = "<group>"; };
+		78E4B16615611D6100B0074A /* SelectContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectContactViewController.m; sourceTree = "<group>"; };
+		78E4B16715611D6100B0074A /* SelectContactViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectContactViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +131,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78111E0E155D14DB000A3337 /* AddressBookUI.framework in Frameworks */,
+				78111E0C155D14D6000A3337 /* AddressBook.framework in Frameworks */,
 				78DFDFAB155286A2008FF2FF /* CoreData.framework in Frameworks */,
 				78DFDF5115500177008FF2FF /* UIKit.framework in Frameworks */,
 				78DFDF5315500177008FF2FF /* Foundation.framework in Frameworks */,
@@ -65,15 +143,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78092CE4157A509200D4A870 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				782CF3B2158DB6F800AE702D /* icon_folder_bookmark.png */,
+				782CF3B0158D72DF00AE702D /* background_plain.png */,
+				782CF3B4158DB75A00AE702D /* icon_graph_bars_down.png */,
+				782CF3AE158D64D100AE702D /* orange_button.png */,
+				782CF3AA158D5C9100AE702D /* white_button.png */,
+				782CF3AC158D61E800AE702D /* blue_button.png */,
+				782CF3A6158D590B00AE702D /* navbar2_bg.png */,
+				782CF3A2158D571200AE702D /* left_nav_button.png */,
+				782CF3A3158D571200AE702D /* right_nav_button.png */,
+				782CF3A0158D527D00AE702D /* Default.png */,
+				782CF396158D4FF500AE702D /* textbox_bg.png */,
+				782CF397158D4FF500AE702D /* navbar.png */,
+				782CF398158D4FF500AE702D /* logo.png */,
+				782CF399158D4FF500AE702D /* tabbar_bg.png */,
+				782CF39A158D4FF500AE702D /* background.png */,
+				782CF390158D488600AE702D /* background_w_logo.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		78111DFF155C7597000A3337 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				783BFD0F15741CCF00D4CC1E /* WriteSubmissionMessage.h */,
+				783BFD1015741CCF00D4CC1E /* WriteSubmissionMessage.m */,
+				783BFD1115741CD000D4CC1E /* WriteSubmissionMessage.xib */,
 				78DFDF6C155004CE008FF2FF /* LoginViewController.h */,
 				78DFDF6D155004CE008FF2FF /* LoginViewController.m */,
 				78DFDF6E155004CE008FF2FF /* LoginViewController.xib */,
 				789ACB001558A59200E6C53A /* SubmissionViewController.h */,
 				789ACB011558A59200E6C53A /* SubmissionViewController.m */,
 				789ACB021558A59200E6C53A /* SubmissionViewController.xib */,
+				78111E06155D12B7000A3337 /* CreateSubmissionViewController.h */,
+				78111E07155D12B7000A3337 /* CreateSubmissionViewController.m */,
+				78111E08155D12B7000A3337 /* CreateSubmissionViewController.xib */,
+				78E4B16515611D6100B0074A /* SelectContactViewController.h */,
+				78E4B16615611D6100B0074A /* SelectContactViewController.m */,
+				78E4B16715611D6100B0074A /* SelectContactViewController.xib */,
+				78759F3B156C5E4700E24826 /* SelectTrackViewController.h */,
+				78759F3C156C5E4700E24826 /* SelectTrackViewController.m */,
+				78759F3D156C5E4700E24826 /* SelectTrackViewController.xib */,
+				783BFD1A15744A3400D4CC1E /* ViewPastSubmissionsController.h */,
+				783BFD1B15744A3400D4CC1E /* ViewPastSubmissionsController.m */,
+				783BFD1C15744A3500D4CC1E /* ViewPastSubmissionsController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -98,6 +214,8 @@
 		78DFDF4F15500177008FF2FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				78111E0B155D14D6000A3337 /* AddressBook.framework */,
+				78111E0D155D14DB000A3337 /* AddressBookUI.framework */,
 				78DFDFAA155286A2008FF2FF /* CoreData.framework */,
 				78DFDF5015500177008FF2FF /* UIKit.framework */,
 				78DFDF5215500177008FF2FF /* Foundation.framework */,
@@ -109,6 +227,7 @@
 		78DFDF5615500177008FF2FF /* cassbeats1 */ = {
 			isa = PBXGroup;
 			children = (
+				78092CE4157A509200D4A870 /* Resources */,
 				78DFDF5F15500178008FF2FF /* AppDelegate.h */,
 				78DFDF6015500178008FF2FF /* AppDelegate.m */,
 				78DFDF5715500177008FF2FF /* Supporting Files */,
@@ -133,11 +252,21 @@
 		78DFDFAD15528BD5008FF2FF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				783BFD0C1573FE4F00D4CC1E /* Contact.h */,
+				783BFD0D1573FE5000D4CC1E /* Contact.m */,
+				783BFD061573FE4F00D4CC1E /* User.h */,
+				783BFD071573FE4F00D4CC1E /* User.m */,
+				783BFD031573FE4E00D4CC1E /* Track.h */,
+				783BFD041573FE4E00D4CC1E /* Track.m */,
 				78DFDF7115500738008FF2FF /* AppModel.h */,
 				78DFDF7215500738008FF2FF /* AppModel.m */,
 				78DFDFAE15528C15008FF2FF /* CassBeatsPro.xcdatamodeld */,
-				78DFDFB115528CD8008FF2FF /* User.h */,
-				78DFDFB215528CD8008FF2FF /* User.m */,
+				789545D0157C5574009C1D0A /* Submission.h */,
+				789545D1157C5574009C1D0A /* Submission.m */,
+				781B0EA8156671AC00FB45D3 /* MyContact.h */,
+				781B0EA9156671AC00FB45D3 /* MyContact.m */,
+				78759F47156C685000E24826 /* MyTrack.h */,
+				78759F48156C685000E24826 /* MyTrack.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -197,6 +326,27 @@
 				78DFDF68155001E0008FF2FF /* MainWindow.xib in Resources */,
 				78DFDF70155004CE008FF2FF /* LoginViewController.xib in Resources */,
 				789ACB041558A59200E6C53A /* SubmissionViewController.xib in Resources */,
+				78111E0A155D12B7000A3337 /* CreateSubmissionViewController.xib in Resources */,
+				78E4B16915611D6100B0074A /* SelectContactViewController.xib in Resources */,
+				78759F3F156C5E4700E24826 /* SelectTrackViewController.xib in Resources */,
+				783BFD1315741CD000D4CC1E /* WriteSubmissionMessage.xib in Resources */,
+				783BFD1E15744A3500D4CC1E /* ViewPastSubmissionsController.xib in Resources */,
+				782CF391158D488600AE702D /* background_w_logo.png in Resources */,
+				782CF39B158D4FF500AE702D /* textbox_bg.png in Resources */,
+				782CF39C158D4FF500AE702D /* navbar.png in Resources */,
+				782CF39D158D4FF500AE702D /* logo.png in Resources */,
+				782CF39E158D4FF500AE702D /* tabbar_bg.png in Resources */,
+				782CF39F158D4FF500AE702D /* background.png in Resources */,
+				782CF3A1158D527D00AE702D /* Default.png in Resources */,
+				782CF3A4158D571200AE702D /* left_nav_button.png in Resources */,
+				782CF3A5158D571200AE702D /* right_nav_button.png in Resources */,
+				782CF3A7158D590B00AE702D /* navbar2_bg.png in Resources */,
+				782CF3AB158D5C9100AE702D /* white_button.png in Resources */,
+				782CF3AD158D61E800AE702D /* blue_button.png in Resources */,
+				782CF3AF158D64D100AE702D /* orange_button.png in Resources */,
+				782CF3B1158D72DF00AE702D /* background_plain.png in Resources */,
+				782CF3B3158DB6F900AE702D /* icon_folder_bookmark.png in Resources */,
+				782CF3B5158DB75A00AE702D /* icon_graph_bars_down.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,8 +362,18 @@
 				78DFDF6F155004CE008FF2FF /* LoginViewController.m in Sources */,
 				78DFDF7315500738008FF2FF /* AppModel.m in Sources */,
 				78DFDFB015528C15008FF2FF /* CassBeatsPro.xcdatamodeld in Sources */,
-				78DFDFB315528CD8008FF2FF /* User.m in Sources */,
 				789ACB031558A59200E6C53A /* SubmissionViewController.m in Sources */,
+				78111E09155D12B7000A3337 /* CreateSubmissionViewController.m in Sources */,
+				78E4B16815611D6100B0074A /* SelectContactViewController.m in Sources */,
+				781B0EAA156671AC00FB45D3 /* MyContact.m in Sources */,
+				78759F3E156C5E4700E24826 /* SelectTrackViewController.m in Sources */,
+				78759F49156C685000E24826 /* MyTrack.m in Sources */,
+				783BFD051573FE4E00D4CC1E /* Track.m in Sources */,
+				783BFD081573FE4F00D4CC1E /* User.m in Sources */,
+				783BFD0E1573FE5000D4CC1E /* Contact.m in Sources */,
+				783BFD1215741CD000D4CC1E /* WriteSubmissionMessage.m in Sources */,
+				783BFD1D15744A3500D4CC1E /* ViewPastSubmissionsController.m in Sources */,
+				789545D2157C5574009C1D0A /* Submission.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

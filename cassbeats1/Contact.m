@@ -1,17 +1,19 @@
 //
-//  User.m
+//  Contact.m
 //  cassbeats1
 //
 //  Created by Alexander Casanova on 5/28/12.
 //  Copyright (c) 2012 CassBeats LLC. All rights reserved.
 //
 
-#import "User.h"
+#import "Contact.h"
+#import "Submission.h"
 
 
-@implementation User
+@implementation Contact
 
 @dynamic email;
-@dynamic server_id;
+@dynamic name;
+@dynamic contactToSubmission;
 
 @end

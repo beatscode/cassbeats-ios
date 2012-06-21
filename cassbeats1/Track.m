@@ -1,17 +1,19 @@
 //
-//  User.m
+//  Track.m
 //  cassbeats1
 //
 //  Created by Alexander Casanova on 5/28/12.
 //  Copyright (c) 2012 CassBeats LLC. All rights reserved.
 //
 
-#import "User.h"
+#import "Track.h"
+#import "Submission.h"
 
 
-@implementation User
+@implementation Track
 
-@dynamic email;
-@dynamic server_id;
+@dynamic name;
+@dynamic size;
+@dynamic trackToSubmission;
 
 @end
