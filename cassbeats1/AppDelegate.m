@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import <DropboxSDK/DropboxSDK.h>
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -18,18 +18,76 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    //_loginController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-    //[_window rootViewController: _loginController];
+    _loginController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    [_window.rootViewController presentModalViewController:_loginController animated:YES];
     //[_window addSubview:[_loginController view]];
     //self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     //self.window.backgroundColor = [UIColor whiteColor];
-    _loginController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-    [_window.rootViewController presentModalViewController:_loginController animated:YES];
+  
+   
+    // Set these variables before launching the app
+    NSString* appKey = @"wc7pttjxpf2topw";
+	NSString* appSecret = @"046i56phg6wtngh";
+	NSString *root = kDBRootAppFolder; // Should be set to either kDBRootAppFolder or kDBRootDropbox
+	// You can determine if you have App folder access or Full Dropbox along with your consumer key/secret
+	// from https://dropbox.com/developers/apps 
+	
+	// Look below where the DBSession is created to understand how to use DBSession in your app
+	
+	NSString* errorMsg = nil;
+	if ([appKey rangeOfCharacterFromSet:[[NSCharacterSet alphanumericCharacterSet] invertedSet]].location != NSNotFound) {
+		errorMsg = @"Make sure you set the app key correctly in DBRouletteAppDelegate.m";
+	} else if ([appSecret rangeOfCharacterFromSet:[[NSCharacterSet alphanumericCharacterSet] invertedSet]].location != NSNotFound) {
+		errorMsg = @"Make sure you set the app secret correctly in DBRouletteAppDelegate.m";
+	} else if ([root length] == 0) {
+		errorMsg = @"Set your root to use either App Folder of full Dropbox";
+	} else {
+		NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Info" ofType:@"plist"];
+		NSData *plistData = [NSData dataWithContentsOfFile:plistPath];
+		NSDictionary *loadedPlist = 
+        [NSPropertyListSerialization 
+         propertyListFromData:plistData mutabilityOption:0 format:NULL errorDescription:NULL];
+		NSString *scheme = [[[[loadedPlist objectForKey:@"CFBundleURLTypes"] objectAtIndex:0] objectForKey:@"CFBundleURLSchemes"] objectAtIndex:0];
+		if ([scheme isEqual:@"db-APP_KEY"]) {
+			errorMsg = @"Set your URL scheme correctly in DBRoulette-Info.plist";
+		}
+	}
+	
+    DBSession* dbSession =
+    [[DBSession alloc]
+      initWithAppKey:appKey
+      appSecret:appSecret
+     root:root]; // either kDBRootAppFolder or kDBRootDropbox
+  //  dbSession.delegate = self;
+    [DBSession setSharedSession:dbSession];	
+	//[DBRequest setNetworkRequestDelegate:self];
+    
+	if (errorMsg != nil) {
+		[[[UIAlertView alloc]
+		   initWithTitle:@"Error Configuring Session" message:errorMsg 
+		   delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil]
+		 show];
+	}
+    
+
     [self.window makeKeyAndVisible];
     [self customizeAppearance];
     return YES;
 }
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    if ([[DBSession sharedSession] handleOpenURL:url]) {
+        if ([[DBSession sharedSession] isLinked]) {
+            NSLog(@"App linked successfully!");
+            // At this point you can start making API calls
+            
+        }
+        return YES;
+    }
+    // Add whatever other url handling code your app requires here
+    return NO;
+}
+
 
 -(void)customizeAppearance{
     

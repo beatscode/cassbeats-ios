@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AppModel.h"
+#import <DropboxSDK/DropboxSDK.h>
 #import "CreateSubmissionViewController.h"
 
 @interface LoginViewController : UIViewController<UITextFieldDelegate>
@@ -21,5 +22,5 @@
 - (IBAction)login:(id)sender;
 -(void)authenticateUser:(NSString *)email:(NSString *)password;
 -(void)userSetup:(NSData *)data;
-
+-(IBAction)registerUser:(id)sender;
 @end

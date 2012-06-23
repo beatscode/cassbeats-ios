@@ -41,6 +41,9 @@
 		789545D2157C5574009C1D0A /* Submission.m in Sources */ = {isa = PBXBuildFile; fileRef = 789545D1157C5574009C1D0A /* Submission.m */; };
 		789ACB031558A59200E6C53A /* SubmissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789ACB011558A59200E6C53A /* SubmissionViewController.m */; };
 		789ACB041558A59200E6C53A /* SubmissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789ACB021558A59200E6C53A /* SubmissionViewController.xib */; };
+		78AB00811592A5AD00F625DE /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AB00801592A5AD00F625DE /* DropboxSDK.framework */; };
+		78AB00841592A60500F625DE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AB00831592A60500F625DE /* Security.framework */; };
+		78AB00861592AD4300F625DE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AB00851592AD4300F625DE /* QuartzCore.framework */; };
 		78DFDF5115500177008FF2FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78DFDF5015500177008FF2FF /* UIKit.framework */; };
 		78DFDF5315500177008FF2FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78DFDF5215500177008FF2FF /* Foundation.framework */; };
 		78DFDF5515500177008FF2FF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78DFDF5415500177008FF2FF /* CoreGraphics.framework */; };
@@ -103,6 +106,9 @@
 		789ACB001558A59200E6C53A /* SubmissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmissionViewController.h; sourceTree = "<group>"; };
 		789ACB011558A59200E6C53A /* SubmissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmissionViewController.m; sourceTree = "<group>"; };
 		789ACB021558A59200E6C53A /* SubmissionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubmissionViewController.xib; sourceTree = "<group>"; };
+		78AB00801592A5AD00F625DE /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
+		78AB00831592A60500F625DE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		78AB00851592AD4300F625DE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		78DFDF4C15500177008FF2FF /* cassbeats1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cassbeats1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78DFDF5015500177008FF2FF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		78DFDF5215500177008FF2FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -131,12 +137,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78AB00861592AD4300F625DE /* QuartzCore.framework in Frameworks */,
+				78AB00841592A60500F625DE /* Security.framework in Frameworks */,
 				78111E0E155D14DB000A3337 /* AddressBookUI.framework in Frameworks */,
 				78111E0C155D14D6000A3337 /* AddressBook.framework in Frameworks */,
 				78DFDFAB155286A2008FF2FF /* CoreData.framework in Frameworks */,
 				78DFDF5115500177008FF2FF /* UIKit.framework in Frameworks */,
 				78DFDF5315500177008FF2FF /* Foundation.framework in Frameworks */,
 				78DFDF5515500177008FF2FF /* CoreGraphics.framework in Frameworks */,
+				78AB00811592A5AD00F625DE /* DropboxSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +206,8 @@
 		78DFDF4115500177008FF2FF = {
 			isa = PBXGroup;
 			children = (
+				78AB00851592AD4300F625DE /* QuartzCore.framework */,
+				78AB00831592A60500F625DE /* Security.framework */,
 				78DFDF5615500177008FF2FF /* cassbeats1 */,
 				78DFDF4F15500177008FF2FF /* Frameworks */,
 				78DFDF4D15500177008FF2FF /* Products */,
@@ -214,6 +225,7 @@
 		78DFDF4F15500177008FF2FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				78AB00801592A5AD00F625DE /* DropboxSDK.framework */,
 				78111E0B155D14D6000A3337 /* AddressBook.framework */,
 				78111E0D155D14DB000A3337 /* AddressBookUI.framework */,
 				78DFDFAA155286A2008FF2FF /* CoreData.framework */,
@@ -297,7 +309,7 @@
 		78DFDF4315500177008FF2FF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "CassBeats LLC";
 			};
 			buildConfigurationList = 78DFDF4615500177008FF2FF /* Build configuration list for PBXProject "cassbeats1" */;
@@ -439,6 +451,10 @@
 		78DFDF6515500178008FF2FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cassbeats1/cassbeats1-Prefix.pch";
 				INFOPLIST_FILE = "cassbeats1/cassbeats1-Info.plist";
@@ -450,6 +466,10 @@
 		78DFDF6615500178008FF2FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cassbeats1/cassbeats1-Prefix.pch";
 				INFOPLIST_FILE = "cassbeats1/cassbeats1-Info.plist";

@@ -20,20 +20,6 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "cassbeats1/LoginViewController.m"
-         timestampString = "361588968.211813"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "47"
-         endingLineNumber = "47"
-         landmarkName = "-viewDidLoad"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
          filePath = "cassbeats1/Submission.h"
          timestampString = "359924273.885593"
          startingColumnNumber = "9223372036854775807"
@@ -105,11 +91,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "cassbeats1/AppModel.m"
-         timestampString = "360470614.253331"
+         timestampString = "361934185.217452"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "225"
-         endingLineNumber = "225"
+         startingLineNumber = "237"
+         endingLineNumber = "237"
          landmarkName = "-saveSubmissionOnServer:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -119,11 +105,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "cassbeats1/AppModel.m"
-         timestampString = "360470914.772979"
+         timestampString = "361934185.217452"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "137"
-         endingLineNumber = "137"
+         startingLineNumber = "149"
+         endingLineNumber = "149"
          landmarkName = "-saveSubmission"
          landmarkType = "5">
       </FileBreakpoint>
@@ -133,11 +119,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "cassbeats1/AppModel.m"
-         timestampString = "360471058.192664"
+         timestampString = "361934185.217452"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "123"
-         endingLineNumber = "123"
+         startingLineNumber = "135"
+         endingLineNumber = "135"
          landmarkName = "-saveSubmission"
          landmarkType = "5">
       </FileBreakpoint>
@@ -147,11 +133,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "cassbeats1/AppModel.m"
-         timestampString = "360471143.050859"
+         timestampString = "361934185.217452"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "134"
-         endingLineNumber = "134"
+         startingLineNumber = "146"
+         endingLineNumber = "146"
          landmarkName = "-saveSubmission"
          landmarkType = "5">
       </FileBreakpoint>
@@ -161,40 +147,12 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "cassbeats1/AppModel.m"
-         timestampString = "360471146.016706"
+         timestampString = "361934185.217452"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "128"
-         endingLineNumber = "128"
+         startingLineNumber = "140"
+         endingLineNumber = "140"
          landmarkName = "-saveSubmission"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "cassbeats1/AppDelegate.m"
-         timestampString = "361583625.982624"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "27"
-         endingLineNumber = "27"
-         landmarkName = "-application:didFinishLaunchingWithOptions:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "cassbeats1/LoginViewController.m"
-         timestampString = "361589376.018487"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "53"
-         endingLineNumber = "53"
-         landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

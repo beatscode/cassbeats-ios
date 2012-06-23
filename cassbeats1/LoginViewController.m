@@ -85,11 +85,19 @@
     
     NSLog(@"Logging in:%@ %@",emailTextField.text,passwordTextField.text);
     
-   // AppModel *model = [AppModel sharedModel];
+    // AppModel *model = [AppModel sharedModel];
     [self authenticateUser:emailTextField.text :passwordTextField.text];
     //[model saveUser:emailTextField.text :passwordTextField.text];
-
     
+}
+//Register
+-(IBAction)registerUser:(id)sender{
+    if (![[DBSession sharedSession] isLinked]) {
+        NSLog(@"Not linked");
+        id rootVC = [[[[[UIApplication sharedApplication] keyWindow] subviews] objectAtIndex:0] nextResponder];
+        [[DBSession sharedSession] linkFromController:rootVC ] ;
+
+    }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
@@ -99,7 +107,6 @@
     [self login:nil];
     return YES;
 }
-
 
 #pragma NDSURLConnection
 NSMutableData *receivedData;
@@ -112,13 +119,14 @@ NSMutableData *receivedData;
     NSString *params;
     
     NSMutableDictionary *authData = [NSMutableDictionary dictionary];
+    
     [authData setObject:email forKey:@"email"];
     [authData setObject:password forKey:@"password"];
     
-//    [authData enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-//        NSLog(@"%@",obj);
-//        [params stringByAppendingFormat:@"%@=%@&",key,obj];
-//    }];
+    [authData enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        NSLog(@"%@",obj);
+        [params stringByAppendingFormat:@"%@=%@&",key,obj];
+    }];
     
     params = [[NSString alloc] initWithFormat:@"email=%@&password=%@",email,password];
     NSLog(@"%@",params);
@@ -127,8 +135,9 @@ NSMutableData *receivedData;
     NSMutableURLRequest *request= [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];    
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
     
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
+
     if(error){        
         NSLog(@"connection failed");
     }else{
@@ -181,8 +190,13 @@ NSMutableData *receivedData;
             [model updateUserData:[json objectForKey:@"user"]];
             [model updateTrackData:[json objectForKey:@"dropbox_tracks"]];
             
+                        
             //Remove Login Screen
             [self.presentingViewController dismissModalViewControllerAnimated:YES];
+            
+            // Create DBSession for DropBox
+            // Find out if user has already registerred with dropbox and cassbeats
+
         }
     }
 }

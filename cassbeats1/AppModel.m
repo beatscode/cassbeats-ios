@@ -67,6 +67,18 @@ NSMutableData *receivedData;
     self.downloadable = option;
 }
 
+-(void)createDropBoxDBSession{
+    DBSession* dbSession =
+    [[DBSession alloc]
+      initWithAppKey:@"wc7pttjxpf2topw"
+      appSecret:@"046i56phg6wtngh"
+      root:@"kDBRootAppFolder" // either kDBRootAppFolder or kDBRootDropbox
+     ];
+    [DBSession setSharedSession:dbSession];
+    
+}
+
+
 -(BOOL)saveSubmission{
     
     BOOL isValid = YES;
