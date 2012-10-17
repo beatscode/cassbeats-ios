@@ -66,6 +66,7 @@
 		78E4B16915611D6100B0074A /* SelectContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E4B16715611D6100B0074A /* SelectContactViewController.xib */; };
 		78E83560162EA982009C8E35 /* TutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E8355E162EA982009C8E35 /* TutorialViewController.xib */; };
 		78E83562162EBCA4009C8E35 /* cassbeats-case-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E83561162EBCA4009C8E35 /* cassbeats-case-logo.png */; };
+		78E8356C162EE790009C8E35 /* cassbeats_mobile_bkgd.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E8356B162EE790009C8E35 /* cassbeats_mobile_bkgd.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -150,6 +151,7 @@
 		78E4B16715611D6100B0074A /* SelectContactViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectContactViewController.xib; sourceTree = "<group>"; };
 		78E8355E162EA982009C8E35 /* TutorialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TutorialViewController.xib; sourceTree = "<group>"; };
 		78E83561162EBCA4009C8E35 /* cassbeats-case-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cassbeats-case-logo.png"; path = "../../../Documents/BeatLife Files/CassBeatsPro/logo/cassbeats-case-logo.png"; sourceTree = "<group>"; };
+		78E8356B162EE790009C8E35 /* cassbeats_mobile_bkgd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cassbeats_mobile_bkgd.png; path = "../../../Documents/BeatLife Files/CassBeatsPro/logo/cassbeats_mobile_bkgd.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 		78092CE4157A509200D4A870 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				78E8356B162EE790009C8E35 /* cassbeats_mobile_bkgd.png */,
 				78E83561162EBCA4009C8E35 /* cassbeats-case-logo.png */,
 				782CF3B2158DB6F800AE702D /* icon_folder_bookmark.png */,
 				782CF3B0158D72DF00AE702D /* background_plain.png */,
@@ -396,6 +399,7 @@
 				78B56BF9162441E700CEEE31 /* Default-568h@2x.png in Resources */,
 				78E83560162EA982009C8E35 /* TutorialViewController.xib in Resources */,
 				78E83562162EBCA4009C8E35 /* cassbeats-case-logo.png in Resources */,
+				78E8356C162EE790009C8E35 /* cassbeats_mobile_bkgd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

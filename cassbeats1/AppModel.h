@@ -49,7 +49,6 @@
 -(NSMutableArray *)getAllSubmissions;
 -(void)saveSubmissionOnServer:(NSMutableString *)postString;
 -(void)setSubmissionDownloadOption:(BOOL)option;
--(void)createDropBoxDBSession;
 -(NSArray *)getSubmissionTracks:(Submission *)submission;
 -(NSArray *)getSubmissionContacts:(Submission *)submission;
 -(NSMutableArray *)makeTracks;
