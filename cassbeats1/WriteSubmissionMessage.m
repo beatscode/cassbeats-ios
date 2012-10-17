@@ -44,6 +44,7 @@
     UIImage *blueButtonImage = [[UIImage imageNamed:@"blue_button"]  resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
     [self.saveMessageBtn setBackgroundImage:blueButtonImage forState:UIControlStateNormal];
     [[UIButton appearanceWhenContainedIn:[self class], nil] setTitleColor:[UIColor blackColor]forState:UIControlStateNormal];
+    
 }
 
 - (void)viewDidUnload

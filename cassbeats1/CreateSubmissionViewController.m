@@ -37,15 +37,20 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
+    [self customizeAppearance];
+    self.navigationItem.leftBarButtonItem.title = @"Options";
+    self.title = @"New Submission";
+}
+-(void)customizeAppearance{
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background_plain"]];
     
-   UIImage *orangeButtonImage = [[UIImage imageNamed:@"orange_button"]  resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
+    UIImage *orangeButtonImage = [[UIImage imageNamed:@"orange_button"]  resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
     UIImage *blueButtonImage = [[UIImage imageNamed:@"blue_button"]  resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
-//    
-//    [selectTracksBtn setBackgroundImage:blueButtonImage forState:UIControlStateNormal];
-//    [writeMessageBtn setBackgroundImage:blueButtonImage forState:UIControlStateNormal];
-//    [selectContactsBtn setBackgroundImage:blueButtonImage forState:UIControlStateNormal];
-//    [sendBtn setBackgroundImage:blueButtonImage forState:UIControlStateNormal];
+    //    
+    //    [selectTracksBtn setBackgroundImage:blueButtonImage forState:UIControlStateNormal];
+    //    [writeMessageBtn setBackgroundImage:blueButtonImage forState:UIControlStateNormal];
+    //    [selectContactsBtn setBackgroundImage:blueButtonImage forState:UIControlStateNormal];
+    //    [sendBtn setBackgroundImage:blueButtonImage forState:UIControlStateNormal];
     ////[[UILabel appearance] setColor:[UIColor 
     
     downloadLbl.textColor = [UIColor whiteColor];
@@ -55,7 +60,6 @@
     
     [self.sendBtn setBackgroundImage:orangeButtonImage forState:UIControlStateNormal];
 }
-
 - (void)viewDidUnload
 {
     
@@ -79,34 +83,20 @@
 - (IBAction)saveSubmission:(id)sender {
     
     AppModel *model = [AppModel sharedModel];
+    //will save to both the device and send
+    //urlrequest
     [model saveSubmission];
 }
 - (IBAction)selectTracks:(id)sender {
     
     AppModel *model = [AppModel sharedModel];
-    NSMutableArray *tracks = [[NSMutableArray alloc] initWithObjects:nil];  
-    NSLog(@"Number of Tracks : %d",[model.selectedTracks count]);
-    NSLog(@"Number of Contacts : %d",[model.selectedContacts count]);
-    if ([[model selectedTracks] count] == 0) {
-              
-        [model.trackData enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            
-            MyTrack *track = [[MyTrack alloc] init];
-            if([obj isKindOfClass:[MyTrack class]]){
-                track = (MyTrack *)obj;
-                track.selected = NO;
-            }else{
-                track.name = [obj objectForKey:@"path"];
-                track.size = [obj objectForKey:@"size"];                
-            }
-            [tracks addObject:track];
-        }];
-        
-        model.trackData = tracks;
+    
+    if ([[model selectedTracks] count] == 0) {        
+        model.trackData = [model makeTracks];     
     }
     
     SelectTrackViewController *sTVC = [[SelectTrackViewController alloc] initWithNibName:@"SelectTrackViewController" bundle:nil];
-   // sTVC.tracks = ([tracks count] == 0) ? [model trackData] : tracks;
+    // sTVC.tracks = ([tracks count] == 0) ? [model trackData] : tracks;
     [self.navigationController pushViewController:sTVC animated:YES];
 }
 
@@ -140,8 +130,7 @@
                 NSString* email = (__bridge_transfer NSString*)ABMultiValueCopyValueAtIndex(emails, j);
                 [allEmails addObject:email];
             }
-            //NSLog(@"%@",allEmails);
-            //NSLog(@"%@ %@",firstname,lastname);
+
             MyContact *ct = [[MyContact alloc] init];
             ct.name  = [NSString stringWithFormat:@"%@ %@",firstname,lastname];
             ct.emails = allEmails;

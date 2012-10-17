@@ -43,6 +43,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
 }
 
 - (void)viewDidUnload
@@ -85,7 +86,18 @@
     // Return the number of rows in the section.
     return [self.submissions count];
 }
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSString *msg = [[NSString alloc] init]; 
+    CGSize cellSize;
+    CGSize maxSize; 
+    msg = @"Contacts: %d\nTracks %d\n Date: %@"; 
+    maxSize  = CGSizeMake(380.0f, MAXFLOAT);
+    cellSize = [msg sizeWithFont:[UIFont systemFontOfSize:13]
+               constrainedToSize:maxSize lineBreakMode:UILineBreakModeWordWrap];
+    cellSize.height = cellSize.height + 45;
+    return cellSize.height;
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -94,12 +106,19 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    
+    AppModel *model = [AppModel sharedModel];
+   
     NSUInteger row = [indexPath row];
     Submission *submission = [self.submissions objectAtIndex:row];
+    NSArray *tracks   = [model getSubmissionTracks:submission];
+    NSArray *contacts = [model getSubmissionContacts:submission];
     
     cell.textLabel.text = submission.name;
-    cell.detailTextLabel.text = submission.date;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Contacts: %d\nTracks: %d\nDate: %@",contacts.count,tracks.count,submission.date];
+    cell.detailTextLabel.numberOfLines = 0;
+    cell.detailTextLabel.textColor = [UIColor blackColor];
+    cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
+    
     // Configure the cell...
     return cell;
 }
@@ -148,12 +167,28 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
+    NSUInteger row = [indexPath row];
+    Submission *submission = [self.submissions objectAtIndex:row];
+    AppModel *model = [AppModel sharedModel];
+    NSArray *tracks = [model getSubmissionTracks:submission];
+    NSArray *contacts = [model getSubmissionContacts:submission];
+    NSArray *msg      = [[NSArray alloc] initWithObjects:submission.message, nil];
+    
+     SubmissionDetailsViewController *subDetailVC = [[SubmissionDetailsViewController alloc] initWithNibName:@"SubmissionDetailsViewController" bundle:nil];
+
+     subDetailVC.tracks = tracks;
+     subDetailVC.contacts = contacts;
+     
+     subDetailVC.sectionArray = [[NSMutableArray alloc] init ];
+     [subDetailVC.sectionArray addObject:contacts];
+     [subDetailVC.sectionArray addObject:tracks];
+     [subDetailVC.sectionArray addObject: msg];
+    
+     subDetailVC.title = submission.date;
+    
      // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+     [self.navigationController pushViewController:subDetailVC animated:YES];
+     
 }
 
 @end

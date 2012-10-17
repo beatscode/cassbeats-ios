@@ -8,10 +8,10 @@
 
 #import "LoginViewController.h"
 
+
 @implementation LoginViewController
 @synthesize statusLabel;
 @synthesize loginBtn;
-@synthesize registerBtn;
 @synthesize emailTextField;
 @synthesize passwordTextField;
 
@@ -36,6 +36,9 @@
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    
    // [self.emailTextField becomeFirstResponder];
     [self.statusLabel setText:@""];
     
@@ -43,32 +46,41 @@
     AppModel *model = [AppModel sharedModel]; 
       
     if ([model getUser]) {
+       User *usr = [model user];
+        NSLog(@" email: %@ , id : %@",usr.email, usr.server_id);
+        
        [self.emailTextField setText:[model.user email]];
     }else{
         //For Testing Purposes
+        NSLog(@"Just Testing");
         [self.emailTextField setText:@"cassbeats@gmail.com"];
         [self.passwordTextField setText:@"player9"];
     }
+    [self customizeAppearance];
+    
+    self.title = @"Login";
+    
+    UIBarButtonItem *registerBtn = [[UIBarButtonItem alloc] initWithTitle:@"Register" style:UIBarButtonItemStylePlain target:self action:@selector(registerUser)];
+
+    self.navigationItem.leftBarButtonItem = registerBtn;
+
+}
+-(void)customizeAppearance{
+    //Background
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
     
     UIImage *blueButtonImage = [[UIImage imageNamed:@"blue_button"]  resizableImageWithCapInsets:UIEdgeInsetsMake(0, 15, 0, 15)];
-    UIImage *orangeButtonImage = [[UIImage imageNamed:@"orange_button"]  resizableImageWithCapInsets:UIEdgeInsetsMake(0, 15, 0, 15)];
     
     [self.loginBtn setBackgroundImage:blueButtonImage forState:UIControlStateNormal];
-    [self.loginBtn setTitleColor:[UIColor blackColor]forState:UIControlStateNormal];
-    
-    [self.registerBtn setBackgroundImage:orangeButtonImage forState:UIControlStateNormal];
-    [self.registerBtn setTitleColor:[UIColor blackColor]forState:UIControlStateNormal];
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self.loginBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        
 }
-
 - (void)viewDidUnload
 {
     [self setEmailTextField:nil];
     [self setPasswordTextField:nil];
     [self setStatusLabel:nil];
     [self setLoginBtn:nil];
-    [self setRegisterBtn:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -84,20 +96,22 @@
 - (IBAction)login:(id)sender {
     
     NSLog(@"Logging in:%@ %@",emailTextField.text,passwordTextField.text);
-    
     // AppModel *model = [AppModel sharedModel];
     [self authenticateUser:emailTextField.text :passwordTextField.text];
     //[model saveUser:emailTextField.text :passwordTextField.text];
     
 }
 //Register
--(IBAction)registerUser:(id)sender{
-    if (![[DBSession sharedSession] isLinked]) {
-        NSLog(@"Not linked");
-        id rootVC = [[[[[UIApplication sharedApplication] keyWindow] subviews] objectAtIndex:0] nextResponder];
-        [[DBSession sharedSession] linkFromController:rootVC ] ;
-
-    }
+-(IBAction)registerUser{
+    
+    RegViewController *RVC = [[RegViewController alloc] initWithNibName:@"RegViewController" bundle:nil];
+    
+   // id rootVC = [[[[[UIApplication sharedApplication] keyWindow] subviews] objectAtIndex:0] nextResponder];
+ 
+   // [[[self parentViewController] parentViewController] dismissModalViewControllerAnimated:YES];
+   // [rootVC presentModalViewController:RVC animated:YES];
+    
+    [self.navigationController pushViewController:RVC animated:YES];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
@@ -124,19 +138,17 @@ NSMutableData *receivedData;
     [authData setObject:password forKey:@"password"];
     
     [authData enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        NSLog(@"%@",obj);
         [params stringByAppendingFormat:@"%@=%@&",key,obj];
     }];
     
     params = [[NSString alloc] initWithFormat:@"email=%@&password=%@",email,password];
-    NSLog(@"%@",params);
   
-    NSURL *url = [NSURL URLWithString:@"http://localhost/personal/cassbeats2/mobile/mobile/login"];
+    NSURL *url = [NSURL URLWithString:loginURL];
     NSMutableURLRequest *request= [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];    
     
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
+    [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
 
     if(error){        
         NSLog(@"connection failed");
@@ -181,21 +193,15 @@ NSMutableData *receivedData;
     //NSLog(@"%@",userArray);
     if(!error){
         NSArray *errorArray = [json objectForKey:@"error"];
-        NSLog(@"%@",[errorArray description]);
         if(errorArray){
             //Show Popup stating error authenticating
            [self.statusLabel setText:(NSString *)errorArray];
         }else{            
             AppModel *model = [AppModel sharedModel];
             [model updateUserData:[json objectForKey:@"user"]];
-            [model updateTrackData:[json objectForKey:@"dropbox_tracks"]];
-            
-                        
-            //Remove Login Screen
-            [self.presentingViewController dismissModalViewControllerAnimated:YES];
-            
-            // Create DBSession for DropBox
-            // Find out if user has already registerred with dropbox and cassbeats
+            [model updateTrackData:[json objectForKey:@"dropbox_tracks"]];            
+            AppDelegate *appDelegate= (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            [appDelegate window].rootViewController = appDelegate.tabBarController;
 
         }
     }

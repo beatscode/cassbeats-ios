@@ -8,19 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import "AppModel.h"
-#import <DropboxSDK/DropboxSDK.h>
 #import "CreateSubmissionViewController.h"
+#import "RegViewController.h"
+#import "AppDelegate.h"
+#define loginURL @"http://localhost/personal/cassbeats4/public/mobile/login"
 
 @interface LoginViewController : UIViewController<UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
-@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
-@property (weak, nonatomic) IBOutlet UIButton *registerBtn;
+@property (unsafe_unretained, nonatomic) IBOutlet UITextField *emailTextField;
+@property (unsafe_unretained, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *statusLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *loginBtn;
 
-- (IBAction)login:(id)sender;
+-(IBAction)login:(id)sender;
 -(void)authenticateUser:(NSString *)email:(NSString *)password;
 -(void)userSetup:(NSData *)data;
--(IBAction)registerUser:(id)sender;
+-(IBAction)registerUser;
 @end

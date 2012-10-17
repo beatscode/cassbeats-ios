@@ -8,7 +8,7 @@
 
 #import "AppModel.h"
 
-#define saveServerSubmissionURL @"http://localhost/personal/cassbeats2/index.php/mobile/createSubmission/"
+#define saveServerSubmissionURL @"http://localhost/personal/cassbeats4/public/index.php/mobile/createSubmission/"
 @implementation AppModel
 
 @synthesize userData = _userData;
@@ -32,6 +32,7 @@ NSMutableData *receivedData;
         self.selectedContacts = [[NSMutableArray alloc] initWithObjects:nil];
         self.selectedTracks   = [[NSMutableArray alloc] initWithObjects:nil];
         self.downloadable     = YES;
+        self.trackData        = [[NSMutableArray alloc] initWithObjects:nil];
     }
     return self;    
 }
@@ -48,6 +49,15 @@ NSMutableData *receivedData;
     return submissions;
 }
 
+-(NSArray *)getSubmissionTracks:(Submission *)submission{
+    NSArray *tracks = submission.submissionToTrack.allObjects;
+    return tracks;
+}
+-(NSArray *)getSubmissionContacts:(Submission  *)submission{
+    NSArray *contacts = submission.submissionToContact.allObjects;
+    return contacts;
+}
+
 -(BOOL)getUser{
 
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
@@ -62,22 +72,32 @@ NSMutableData *receivedData;
         return NO;
     }
 }
+-(NSArray *)getUserData{
+    return self.userData;
+}
 
 -(void)setSubmissionDownloadOption:(BOOL)option{
     self.downloadable = option;
 }
 
--(void)createDropBoxDBSession{
-    DBSession* dbSession =
-    [[DBSession alloc]
-      initWithAppKey:@"wc7pttjxpf2topw"
-      appSecret:@"046i56phg6wtngh"
-      root:@"kDBRootAppFolder" // either kDBRootAppFolder or kDBRootDropbox
-     ];
-    [DBSession setSharedSession:dbSession];
-    
+-(NSMutableArray *)makeTracks{
+    NSMutableArray *tracks = [[NSMutableArray alloc] init];
+    NSLog(@"Track Data %@", self.trackData);
+    if([self.trackData isKindOfClass:[NSArray class]]){
+        [self.trackData enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            MyTrack *track = [[MyTrack alloc] init];
+            if([obj isKindOfClass:[MyTrack class]]){
+                track = (MyTrack *)obj;
+                track.selected = NO;
+            }else{
+                track.name = [obj objectForKey:@"path"];
+                track.size = [obj objectForKey:@"size"];                
+            }
+            [tracks addObject:track];
+        }];
+   }
+    return tracks;
 }
-
 
 -(BOOL)saveSubmission{
     
@@ -90,7 +110,7 @@ NSMutableData *receivedData;
     NSDate *date = [NSDate date];
     // format it
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc]init];
-    [dateFormat setDateFormat:@"HH:mm:ss zzz"];
+    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     // convert it to a string
     NSString *dateString = [dateFormat stringFromDate:date];
         
@@ -103,7 +123,7 @@ NSMutableData *receivedData;
     Submission *submission = (Submission *)[NSEntityDescription insertNewObjectForEntityForName:@"Submission" inManagedObjectContext:context];
     User *usr  = self.user;
     
-    submission.name = [[NSString alloc] initWithFormat:@"Submission - %@", dateString];
+    submission.name = [[NSString alloc] initWithFormat:@"Submission"];
     submission.date = dateString;
     submission.message = self.submissionMessage;
     submission.download = [NSNumber numberWithBool:self.downloadable];
@@ -173,9 +193,11 @@ NSMutableData *receivedData;
 }
 
 -(void)saveUser:(NSArray *)user{
+    //TODO: get first user
     User *usr = (User *)[NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:[self managedObjectContext]];
     usr.email = [user valueForKey: @"email"];
-    usr.server_id = [user valueForKey:@"id"];
+    NSString *server_id = [NSString stringWithFormat:@"%@",[user valueForKey:@"id"]];
+    usr.server_id = server_id;
    [self saveContext];
 }
 +(id)sharedModel{
@@ -200,11 +222,11 @@ NSMutableData *receivedData;
 -(void)updateUserData:(NSArray *)array{
     self.userData  = array; 
     [self saveUser:array]; 
-    NSLog(@"User Data %@",array);
 }
 
 -(void)updateTrackData:(NSArray *)array{
-    self.trackData = array;
+    NSLog(@"%@",array);
+    self.trackData = array;   
 }
 
 -(BOOL)validateSubmission{
@@ -214,7 +236,7 @@ NSMutableData *receivedData;
     if([self.submissionMessage isEqualToString:@""]){
         //Alert 
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Empty Message" message:@"You Must add a message to this submission" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Okay", nil];
-        [alertView show ];        
+        [alertView show];        
         isValid = NO;       
     }
     
@@ -235,7 +257,6 @@ NSMutableData *receivedData;
 
 -(void)saveSubmissionOnServer:(NSString *)postString{
         
-    NSError *error;
     NSURL *url = [NSURL URLWithString:saveServerSubmissionURL];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
@@ -243,10 +264,13 @@ NSMutableData *receivedData;
     [request setHTTPMethod:@"POST"];
     [request setValue:[NSString stringWithFormat:@"%d", [requestData length]] forHTTPHeaderField:@"Content-Length"];
     [request setHTTPBody: requestData];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible  = YES;
     
     NSURLConnection *connection = [[NSURLConnection alloc]initWithRequest:request delegate:self startImmediately:YES];
-    if (error) {
-        NSLog(@"%@",error);
+    if (connection) {
+        NSLog(@"Connection Failed");
+        UIAlertView *connectFailMessage = [[UIAlertView alloc] initWithTitle:@"NSURLConnection " message:@"Failed in viewDidLoad"  delegate: self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+		[connectFailMessage show];
     }
     
 }

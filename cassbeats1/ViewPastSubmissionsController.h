@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AppModel.h"
 #import "Submission.h"
+#import "SubmissionDetailsViewController.h"
 
 @interface ViewPastSubmissionsController : UITableViewController
 

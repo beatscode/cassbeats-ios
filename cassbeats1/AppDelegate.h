@@ -9,11 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "LoginViewController.h"
 
-
-@interface AppDelegate : UIResponder <UIApplicationDelegate,UITabBarControllerDelegate,DBRestClientDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,UITabBarControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIWindow *window;
-@property (strong) LoginViewController *loginController;
 @property (nonatomic,strong) IBOutlet UITabBarController *tabBarController;
 @property(nonatomic,strong) IBOutlet UINavigationController *navController;
 

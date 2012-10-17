@@ -14,7 +14,7 @@
 
 @property (nonatomic,strong) IBOutlet UIButton *saveButton;
 @property (nonatomic,strong) IBOutlet UITextView *messageBody;
-@property (weak, nonatomic) IBOutlet UIButton *saveMessageBtn;
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *saveMessageBtn;
 
 - (IBAction)saveMessage:(id)sender;
 

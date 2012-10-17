@@ -35,15 +35,21 @@
 		783BFD1315741CD000D4CC1E /* WriteSubmissionMessage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783BFD1115741CD000D4CC1E /* WriteSubmissionMessage.xib */; };
 		783BFD1D15744A3500D4CC1E /* ViewPastSubmissionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 783BFD1B15744A3400D4CC1E /* ViewPastSubmissionsController.m */; };
 		783BFD1E15744A3500D4CC1E /* ViewPastSubmissionsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783BFD1C15744A3500D4CC1E /* ViewPastSubmissionsController.xib */; };
+		7874C5E3159E12D600A9A327 /* CustomRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874C5E1159E12D600A9A327 /* CustomRegisterViewController.m */; };
+		7874C5E4159E12D600A9A327 /* CustomRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7874C5E2159E12D600A9A327 /* CustomRegisterViewController.xib */; };
 		78759F3E156C5E4700E24826 /* SelectTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78759F3C156C5E4700E24826 /* SelectTrackViewController.m */; };
 		78759F3F156C5E4700E24826 /* SelectTrackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78759F3D156C5E4700E24826 /* SelectTrackViewController.xib */; };
 		78759F49156C685000E24826 /* MyTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 78759F48156C685000E24826 /* MyTrack.m */; };
+		787F665A159BAAB7001766B7 /* SubmissionDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787F6658159BAAB7001766B7 /* SubmissionDetailsViewController.m */; };
+		787F665B159BAAB7001766B7 /* SubmissionDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 787F6659159BAAB7001766B7 /* SubmissionDetailsViewController.xib */; };
 		789545D2157C5574009C1D0A /* Submission.m in Sources */ = {isa = PBXBuildFile; fileRef = 789545D1157C5574009C1D0A /* Submission.m */; };
 		789ACB031558A59200E6C53A /* SubmissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789ACB011558A59200E6C53A /* SubmissionViewController.m */; };
 		789ACB041558A59200E6C53A /* SubmissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789ACB021558A59200E6C53A /* SubmissionViewController.xib */; };
-		78AB00811592A5AD00F625DE /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AB00801592A5AD00F625DE /* DropboxSDK.framework */; };
 		78AB00841592A60500F625DE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AB00831592A60500F625DE /* Security.framework */; };
 		78AB00861592AD4300F625DE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AB00851592AD4300F625DE /* QuartzCore.framework */; };
+		78B56BF9162441E700CEEE31 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78B56BF8162441E700CEEE31 /* Default-568h@2x.png */; };
+		78B71A0F15965D9100C82D5F /* RegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B71A0D15965D9100C82D5F /* RegViewController.m */; };
+		78B71A1015965D9100C82D5F /* RegViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78B71A0E15965D9100C82D5F /* RegViewController.xib */; };
 		78DFDF5115500177008FF2FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78DFDF5015500177008FF2FF /* UIKit.framework */; };
 		78DFDF5315500177008FF2FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78DFDF5215500177008FF2FF /* Foundation.framework */; };
 		78DFDF5515500177008FF2FF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78DFDF5415500177008FF2FF /* CoreGraphics.framework */; };
@@ -58,6 +64,8 @@
 		78DFDFB015528C15008FF2FF /* CassBeatsPro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 78DFDFAE15528C15008FF2FF /* CassBeatsPro.xcdatamodeld */; };
 		78E4B16815611D6100B0074A /* SelectContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E4B16615611D6100B0074A /* SelectContactViewController.m */; };
 		78E4B16915611D6100B0074A /* SelectContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E4B16715611D6100B0074A /* SelectContactViewController.xib */; };
+		78E83560162EA982009C8E35 /* TutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E8355E162EA982009C8E35 /* TutorialViewController.xib */; };
+		78E83562162EBCA4009C8E35 /* cassbeats-case-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E83561162EBCA4009C8E35 /* cassbeats-case-logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,11 +104,17 @@
 		783BFD1A15744A3400D4CC1E /* ViewPastSubmissionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPastSubmissionsController.h; sourceTree = "<group>"; };
 		783BFD1B15744A3400D4CC1E /* ViewPastSubmissionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPastSubmissionsController.m; sourceTree = "<group>"; };
 		783BFD1C15744A3500D4CC1E /* ViewPastSubmissionsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewPastSubmissionsController.xib; sourceTree = "<group>"; };
+		7874C5E0159E12D500A9A327 /* CustomRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomRegisterViewController.h; sourceTree = "<group>"; };
+		7874C5E1159E12D600A9A327 /* CustomRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomRegisterViewController.m; sourceTree = "<group>"; };
+		7874C5E2159E12D600A9A327 /* CustomRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomRegisterViewController.xib; sourceTree = "<group>"; };
 		78759F3B156C5E4700E24826 /* SelectTrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTrackViewController.h; sourceTree = "<group>"; };
 		78759F3C156C5E4700E24826 /* SelectTrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTrackViewController.m; sourceTree = "<group>"; };
 		78759F3D156C5E4700E24826 /* SelectTrackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectTrackViewController.xib; sourceTree = "<group>"; };
 		78759F47156C685000E24826 /* MyTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTrack.h; sourceTree = "<group>"; };
 		78759F48156C685000E24826 /* MyTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTrack.m; sourceTree = "<group>"; };
+		787F6657159BAAB7001766B7 /* SubmissionDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmissionDetailsViewController.h; sourceTree = "<group>"; };
+		787F6658159BAAB7001766B7 /* SubmissionDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmissionDetailsViewController.m; sourceTree = "<group>"; };
+		787F6659159BAAB7001766B7 /* SubmissionDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubmissionDetailsViewController.xib; sourceTree = "<group>"; };
 		789545D0157C5574009C1D0A /* Submission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Submission.h; sourceTree = "<group>"; };
 		789545D1157C5574009C1D0A /* Submission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Submission.m; sourceTree = "<group>"; };
 		789ACB001558A59200E6C53A /* SubmissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmissionViewController.h; sourceTree = "<group>"; };
@@ -109,7 +123,11 @@
 		78AB00801592A5AD00F625DE /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
 		78AB00831592A60500F625DE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		78AB00851592AD4300F625DE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		78DFDF4C15500177008FF2FF /* cassbeats1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cassbeats1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		78B56BF8162441E700CEEE31 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		78B71A0C15965D9100C82D5F /* RegViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegViewController.h; sourceTree = "<group>"; };
+		78B71A0D15965D9100C82D5F /* RegViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegViewController.m; sourceTree = "<group>"; };
+		78B71A0E15965D9100C82D5F /* RegViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegViewController.xib; sourceTree = "<group>"; };
+		78DFDF4C15500177008FF2FF /* CassBeats Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CassBeats Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78DFDF5015500177008FF2FF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		78DFDF5215500177008FF2FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		78DFDF5415500177008FF2FF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -130,6 +148,8 @@
 		78E4B16515611D6100B0074A /* SelectContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectContactViewController.h; sourceTree = "<group>"; };
 		78E4B16615611D6100B0074A /* SelectContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectContactViewController.m; sourceTree = "<group>"; };
 		78E4B16715611D6100B0074A /* SelectContactViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectContactViewController.xib; sourceTree = "<group>"; };
+		78E8355E162EA982009C8E35 /* TutorialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TutorialViewController.xib; sourceTree = "<group>"; };
+		78E83561162EBCA4009C8E35 /* cassbeats-case-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cassbeats-case-logo.png"; path = "../../../Documents/BeatLife Files/CassBeatsPro/logo/cassbeats-case-logo.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +165,6 @@
 				78DFDF5115500177008FF2FF /* UIKit.framework in Frameworks */,
 				78DFDF5315500177008FF2FF /* Foundation.framework in Frameworks */,
 				78DFDF5515500177008FF2FF /* CoreGraphics.framework in Frameworks */,
-				78AB00811592A5AD00F625DE /* DropboxSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +174,7 @@
 		78092CE4157A509200D4A870 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				78E83561162EBCA4009C8E35 /* cassbeats-case-logo.png */,
 				782CF3B2158DB6F800AE702D /* icon_folder_bookmark.png */,
 				782CF3B0158D72DF00AE702D /* background_plain.png */,
 				782CF3B4158DB75A00AE702D /* icon_graph_bars_down.png */,
@@ -178,6 +198,7 @@
 		78111DFF155C7597000A3337 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				78E8355E162EA982009C8E35 /* TutorialViewController.xib */,
 				783BFD0F15741CCF00D4CC1E /* WriteSubmissionMessage.h */,
 				783BFD1015741CCF00D4CC1E /* WriteSubmissionMessage.m */,
 				783BFD1115741CD000D4CC1E /* WriteSubmissionMessage.xib */,
@@ -199,6 +220,15 @@
 				783BFD1A15744A3400D4CC1E /* ViewPastSubmissionsController.h */,
 				783BFD1B15744A3400D4CC1E /* ViewPastSubmissionsController.m */,
 				783BFD1C15744A3500D4CC1E /* ViewPastSubmissionsController.xib */,
+				78B71A0C15965D9100C82D5F /* RegViewController.h */,
+				78B71A0D15965D9100C82D5F /* RegViewController.m */,
+				78B71A0E15965D9100C82D5F /* RegViewController.xib */,
+				787F6657159BAAB7001766B7 /* SubmissionDetailsViewController.h */,
+				787F6658159BAAB7001766B7 /* SubmissionDetailsViewController.m */,
+				787F6659159BAAB7001766B7 /* SubmissionDetailsViewController.xib */,
+				7874C5E0159E12D500A9A327 /* CustomRegisterViewController.h */,
+				7874C5E1159E12D600A9A327 /* CustomRegisterViewController.m */,
+				7874C5E2159E12D600A9A327 /* CustomRegisterViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -206,6 +236,7 @@
 		78DFDF4115500177008FF2FF = {
 			isa = PBXGroup;
 			children = (
+				78B56BF8162441E700CEEE31 /* Default-568h@2x.png */,
 				78AB00851592AD4300F625DE /* QuartzCore.framework */,
 				78AB00831592A60500F625DE /* Security.framework */,
 				78DFDF5615500177008FF2FF /* cassbeats1 */,
@@ -217,7 +248,7 @@
 		78DFDF4D15500177008FF2FF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				78DFDF4C15500177008FF2FF /* cassbeats1.app */,
+				78DFDF4C15500177008FF2FF /* CassBeats Mobile.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -300,7 +331,7 @@
 			);
 			name = cassbeats1;
 			productName = cassbeats1;
-			productReference = 78DFDF4C15500177008FF2FF /* cassbeats1.app */;
+			productReference = 78DFDF4C15500177008FF2FF /* CassBeats Mobile.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -309,7 +340,7 @@
 		78DFDF4315500177008FF2FF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "CassBeats LLC";
 			};
 			buildConfigurationList = 78DFDF4615500177008FF2FF /* Build configuration list for PBXProject "cassbeats1" */;
@@ -359,6 +390,12 @@
 				782CF3B1158D72DF00AE702D /* background_plain.png in Resources */,
 				782CF3B3158DB6F900AE702D /* icon_folder_bookmark.png in Resources */,
 				782CF3B5158DB75A00AE702D /* icon_graph_bars_down.png in Resources */,
+				78B71A1015965D9100C82D5F /* RegViewController.xib in Resources */,
+				787F665B159BAAB7001766B7 /* SubmissionDetailsViewController.xib in Resources */,
+				7874C5E4159E12D600A9A327 /* CustomRegisterViewController.xib in Resources */,
+				78B56BF9162441E700CEEE31 /* Default-568h@2x.png in Resources */,
+				78E83560162EA982009C8E35 /* TutorialViewController.xib in Resources */,
+				78E83562162EBCA4009C8E35 /* cassbeats-case-logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +423,9 @@
 				783BFD1215741CD000D4CC1E /* WriteSubmissionMessage.m in Sources */,
 				783BFD1D15744A3500D4CC1E /* ViewPastSubmissionsController.m in Sources */,
 				789545D2157C5574009C1D0A /* Submission.m in Sources */,
+				78B71A0F15965D9100C82D5F /* RegViewController.m in Sources */,
+				787F665A159BAAB7001766B7 /* SubmissionDetailsViewController.m in Sources */,
+				7874C5E3159E12D600A9A327 /* CustomRegisterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,7 +459,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -437,7 +477,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -458,7 +498,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cassbeats1/cassbeats1-Prefix.pch";
 				INFOPLIST_FILE = "cassbeats1/cassbeats1-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "CassBeats Mobile";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -473,7 +514,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cassbeats1/cassbeats1-Prefix.pch";
 				INFOPLIST_FILE = "cassbeats1/cassbeats1-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "CassBeats Mobile";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -42,6 +42,7 @@
 -(void)saveContext;
 -(void)saveUser:(NSArray *)user;
 -(BOOL)getUser;
+-(NSArray *)getUserData;
 -(void)updateUserData:(NSArray *)array;
 -(void)updateTrackData:(NSArray *)array;
 -(BOOL)saveSubmission;
@@ -50,4 +51,7 @@
 -(void)saveSubmissionOnServer:(NSMutableString *)postString;
 -(void)setSubmissionDownloadOption:(BOOL)option;
 -(void)createDropBoxDBSession;
+-(NSArray *)getSubmissionTracks:(Submission *)submission;
+-(NSArray *)getSubmissionContacts:(Submission *)submission;
+-(NSMutableArray *)makeTracks;
 @end
