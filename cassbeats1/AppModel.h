@@ -14,7 +14,6 @@
 #import "Contact.h"
 #import "MyContact.h"
 #import "MyTrack.h"
-#import <DropboxSDK/DropboxSDK.h>
 
 @interface AppModel : NSObject<NSURLConnectionDelegate>{
     NSManagedObjectContext *managedObjectContext;

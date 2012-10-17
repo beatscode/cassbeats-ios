@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #define registerURL @"http://localhost/personal/cassbeats4/public/mobile/register"
-#import <DropboxSDK/DropboxSDK.h>
 #import "AppModel.h"
 #import "CustomRegisterViewController.h"
 
