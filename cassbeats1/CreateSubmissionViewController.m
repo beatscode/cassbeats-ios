@@ -38,8 +38,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self customizeAppearance];
-    self.navigationItem.leftBarButtonItem.title = @"Options";
-    self.title = @"New Submission";
 }
 -(void)customizeAppearance{
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background_plain"]];
@@ -59,6 +57,9 @@
     [[UIButton appearanceWhenContainedIn:[self class], nil] setTitleColor:[UIColor blackColor]forState:UIControlStateNormal];
     
     [self.sendBtn setBackgroundImage:orangeButtonImage forState:UIControlStateNormal];
+    
+    [self.navigationItem.leftBarButtonItem setTitle:@"Options"];
+    self.title = @"New Submission";
 }
 - (void)viewDidUnload
 {

@@ -75,7 +75,6 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible  = YES;
     receivedData = [[NSMutableData alloc] init];
     
-    NSError *error;
     NSMutableString *params = [NSMutableString stringWithString:@""];
     NSMutableDictionary *authData = [NSMutableDictionary dictionary];
     
@@ -91,9 +90,9 @@
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];    
     
-    [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
     
-    if(error){        
+    if(connection){
         NSLog(@"connection failed");
     }else{
         NSLog(@"connection succeeded");

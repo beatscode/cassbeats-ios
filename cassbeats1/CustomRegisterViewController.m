@@ -71,7 +71,6 @@ NSMutableData *receivedData;
     AppModel *model = [AppModel sharedModel];
     User *user = model.user;
     
-    NSError *error;
     NSString *params;   
     
     params = [[NSString alloc] initWithFormat:@"user_id=%@",user.server_id];
@@ -81,9 +80,9 @@ NSMutableData *receivedData;
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];    
     
-    [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
     
-    if(error){        
+    if(connection){
         NSLog(@"connection failed");
     }else{
         NSLog(@"connection succeeded");

@@ -67,6 +67,9 @@
 		78E83560162EA982009C8E35 /* TutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E8355E162EA982009C8E35 /* TutorialViewController.xib */; };
 		78E83562162EBCA4009C8E35 /* cassbeats-case-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E83561162EBCA4009C8E35 /* cassbeats-case-logo.png */; };
 		78E8356C162EE790009C8E35 /* cassbeats_mobile_bkgd.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E8356B162EE790009C8E35 /* cassbeats_mobile_bkgd.png */; };
+		78E83570162FF5FC009C8E35 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E8356F162FF5FB009C8E35 /* TutorialViewController.m */; };
+		78E83572162FF923009C8E35 /* cassbeats_tutorial_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E83571162FF923009C8E35 /* cassbeats_tutorial_text.png */; };
+		78E8357416300A16009C8E35 /* 96-book.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E8357316300A16009C8E35 /* 96-book.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -152,6 +155,10 @@
 		78E8355E162EA982009C8E35 /* TutorialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TutorialViewController.xib; sourceTree = "<group>"; };
 		78E83561162EBCA4009C8E35 /* cassbeats-case-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cassbeats-case-logo.png"; path = "../../../Documents/BeatLife Files/CassBeatsPro/logo/cassbeats-case-logo.png"; sourceTree = "<group>"; };
 		78E8356B162EE790009C8E35 /* cassbeats_mobile_bkgd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cassbeats_mobile_bkgd.png; path = "../../../Documents/BeatLife Files/CassBeatsPro/logo/cassbeats_mobile_bkgd.png"; sourceTree = "<group>"; };
+		78E8356E162FF5FB009C8E35 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
+		78E8356F162FF5FB009C8E35 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
+		78E83571162FF923009C8E35 /* cassbeats_tutorial_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cassbeats_tutorial_text.png; path = "../../../Documents/BeatLife Files/CassBeatsPro/logo/cassbeats_tutorial_text.png"; sourceTree = "<group>"; };
+		78E8357316300A16009C8E35 /* 96-book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "96-book.png"; path = "../../../Documents/glyphish-icons/PNG icons/96-book.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +183,8 @@
 		78092CE4157A509200D4A870 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				78E8357316300A16009C8E35 /* 96-book.png */,
+				78E83571162FF923009C8E35 /* cassbeats_tutorial_text.png */,
 				78E8356B162EE790009C8E35 /* cassbeats_mobile_bkgd.png */,
 				78E83561162EBCA4009C8E35 /* cassbeats-case-logo.png */,
 				782CF3B2158DB6F800AE702D /* icon_folder_bookmark.png */,
@@ -232,6 +241,8 @@
 				7874C5E0159E12D500A9A327 /* CustomRegisterViewController.h */,
 				7874C5E1159E12D600A9A327 /* CustomRegisterViewController.m */,
 				7874C5E2159E12D600A9A327 /* CustomRegisterViewController.xib */,
+				78E8356E162FF5FB009C8E35 /* TutorialViewController.h */,
+				78E8356F162FF5FB009C8E35 /* TutorialViewController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -400,6 +411,8 @@
 				78E83560162EA982009C8E35 /* TutorialViewController.xib in Resources */,
 				78E83562162EBCA4009C8E35 /* cassbeats-case-logo.png in Resources */,
 				78E8356C162EE790009C8E35 /* cassbeats_mobile_bkgd.png in Resources */,
+				78E83572162FF923009C8E35 /* cassbeats_tutorial_text.png in Resources */,
+				78E8357416300A16009C8E35 /* 96-book.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +443,7 @@
 				78B71A0F15965D9100C82D5F /* RegViewController.m in Sources */,
 				787F665A159BAAB7001766B7 /* SubmissionDetailsViewController.m in Sources */,
 				7874C5E3159E12D600A9A327 /* CustomRegisterViewController.m in Sources */,
+				78E83570162FF5FC009C8E35 /* TutorialViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
