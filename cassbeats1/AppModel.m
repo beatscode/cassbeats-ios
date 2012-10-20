@@ -267,9 +267,8 @@ NSMutableData *receivedData;
     [UIApplication sharedApplication].networkActivityIndicatorVisible  = YES;
     
     NSURLConnection *connection = [[NSURLConnection alloc]initWithRequest:request delegate:self startImmediately:YES];
-    if (connection) {
-        NSLog(@"Connection Failed");
-        UIAlertView *connectFailMessage = [[UIAlertView alloc] initWithTitle:@"NSURLConnection " message:@"Failed in viewDidLoad"  delegate: self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    if (!connection) {
+        UIAlertView *connectFailMessage = [[UIAlertView alloc] initWithTitle:@"NSURLConnection " message:@"Failed Connection"  delegate: self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
 		[connectFailMessage show];
     }
     

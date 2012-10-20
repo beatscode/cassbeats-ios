@@ -117,14 +117,12 @@
     
     if([obj isKindOfClass:[Track class]]){
        
-        Track *track = obj;
-        
+        Track *track = obj;        
         cell.textLabel.text = track.name;
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"Size: %d",track.size];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"Size: %@",track.size];
         
     }else if([obj isKindOfClass:[Contact class]]){
-        Contact *contact= obj;
-        
+        Contact *contact= obj;        
         cell.textLabel.text = contact.name;
         cell.detailTextLabel.text =  contact.email;       
     }else if([obj isKindOfClass:[NSString class]]){

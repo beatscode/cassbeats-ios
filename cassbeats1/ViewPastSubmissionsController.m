@@ -91,7 +91,7 @@
     NSString *msg = [[NSString alloc] init]; 
     CGSize cellSize;
     CGSize maxSize; 
-    msg = @"Contacts: %d\nTracks %d\n Date: %@"; 
+    msg = @"%d Contact(s),%d Track(s)\nEmails: %@"; 
     maxSize  = CGSizeMake(380.0f, MAXFLOAT);
     cellSize = [msg sizeWithFont:[UIFont systemFontOfSize:13]
                constrainedToSize:maxSize lineBreakMode:UILineBreakModeWordWrap];
@@ -106,23 +106,40 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
+    
     AppModel *model = [AppModel sharedModel];
-   
     NSUInteger row = [indexPath row];
     Submission *submission = [self.submissions objectAtIndex:row];
     NSArray *tracks   = [model getSubmissionTracks:submission];
     NSArray *contacts = [model getSubmissionContacts:submission];
-    
-    cell.textLabel.text = submission.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Contacts: %d\nTracks: %d\nDate: %@",contacts.count,tracks.count,submission.date];
+    NSString *contactNames = @"";
+    for(Contact *obj in contacts){
+        NSLog(@"Name: %@ - email: %@",obj.name,obj.email);
+        contactNames = [contactNames stringByAppendingString:obj.email];
+    }
+
+    cell.textLabel.text = [NSString stringWithFormat:@"On %@",submission.date];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d Contact(s),%d Track(s)\nEmail(s): %@",contacts.count,tracks.count,contactNames];
     cell.detailTextLabel.numberOfLines = 0;
     cell.detailTextLabel.textColor = [UIColor blackColor];
     cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
-    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     // Configure the cell...
     return cell;
 }
 
+-(NSString *)getFormattedDate:(NSString *)dateStr{
+   // NSString *dateStr = @"Tue, 25 May 2010 12:53:58 +0000";
+
+    // Convert string to date object
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+    [dateFormat setLocale:usLocale];
+    [dateFormat setDateFormat:@"yyyy-MM-dd 'at' HH:mm"];
+    NSDate *date = [dateFormat dateFromString:dateStr];
+    NSLog(@"%@",[dateFormat stringFromDate:date]);
+    return [dateFormat stringFromDate:date];
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -169,14 +186,14 @@
     // Navigation logic may go here. Create and push another view controller.
     NSUInteger row = [indexPath row];
     Submission *submission = [self.submissions objectAtIndex:row];
-    AppModel *model = [AppModel sharedModel];
-    NSArray *tracks = [model getSubmissionTracks:submission];
+    AppModel *model   = [AppModel sharedModel];
+    NSArray *tracks   = [model getSubmissionTracks:submission];
     NSArray *contacts = [model getSubmissionContacts:submission];
     NSArray *msg      = [[NSArray alloc] initWithObjects:submission.message, nil];
     
      SubmissionDetailsViewController *subDetailVC = [[SubmissionDetailsViewController alloc] initWithNibName:@"SubmissionDetailsViewController" bundle:nil];
 
-     subDetailVC.tracks = tracks;
+     subDetailVC.tracks   = tracks;
      subDetailVC.contacts = contacts;
      
      subDetailVC.sectionArray = [[NSMutableArray alloc] init ];
