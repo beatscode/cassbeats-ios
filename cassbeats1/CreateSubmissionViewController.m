@@ -12,14 +12,15 @@
 @synthesize selectTracksBtn;
 @synthesize selectContactsBtn;
 @synthesize writeMessageBtn;
-@synthesize downloadLbl;
 @synthesize sendBtn;
+@synthesize statusLbl;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+      
     }
     return self;
 }
@@ -38,6 +39,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self customizeAppearance];
+    
+}
+-(void)viewWillAppear:(BOOL)animated{
+      [self setStatus];
+}
+
+-(void)setStatus{
+    AppModel *model = [AppModel sharedModel];
+    NSLog(@"Number of Tracks : %d",[model.selectedTracks count]);
+    NSLog(@"Number of Contacts : %d",[model.selectedContacts count]);
+    NSString *status = [NSString stringWithFormat:@"You have selected %d contact(s), %d track(s) ",[model.selectedTracks count],[model .selectedContacts count]];
+    if ([model submissionMessage].length > 0) {
+        status = [status stringByAppendingString:@"and a message"];
+    }else{
+         status = [status stringByAppendingString:@"and no message"];
+    }
+    [statusLbl setText:status];
 }
 -(void)customizeAppearance{
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background_plain"]];
@@ -51,7 +69,6 @@
     //    [sendBtn setBackgroundImage:blueButtonImage forState:UIControlStateNormal];
     ////[[UILabel appearance] setColor:[UIColor 
     
-    downloadLbl.textColor = [UIColor whiteColor];
     
     [[UIButton appearanceWhenContainedIn:[self class], nil] setBackgroundImage:blueButtonImage forState:UIControlStateNormal];
     [[UIButton appearanceWhenContainedIn:[self class], nil] setTitleColor:[UIColor blackColor]forState:UIControlStateNormal];
@@ -69,7 +86,6 @@
     [self setSelectTracksBtn:nil];
     [self setSelectContactsBtn:nil];
     [self setWriteMessageBtn:nil];
-    [self setDownloadLbl:nil];
     [self setSendBtn:nil];
     [super viewDidUnload];
 

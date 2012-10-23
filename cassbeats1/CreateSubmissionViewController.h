@@ -20,13 +20,14 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *selectTracksBtn;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *selectContactsBtn;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *writeMessageBtn;
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *downloadLbl;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *sendBtn;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *statusLbl;
 
 - (IBAction)saveSubmission:(id)sender;
 - (IBAction)selectTracks:(id)sender;
 - (IBAction)selectContacts:(id)sender;
 - (IBAction)writeMessage:(id)sender;
-- (IBAction)setSubmissionDownloadOption:(UISwitch *)switcher;
+//- (IBAction)setSubmissionDownloadOption:(UISwitch *)switcher;
+
 
 @end

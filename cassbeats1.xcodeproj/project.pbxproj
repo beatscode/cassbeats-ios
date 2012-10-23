@@ -82,6 +82,8 @@
 		78DFDF7315500738008FF2FF /* AppModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DFDF7215500738008FF2FF /* AppModel.m */; };
 		78DFDFAB155286A2008FF2FF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78DFDFAA155286A2008FF2FF /* CoreData.framework */; };
 		78DFDFB015528C15008FF2FF /* CassBeatsPro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 78DFDFAE15528C15008FF2FF /* CassBeatsPro.xcdatamodeld */; };
+		78E3E24316369D900033DBDD /* cassbeats-case-logo2x_copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E3E24216369D900033DBDD /* cassbeats-case-logo2x_copy.png */; };
+		78E3E24516369F8D0033DBDD /* CassBeats-Mobile-Logo-text.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E3E24416369F8D0033DBDD /* CassBeats-Mobile-Logo-text.png */; };
 		78E4B16815611D6100B0074A /* SelectContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E4B16615611D6100B0074A /* SelectContactViewController.m */; };
 		78E4B16915611D6100B0074A /* SelectContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E4B16715611D6100B0074A /* SelectContactViewController.xib */; };
 		78E83560162EA982009C8E35 /* TutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E8355E162EA982009C8E35 /* TutorialViewController.xib */; };
@@ -184,6 +186,8 @@
 		78DFDF7215500738008FF2FF /* AppModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppModel.m; sourceTree = "<group>"; };
 		78DFDFAA155286A2008FF2FF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		78DFDFAF15528C15008FF2FF /* CassBeatsPro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CassBeatsPro.xcdatamodel; sourceTree = "<group>"; };
+		78E3E24216369D900033DBDD /* cassbeats-case-logo2x_copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cassbeats-case-logo2x_copy.png"; sourceTree = "<group>"; };
+		78E3E24416369F8D0033DBDD /* CassBeats-Mobile-Logo-text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CassBeats-Mobile-Logo-text.png"; sourceTree = "<group>"; };
 		78E4B16515611D6100B0074A /* SelectContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectContactViewController.h; sourceTree = "<group>"; };
 		78E4B16615611D6100B0074A /* SelectContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectContactViewController.m; sourceTree = "<group>"; };
 		78E4B16715611D6100B0074A /* SelectContactViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectContactViewController.xib; sourceTree = "<group>"; };
@@ -214,6 +218,8 @@
 		78092CE4157A509200D4A870 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				78E3E24416369F8D0033DBDD /* CassBeats-Mobile-Logo-text.png */,
+				78E3E24216369D900033DBDD /* cassbeats-case-logo2x_copy.png */,
 				78C489AF163361B0005B72BA /* appIcon@2x.png */,
 				78C489AD163361A4005B72BA /* appIcon.png */,
 				78C489A51633149B005B72BA /* 96-book@2x.png */,
@@ -475,6 +481,8 @@
 				78C489A81633149B005B72BA /* cassbeats_tutorial_text@2x.png in Resources */,
 				78C489AE163361A4005B72BA /* appIcon.png in Resources */,
 				78C489B0163361B0005B72BA /* appIcon@2x.png in Resources */,
+				78E3E24316369D900033DBDD /* cassbeats-case-logo2x_copy.png in Resources */,
+				78E3E24516369F8D0033DBDD /* CassBeats-Mobile-Logo-text.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
