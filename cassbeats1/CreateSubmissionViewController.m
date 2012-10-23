@@ -87,6 +87,7 @@
     [self setSelectContactsBtn:nil];
     [self setWriteMessageBtn:nil];
     [self setSendBtn:nil];
+    [self setStatusLbl:nil];
     [super viewDidUnload];
 
     // Release any retained subviews of the main view.

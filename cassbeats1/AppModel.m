@@ -102,92 +102,90 @@ NSMutableData *receivedData;
 -(BOOL)saveSubmission{
     
     BOOL isValid = YES;
-    if([self validateSubmission] == NO){
-        isValid = NO;      
-    }
-     //Get Date
-    // get the current date
-    NSDate *date = [NSDate date];
-    // format it
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc]init];
-    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    // convert it to a string
-    NSString *dateString = [dateFormat stringFromDate:date];
-        
-    NSManagedObjectContext *context = [self managedObjectContext];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Submission"  inManagedObjectContext:context];
-    request.entity = entity;
-    NSMutableArray *mutableFetchResults = [[context executeFetchRequest:request error:nil] mutableCopy];
-
-    Submission *submission = (Submission *)[NSEntityDescription insertNewObjectForEntityForName:@"Submission" inManagedObjectContext:context];
-    User *usr  = self.user;
-    
-    submission.name = [[NSString alloc] initWithFormat:@"Submission"];
-    submission.date = dateString;
-    submission.message = self.submissionMessage;
-    submission.download = [NSNumber numberWithBool:self.downloadable];
-    
-    NSMutableString *stringForPost  = [[NSMutableString alloc] init];
-    
-    NSLog(@"Number of Tracks : %d",[self.selectedTracks count]);
-    NSLog(@"Number of Contacts : %d",[self.selectedContacts count]);
-    
-    //Add Tracks to submission
-    if([self.selectedTracks count] > 0){
-        NSInteger size = 0;
-        for(MyTrack *mytrack in self.selectedTracks){
-            [stringForPost appendString: [NSString stringWithFormat:@"tracks[]=%@&",  mytrack.name]];
-            NSLog(@"%@",mytrack.name);
-            Track *track = (Track *)[NSEntityDescription insertNewObjectForEntityForName:@"Track" inManagedObjectContext:context];
-            track.name = mytrack.name;
-            [submission addSubmissionToTrackObject:track]; 
-            size = size + [mytrack.size intValue]; 
-        } 
-        [stringForPost appendString: [NSString stringWithFormat:@"size=%d&",  size]];
-    }
-    
-    
-    //Add Contacts to submission
-    if([self.selectedContacts count] > 0){
-       
-        for(MyContact *mycontact in self.selectedContacts){
-                
-            [stringForPost appendString:[NSString stringWithFormat:@"contacts[]=%@&names[]=%@&",  [mycontact.emails objectAtIndex:0],mycontact.name]];
-           
-            Contact *contact = (Contact *)[NSEntityDescription insertNewObjectForEntityForName:@"Contact" inManagedObjectContext:context];
+    if([self validateSubmission] == YES){
+         //Get Date
+        // get the current date
+        NSDate *date = [NSDate date];
+        // format it
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc]init];
+        [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        // convert it to a string
+        NSString *dateString = [dateFormat stringFromDate:date];
             
-            contact.name = mycontact.name;
-            contact.email = [mycontact.emails objectAtIndex:0];
-            [submission addSubmissionToContactObject:contact];
-        }
-    }
-    //Add message to post string
-    
-    [stringForPost appendString:[NSString stringWithFormat:@"download=%@&message=%@&user_id=%@", [NSNumber numberWithBool:self.downloadable], self.submissionMessage, usr.server_id]];
-    
-    if([mutableFetchResults count] > 0){
-        submission = [mutableFetchResults objectAtIndex:0];
-        NSSet *tracksOfSubmission = submission.submissionToTrack;
+        NSManagedObjectContext *context = [self managedObjectContext];
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Submission"  inManagedObjectContext:context];
+        request.entity = entity;
+        NSMutableArray *mutableFetchResults = [[context executeFetchRequest:request error:nil] mutableCopy];
+
+        Submission *submission = (Submission *)[NSEntityDescription insertNewObjectForEntityForName:@"Submission" inManagedObjectContext:context];
+        User *usr  = self.user;
         
-        for(Track *track in tracksOfSubmission.allObjects){
-            Submission *sub = (Submission *)track.trackToSubmission;
-            NSLog(@"track name = %@ & submission name is %@",track.name,sub.name);
+        submission.name = [[NSString alloc] initWithFormat:@"Submission"];
+        submission.date = dateString;
+        submission.message = self.submissionMessage;
+        submission.download = [NSNumber numberWithBool:self.downloadable];
+        
+        NSMutableString *stringForPost  = [[NSMutableString alloc] init];
+        
+        NSLog(@"Number of Tracks : %d",[self.selectedTracks count]);
+        NSLog(@"Number of Contacts : %d",[self.selectedContacts count]);
+        
+        //Add Tracks to submission
+        if([self.selectedTracks count] > 0){
+            NSInteger size = 0;
+            for(MyTrack *mytrack in self.selectedTracks){
+                [stringForPost appendString: [NSString stringWithFormat:@"tracks[]=%@&",  mytrack.name]];
+                NSLog(@"%@",mytrack.name);
+                Track *track = (Track *)[NSEntityDescription insertNewObjectForEntityForName:@"Track" inManagedObjectContext:context];
+                track.name = mytrack.name;
+                [submission addSubmissionToTrackObject:track]; 
+                size = size + [mytrack.size intValue]; 
+            } 
+            [stringForPost appendString: [NSString stringWithFormat:@"size=%d&",  size]];
+        }
+        
+        
+        //Add Contacts to submission
+        if([self.selectedContacts count] > 0){
+           
+            for(MyContact *mycontact in self.selectedContacts){
+                    
+                [stringForPost appendString:[NSString stringWithFormat:@"contacts[]=%@&names[]=%@&",  [mycontact.emails objectAtIndex:0],mycontact.name]];
+               
+                Contact *contact = (Contact *)[NSEntityDescription insertNewObjectForEntityForName:@"Contact" inManagedObjectContext:context];
+                
+                contact.name = mycontact.name;
+                contact.email = [mycontact.emails objectAtIndex:0];
+                [submission addSubmissionToContactObject:contact];
+            }
+        }
+        //Add message to post string
+        
+        [stringForPost appendString:[NSString stringWithFormat:@"download=%@&message=%@&user_id=%@", [NSNumber numberWithBool:self.downloadable], self.submissionMessage, usr.server_id]];
+        
+        if([mutableFetchResults count] > 0){
+            submission = [mutableFetchResults objectAtIndex:0];
+            NSSet *tracksOfSubmission = submission.submissionToTrack;
+            
+            for(Track *track in tracksOfSubmission.allObjects){
+                Submission *sub = (Submission *)track.trackToSubmission;
+                NSLog(@"track name = %@ & submission name is %@",track.name,sub.name);
+            }
+        }
+     
+        
+        //Reset Ivars
+        if(isValid){
+            //I need the emails / tracks / and selected messages to save the submission(s)
+            [self saveSubmissionOnServer:stringForPost];
+            [self saveContext];
+            self.submissionMessage = nil; 
+            self.downloadable = NO;
+            self.selectedContacts  = [[NSMutableArray alloc] initWithObjects:nil];
+            self.selectedTracks    = [[NSMutableArray alloc] initWithObjects:nil];
         }
     }
- 
-    
-    //Reset Ivars
-    if(isValid){
-        //I need the emails / tracks / and selected messages to save the submission(s)
-        [self saveSubmissionOnServer:stringForPost];   
-        [self saveContext];
-        self.submissionMessage = nil; 
-        self.downloadable = NO;
-        self.selectedContacts  = [[NSMutableArray alloc] initWithObjects:nil];
-        self.selectedTracks    = [[NSMutableArray alloc] initWithObjects:nil];
-    }
-    
     //send submission to server
     return isValid;
 }
