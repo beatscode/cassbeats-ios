@@ -58,7 +58,9 @@
     
     [self.sendBtn setBackgroundImage:orangeButtonImage forState:UIControlStateNormal];
     
-    [self.navigationItem.leftBarButtonItem setTitle:@"Options"];
+   // [self.navigationItem.leftBarButtonItem setTitle:@"Options"];
+
+    
     self.title = @"New Submission";
 }
 - (void)viewDidUnload
@@ -78,7 +80,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return UIInterfaceOrientationIsPortrait(interfaceOrientation);
 }
 
 - (IBAction)saveSubmission:(id)sender {
@@ -100,7 +102,10 @@
     // sTVC.tracks = ([tracks count] == 0) ? [model trackData] : tracks;
     [self.navigationController pushViewController:sTVC animated:YES];
 }
-
+- (BOOL)isABAddressBookCreateWithOptionsAvailable
+{
+    return &ABAddressBookCreateWithOptions != NULL;
+}
 - (IBAction)selectContacts:(id)sender {
     
     AppModel *model = [AppModel sharedModel];
@@ -109,41 +114,65 @@
     //make sure there are no contacts 
     if ([model.contacts count] == 0) {
       
-        ABAddressBookRef addressBook = ABAddressBookCreate();
-        //Hold all people in contact
-        CFArrayRef people = ABAddressBookCopyArrayOfAllPeople(addressBook);
-        //hold all contacts
-        NSMutableArray *cts = [[NSMutableArray alloc] init ];
-        
-        for (CFIndex i = 0; i < CFArrayGetCount(people); i++) {
-            ABRecordRef person = CFArrayGetValueAtIndex(people, i);
-                    
-            NSString *firstname = (__bridge_transfer NSString*)ABRecordCopyValue(person, kABPersonFirstNameProperty);
-            NSString *lastname = (__bridge_transfer NSString *)ABRecordCopyValue(person, kABPersonLastNameProperty);
-            if (lastname == nil) {
-                lastname = @"";
-            }
-            ABMultiValueRef emails = ABRecordCopyValue(person, kABPersonEmailProperty);
-            NSMutableArray *allEmails = [[NSMutableArray alloc] initWithCapacity:ABMultiValueGetCount(emails)];
-            
-            for (CFIndex j=0; j < ABMultiValueGetCount(emails); j++) {
-                
-                NSString* email = (__bridge_transfer NSString*)ABMultiValueCopyValueAtIndex(emails, j);
-                [allEmails addObject:email];
-            }
+        if ([self isABAddressBookCreateWithOptionsAvailable])
+        {
+            CFErrorRef error = nil;
+            ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, &error);
+            ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if (error)
+                    {
+                        // display error message here
+                    }
+                    else if (!granted)
+                    {
+                        // display access denied error message here
+                    }
+                    else
+                    {
+                        // access granted
+                        // do the important stuff here
+                        
+                        //Hold all people in contact
+                        CFArrayRef people = ABAddressBookCopyArrayOfAllPeople(addressBook);
+                        //hold all contacts
+                        NSMutableArray *cts = [[NSMutableArray alloc] init ];
+                        
+                        for (CFIndex i = 0; i < CFArrayGetCount(people); i++) {
+                            ABRecordRef person = CFArrayGetValueAtIndex(people, i);
+                            
+                            NSString *firstname = (__bridge_transfer NSString*)ABRecordCopyValue(person, kABPersonFirstNameProperty);
+                            NSString *lastname = (__bridge_transfer NSString *)ABRecordCopyValue(person, kABPersonLastNameProperty);
+                            if (lastname == nil) {
+                                lastname = @"";
+                            }
+                            ABMultiValueRef emails = ABRecordCopyValue(person, kABPersonEmailProperty);
+                            NSMutableArray *allEmails = [[NSMutableArray alloc] initWithCapacity:ABMultiValueGetCount(emails)];
+                            
+                            for (CFIndex j=0; j < ABMultiValueGetCount(emails); j++) {
+                                
+                                NSString* email = (__bridge_transfer NSString*)ABMultiValueCopyValueAtIndex(emails, j);
+                                [allEmails addObject:email];
+                            }
+                            
+                            MyContact *ct = [[MyContact alloc] init];
+                            ct.name  = [NSString stringWithFormat:@"%@ %@",firstname,lastname];
+                            ct.emails = allEmails;
+                            //ct.selected = YES;
+                            [cts addObject:ct];
+                            
+                            CFRelease(emails);
+                        }
+                        CFRelease(addressBook);
+                        CFRelease(people);
+                        
+                        model.contacts = cts;
 
-            MyContact *ct = [[MyContact alloc] init];
-            ct.name  = [NSString stringWithFormat:@"%@ %@",firstname,lastname];
-            ct.emails = allEmails;
-            //ct.selected = YES;
-            [cts addObject:ct];
-           
-            CFRelease(emails);
-        }
-        CFRelease(addressBook);
-        CFRelease(people);   
-        
-        model.contacts = cts;
+                    }
+                });
+            });
+        } 
+
     }
     
     SelectContactViewController *sCVC = [[SelectContactViewController alloc] initWithNibName:@"SelectContactViewController" bundle:nil];

@@ -179,8 +179,8 @@ NSMutableData *receivedData;
 }
 
 - (IBAction)showLogin:(id)sender {
-    [self.presentingViewController dismissModalViewControllerAnimated:YES];
-    
+    //[self.presentingViewController dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma UITextField Delegate

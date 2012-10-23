@@ -94,7 +94,7 @@
     msg = @"%d Contact(s),%d Track(s)\nEmails: %@"; 
     maxSize  = CGSizeMake(380.0f, MAXFLOAT);
     cellSize = [msg sizeWithFont:[UIFont systemFontOfSize:13]
-               constrainedToSize:maxSize lineBreakMode:UILineBreakModeWordWrap];
+               constrainedToSize:maxSize lineBreakMode:NSLineBreakByWordWrapping];
     cellSize.height = cellSize.height + 45;
     return cellSize.height;
 }
@@ -122,7 +122,7 @@
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%d Contact(s),%d Track(s)\nEmail(s): %@",contacts.count,tracks.count,contactNames];
     cell.detailTextLabel.numberOfLines = 0;
     cell.detailTextLabel.textColor = [UIColor blackColor];
-    cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
+    [cell.detailTextLabel setLineBreakMode:NSLineBreakByWordWrapping ];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     // Configure the cell...
     return cell;

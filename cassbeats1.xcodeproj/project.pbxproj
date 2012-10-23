@@ -68,6 +68,8 @@
 		78C489A116330EB4005B72BA /* tabbar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C4897916330EB4005B72BA /* tabbar_bg@2x.png */; };
 		78C489A71633149B005B72BA /* 96-book@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C489A51633149B005B72BA /* 96-book@2x.png */; };
 		78C489A81633149B005B72BA /* cassbeats_tutorial_text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C489A61633149B005B72BA /* cassbeats_tutorial_text@2x.png */; };
+		78C489AE163361A4005B72BA /* appIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C489AD163361A4005B72BA /* appIcon.png */; };
+		78C489B0163361B0005B72BA /* appIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C489AF163361B0005B72BA /* appIcon@2x.png */; };
 		78DFDF5115500177008FF2FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78DFDF5015500177008FF2FF /* UIKit.framework */; };
 		78DFDF5315500177008FF2FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78DFDF5215500177008FF2FF /* Foundation.framework */; };
 		78DFDF5515500177008FF2FF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78DFDF5415500177008FF2FF /* CoreGraphics.framework */; };
@@ -122,7 +124,6 @@
 		789ACB001558A59200E6C53A /* SubmissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmissionViewController.h; sourceTree = "<group>"; };
 		789ACB011558A59200E6C53A /* SubmissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmissionViewController.m; sourceTree = "<group>"; };
 		789ACB021558A59200E6C53A /* SubmissionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubmissionViewController.xib; sourceTree = "<group>"; };
-		78AB00801592A5AD00F625DE /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
 		78AB00831592A60500F625DE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		78AB00851592AD4300F625DE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		78B56BF8162441E700CEEE31 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -163,6 +164,8 @@
 		78C4897916330EB4005B72BA /* tabbar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_bg@2x.png"; sourceTree = "<group>"; };
 		78C489A51633149B005B72BA /* 96-book@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "96-book@2x.png"; sourceTree = "<group>"; };
 		78C489A61633149B005B72BA /* cassbeats_tutorial_text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cassbeats_tutorial_text@2x.png"; sourceTree = "<group>"; };
+		78C489AD163361A4005B72BA /* appIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appIcon.png; path = ../appIcon.png; sourceTree = "<group>"; };
+		78C489AF163361B0005B72BA /* appIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appIcon@2x.png"; path = "../appIcon@2x.png"; sourceTree = "<group>"; };
 		78DFDF4C15500177008FF2FF /* CassBeats Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CassBeats Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78DFDF5015500177008FF2FF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		78DFDF5215500177008FF2FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -211,6 +214,8 @@
 		78092CE4157A509200D4A870 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				78C489AF163361B0005B72BA /* appIcon@2x.png */,
+				78C489AD163361A4005B72BA /* appIcon.png */,
 				78C489A51633149B005B72BA /* 96-book@2x.png */,
 				78C489A61633149B005B72BA /* cassbeats_tutorial_text@2x.png */,
 				78C4895516330EB4005B72BA /* 96-book.png */,
@@ -312,7 +317,6 @@
 		78DFDF4F15500177008FF2FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				78AB00801592A5AD00F625DE /* DropboxSDK.framework */,
 				78111E0B155D14D6000A3337 /* AddressBook.framework */,
 				78111E0D155D14DB000A3337 /* AddressBookUI.framework */,
 				78DFDFAA155286A2008FF2FF /* CoreData.framework */,
@@ -469,6 +473,8 @@
 				78C489A116330EB4005B72BA /* tabbar_bg@2x.png in Resources */,
 				78C489A71633149B005B72BA /* 96-book@2x.png in Resources */,
 				78C489A81633149B005B72BA /* cassbeats_tutorial_text@2x.png in Resources */,
+				78C489AE163361A4005B72BA /* appIcon.png in Resources */,
+				78C489B0163361B0005B72BA /* appIcon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,7 +578,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cassbeats1/cassbeats1-Prefix.pch";
 				INFOPLIST_FILE = "cassbeats1/cassbeats1-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "CassBeats Mobile";
 				WRAPPER_EXTENSION = app;
 			};
@@ -588,7 +594,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cassbeats1/cassbeats1-Prefix.pch";
 				INFOPLIST_FILE = "cassbeats1/cassbeats1-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "CassBeats Mobile";
 				WRAPPER_EXTENSION = app;
 			};

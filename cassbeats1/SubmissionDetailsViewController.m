@@ -66,7 +66,7 @@
             msg = [[self.sectionArray objectAtIndex:indexPath.section] objectAtIndex:0]; 
             maxSize  = CGSizeMake(380.0f, MAXFLOAT);
             cellSize = [msg sizeWithFont:[UIFont systemFontOfSize:13]
-                       constrainedToSize:maxSize lineBreakMode:UILineBreakModeWordWrap];
+                       constrainedToSize:maxSize lineBreakMode:NSLineBreakByWordWrapping];
             cellSize.height = cellSize.height + 45;
         break;
         default:
@@ -129,7 +129,7 @@
         cell.textLabel.text = @"You Wrote...";
         cell.detailTextLabel.text = obj;
         cell.detailTextLabel.numberOfLines = 0;
-        cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
+        [cell.detailTextLabel setLineBreakMode:NSLineBreakByWordWrapping];
     }
     
 

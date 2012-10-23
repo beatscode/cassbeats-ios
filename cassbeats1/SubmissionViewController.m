@@ -18,7 +18,7 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     self.menuData = [NSArray arrayWithObjects:@"Create Submission",@"View Past Submissions",nil];
-    [self setTitle:@"Submission Options"];
+    [self setTitle:@"Options"];
 }
 
 -(void)viewDidUnload{
@@ -54,6 +54,7 @@
         case createsubmission:
             self.cvController = [[CreateSubmissionViewController alloc] initWithNibName:@"CreateSubmissionViewController" bundle:nil];
             [self.navigationController pushViewController:self.cvController animated:YES];
+            
             break;
         case viewpastsubmissions:
             self.vpsController = [[ViewPastSubmissionsController alloc] initWithNibName:@"ViewPastSubmissionsController" bundle:nil];
