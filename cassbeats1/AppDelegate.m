@@ -37,7 +37,7 @@
     
 
     //Tab Bar
-    UIImage *tabBackground = [[UIImage imageNamed:@"tabbar_bg"] 
+    UIImage *tabBackground = [[UIImage imageNamed:@"navbar"] 
                               resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     [[UITabBar appearance] setBackgroundImage:tabBackground];
     [[UISearchBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar"]];

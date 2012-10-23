@@ -148,7 +148,7 @@
 						<string key="NSFrame">{{20, 20}, {114, 114}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="486686480"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -157,25 +157,10 @@
 							<string key="NSResourceName">cassbeats-case-logo2x_copy.png</string>
 						</object>
 					</object>
-					<object class="IBUIImageView" id="486686480">
-						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{142, 20}, {115, 33}}</string>
-						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="228131419"/>
-						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">CassBeats-Mobile-Logo-text.png</string>
-						</object>
-					</object>
 					<object class="IBUILabel" id="228131419">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{142, 67}, {158, 61}}</string>
+						<string key="NSFrame">{{142, 30}, {158, 61}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="552103108"/>
@@ -185,7 +170,7 @@
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<string key="IBUIText"/>
+						<string key="IBUIText">You have selected 3 contacts</string>
 						<reference key="IBUITextColor" ref="653208132"/>
 						<reference key="IBUIHighlightedColor" ref="653208132"/>
 						<int key="IBUIBaselineAdjustment">0</int>
@@ -326,9 +311,8 @@
 							<reference ref="552103108"/>
 							<reference ref="359350457"/>
 							<reference ref="1021539740"/>
-							<reference ref="486686480"/>
-							<reference ref="228131419"/>
 							<reference ref="268583896"/>
+							<reference ref="228131419"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -369,11 +353,6 @@
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">35</int>
-						<reference key="object" ref="486686480"/>
-						<reference key="parent" ref="191373211"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">36</int>
 						<reference key="object" ref="228131419"/>
 						<reference key="parent" ref="191373211"/>
@@ -391,7 +370,6 @@
 				<string key="14.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="23.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="34.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="35.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="36.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
@@ -474,10 +452,10 @@
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="CassBeats-Mobile-Logo-text.png">{115, 33}</string>
-			<string key="cassbeats-case-logo2x_copy.png">{114, 110}</string>
-		</dictionary>
+		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="NS.key.0">cassbeats-case-logo2x_copy.png</string>
+			<string key="NS.object.0">{114, 110}</string>
+		</object>
 		<string key="IBCocoaTouchPluginVersion">1929</string>
 	</data>
 </archive>
