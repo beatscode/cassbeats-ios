@@ -46,6 +46,10 @@ NSMutableData *receivedData;
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Submission" inManagedObjectContext:context];
     request.entity = entity;
     
+    NSSortDescriptor *dateSort = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO selector:nil];
+    NSArray *sortDescriptors = [NSArray arrayWithObjects:dateSort, nil];
+    [request setSortDescriptors:sortDescriptors];
+    
     NSMutableArray *submissions = [[context executeFetchRequest:request error:nil] mutableCopy];
     return submissions;
 }
