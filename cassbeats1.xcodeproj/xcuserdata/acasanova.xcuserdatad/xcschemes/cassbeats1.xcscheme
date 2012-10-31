@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "78DFDF4B15500177008FF2FF"
-               BuildableName = "CassBeats Mobile.app"
+               BuildableName = "CassBeats.app"
                BlueprintName = "cassbeats1"
                ReferencedContainer = "container:cassbeats1.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "78DFDF4B15500177008FF2FF"
-            BuildableName = "CassBeats Mobile.app"
+            BuildableName = "CassBeats.app"
             BlueprintName = "cassbeats1"
             ReferencedContainer = "container:cassbeats1.xcodeproj">
          </BuildableReference>
@@ -41,7 +41,7 @@
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Debug"
@@ -52,7 +52,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "78DFDF4B15500177008FF2FF"
-            BuildableName = "CassBeats Mobile.app"
+            BuildableName = "CassBeats.app"
             BlueprintName = "cassbeats1"
             ReferencedContainer = "container:cassbeats1.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "78DFDF4B15500177008FF2FF"
-            BuildableName = "CassBeats Mobile.app"
+            BuildableName = "CassBeats.app"
             BlueprintName = "cassbeats1"
             ReferencedContainer = "container:cassbeats1.xcodeproj">
          </BuildableReference>

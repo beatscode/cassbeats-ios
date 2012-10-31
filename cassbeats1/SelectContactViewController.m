@@ -37,13 +37,13 @@
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    AppModel *model = [AppModel sharedModel];
-    NSLog(@"Amount of selected contacts: %i",[[model selectedContacts] count]);
-
-    for(MyContact *c in [model selectedContacts]){
-        NSLog(@"\n\n");
-        NSLog(@"%@ Is selected %d", c.name, c.selected);
-    }
+//    AppModel *model = [AppModel sharedModel];
+//    NSLog(@"Amount of selected contacts: %i",[[model selectedContacts] count]);
+//
+//    for(MyContact *c in [model selectedContacts]){
+//        NSLog(@"\n\n");
+//        NSLog(@"%@ Is selected %d", c.name, c.selected);
+//    }
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(doneSelectingContacts)];
      self.navigationItem.rightBarButtonItem = rightButton;
     

@@ -9,9 +9,8 @@
 #import "WriteSubmissionMessage.h"
 
 @implementation WriteSubmissionMessage
-@synthesize saveMessageBtn;
+@synthesize subjectTxt,messageBody;
 
-@synthesize saveButton,messageBody;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -41,19 +40,24 @@
     // Do any additional setup after loading the view from its nib.
     
      self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background_plain"]];
-    UIImage *blueButtonImage = [[UIImage imageNamed:@"blue_button"]  resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
-    [self.saveMessageBtn setBackgroundImage:blueButtonImage forState:UIControlStateNormal];
+    //UIImage *blueButtonImage = [[UIImage imageNamed:@"blue_button"]  resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
+    //[self.saveMessageBtn setBackgroundImage:blueButtonImage forState:UIControlStateNormal];
+    
     [[UIButton appearanceWhenContainedIn:[self class], nil] setTitleColor:[UIColor blackColor]forState:UIControlStateNormal];
     
+    AppModel *model = [AppModel sharedModel];
+    
+    self.subjectTxt.text = [model submissionSubject];
+    self.messageBody.text = [model submissionMessage];
 }
 
 - (void)viewDidUnload
 {
-    [self setSaveMessageBtn:nil];
+    //[self setSaveMessageBtn:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-    self.saveButton = nil;
+    self.subjectTxt = nil;
     self.messageBody = nil;
 }
 
@@ -67,6 +71,7 @@
     
     AppModel *model = [AppModel sharedModel];
     model.submissionMessage = self.messageBody.text;
+    model.submissionSubject = self.subjectTxt.text;
     [self.navigationController popViewControllerAnimated:YES];
 }
 @end

@@ -179,7 +179,10 @@ NSMutableData *receivedData;
 
 
 #pragma mark - Search Bar
-
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    self.isFiltered = FALSE;
+    [self.tableView reloadData];
+}
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
 
     if(searchText.length == 0){

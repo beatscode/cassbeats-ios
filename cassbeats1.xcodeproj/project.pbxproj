@@ -26,7 +26,6 @@
 		78759F49156C685000E24826 /* MyTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 78759F48156C685000E24826 /* MyTrack.m */; };
 		787F665A159BAAB7001766B7 /* SubmissionDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787F6658159BAAB7001766B7 /* SubmissionDetailsViewController.m */; };
 		787F665B159BAAB7001766B7 /* SubmissionDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 787F6659159BAAB7001766B7 /* SubmissionDetailsViewController.xib */; };
-		789545D2157C5574009C1D0A /* Submission.m in Sources */ = {isa = PBXBuildFile; fileRef = 789545D1157C5574009C1D0A /* Submission.m */; };
 		789ACB031558A59200E6C53A /* SubmissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789ACB011558A59200E6C53A /* SubmissionViewController.m */; };
 		789ACB041558A59200E6C53A /* SubmissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789ACB021558A59200E6C53A /* SubmissionViewController.xib */; };
 		78AB00841592A60500F625DE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AB00831592A60500F625DE /* Security.framework */; };
@@ -88,6 +87,7 @@
 		78E4B16915611D6100B0074A /* SelectContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E4B16715611D6100B0074A /* SelectContactViewController.xib */; };
 		78E83560162EA982009C8E35 /* TutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E8355E162EA982009C8E35 /* TutorialViewController.xib */; };
 		78E83570162FF5FC009C8E35 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E8356F162FF5FB009C8E35 /* TutorialViewController.m */; };
+		78FE926C163A904700EAC7DD /* Submission.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FE926B163A904700EAC7DD /* Submission.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,8 +121,6 @@
 		787F6657159BAAB7001766B7 /* SubmissionDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmissionDetailsViewController.h; sourceTree = "<group>"; };
 		787F6658159BAAB7001766B7 /* SubmissionDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmissionDetailsViewController.m; sourceTree = "<group>"; };
 		787F6659159BAAB7001766B7 /* SubmissionDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubmissionDetailsViewController.xib; sourceTree = "<group>"; };
-		789545D0157C5574009C1D0A /* Submission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Submission.h; sourceTree = "<group>"; };
-		789545D1157C5574009C1D0A /* Submission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Submission.m; sourceTree = "<group>"; };
 		789ACB001558A59200E6C53A /* SubmissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmissionViewController.h; sourceTree = "<group>"; };
 		789ACB011558A59200E6C53A /* SubmissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmissionViewController.m; sourceTree = "<group>"; };
 		789ACB021558A59200E6C53A /* SubmissionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubmissionViewController.xib; sourceTree = "<group>"; };
@@ -168,7 +166,7 @@
 		78C489A61633149B005B72BA /* cassbeats_tutorial_text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cassbeats_tutorial_text@2x.png"; sourceTree = "<group>"; };
 		78C489AD163361A4005B72BA /* appIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appIcon.png; path = ../appIcon.png; sourceTree = "<group>"; };
 		78C489AF163361B0005B72BA /* appIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appIcon@2x.png"; path = "../appIcon@2x.png"; sourceTree = "<group>"; };
-		78DFDF4C15500177008FF2FF /* CassBeats Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CassBeats Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78DFDF4C15500177008FF2FF /* CassBeats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CassBeats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78DFDF5015500177008FF2FF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		78DFDF5215500177008FF2FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		78DFDF5415500177008FF2FF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -194,6 +192,8 @@
 		78E8355E162EA982009C8E35 /* TutorialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TutorialViewController.xib; sourceTree = "<group>"; };
 		78E8356E162FF5FB009C8E35 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		78E8356F162FF5FB009C8E35 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
+		78FE926A163A904700EAC7DD /* Submission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Submission.h; sourceTree = "<group>"; };
+		78FE926B163A904700EAC7DD /* Submission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Submission.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,7 +315,7 @@
 		78DFDF4D15500177008FF2FF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				78DFDF4C15500177008FF2FF /* CassBeats Mobile.app */,
+				78DFDF4C15500177008FF2FF /* CassBeats.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -370,8 +370,8 @@
 				78DFDF7115500738008FF2FF /* AppModel.h */,
 				78DFDF7215500738008FF2FF /* AppModel.m */,
 				78DFDFAE15528C15008FF2FF /* CassBeatsPro.xcdatamodeld */,
-				789545D0157C5574009C1D0A /* Submission.h */,
-				789545D1157C5574009C1D0A /* Submission.m */,
+				78FE926A163A904700EAC7DD /* Submission.h */,
+				78FE926B163A904700EAC7DD /* Submission.m */,
 				781B0EA8156671AC00FB45D3 /* MyContact.h */,
 				781B0EA9156671AC00FB45D3 /* MyContact.m */,
 				78759F47156C685000E24826 /* MyTrack.h */,
@@ -397,7 +397,7 @@
 			);
 			name = cassbeats1;
 			productName = cassbeats1;
-			productReference = 78DFDF4C15500177008FF2FF /* CassBeats Mobile.app */;
+			productReference = 78DFDF4C15500177008FF2FF /* CassBeats.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -509,11 +509,11 @@
 				783BFD0E1573FE5000D4CC1E /* Contact.m in Sources */,
 				783BFD1215741CD000D4CC1E /* WriteSubmissionMessage.m in Sources */,
 				783BFD1D15744A3500D4CC1E /* ViewPastSubmissionsController.m in Sources */,
-				789545D2157C5574009C1D0A /* Submission.m in Sources */,
 				78B71A0F15965D9100C82D5F /* RegViewController.m in Sources */,
 				787F665A159BAAB7001766B7 /* SubmissionDetailsViewController.m in Sources */,
 				7874C5E3159E12D600A9A327 /* CustomRegisterViewController.m in Sources */,
 				78E83570162FF5FC009C8E35 /* TutorialViewController.m in Sources */,
+				78FE926C163A904700EAC7DD /* Submission.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,7 +587,7 @@
 				GCC_PREFIX_HEADER = "cassbeats1/cassbeats1-Prefix.pch";
 				INFOPLIST_FILE = "cassbeats1/cassbeats1-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = "CassBeats Mobile";
+				PRODUCT_NAME = CassBeats;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -603,7 +603,7 @@
 				GCC_PREFIX_HEADER = "cassbeats1/cassbeats1-Prefix.pch";
 				INFOPLIST_FILE = "cassbeats1/cassbeats1-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = "CassBeats Mobile";
+				PRODUCT_NAME = CassBeats;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

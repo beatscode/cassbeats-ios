@@ -102,11 +102,33 @@
 
 - (IBAction)saveSubmission:(id)sender {
     
-    AppModel *model = [AppModel sharedModel];
-    //will save to both the device and send
-    //urlrequest
-    [model saveSubmission];
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Confirm Submission"
+                                                      message:@"Please confirm this submission\nAllow for 30 - 35 seconds for submission to complete"
+                                                     delegate:self
+                                            cancelButtonTitle:@"Cancel"
+                                            otherButtonTitles:@"I Understand", nil];
+    [message show];
 }
+
+#pragma mark - UIAlertView Delegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    if([title isEqualToString:@"I Understand"])
+    {
+        AppModel *model = [AppModel sharedModel];
+        //will save to both the device and send
+        //urlrequest
+        [model saveSubmission];
+    }
+    else if([title isEqualToString:@"Cancel"])
+    {
+        NSLog(@"Canceled...");
+    }
+}
+
+
 - (IBAction)selectTracks:(id)sender {
     
     AppModel *model = [AppModel sharedModel];
@@ -170,13 +192,12 @@
                                 
                                 NSString* email = (__bridge_transfer NSString*)ABMultiValueCopyValueAtIndex(emails, j);
                                 [allEmails addObject:email];
-                            }
-                            
-                            MyContact *ct = [[MyContact alloc] init];
-                            ct.name  = [NSString stringWithFormat:@"%@ %@",firstname,lastname];
-                            ct.emails = allEmails;
-                            //ct.selected = YES;
-                            [cts addObject:ct];
+                                
+                                MyContact *ct = [[MyContact alloc] init];
+                                ct.name  = [NSString stringWithFormat:@"%@ %@",firstname,lastname];
+                                ct.emails = allEmails;
+                                [cts addObject:ct];
+                            }                        
                             
                             CFRelease(emails);
                         }

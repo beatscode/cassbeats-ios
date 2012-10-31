@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#define registerViewURL @"http://localhost/personal/cassbeats4/public/mobile/requestdropbox/"
-#define confirmDropBoxOAuthURL @"http://localhost/personal/cassbeats4/public/mobile/confirmDropBoxOAuthURL"
+#define registerViewURL @"http://www.cassbeats.com/mobile/requestdropbox/"
+#define confirmDropBoxOAuthURL @"http://www.cassbeats.com/mobile/confirmDropBoxOAuthURL"
 
 @interface CustomRegisterViewController : UIViewController
 

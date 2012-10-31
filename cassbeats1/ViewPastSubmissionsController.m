@@ -11,6 +11,9 @@
 @implementation ViewPastSubmissionsController
 
 @synthesize submissions;
+@synthesize searchBar;
+@synthesize isFiltered;
+@synthesize filteredResults;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -43,7 +46,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+    self.title = @"Past Submissions";
 }
 
 - (void)viewDidUnload
@@ -78,13 +81,49 @@
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+#pragma mark - Search Bar
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    self.isFiltered = FALSE;
+    [self.tableView reloadData];
+}
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    
+    AppModel *model = [AppModel sharedModel];
+    if(searchText.length == 0){
+        self.isFiltered = FALSE;
+    }else{
+        self.isFiltered = TRUE;
+        // search contact names, emails, and track names
+        // then return the corresponding submission
+        
+        self.filteredResults = [[NSMutableArray alloc] init];
+        NSArray *contactSubmissions = [model getSubmissionByContact:searchText];
+        NSArray *trackSubmissions = [model getSubmissionByTrack:searchText];
+        if([contactSubmissions count] > 0)
+            [self.filteredResults addObjectsFromArray:contactSubmissions];
+        if([trackSubmissions count] > 0)
+            [self.filteredResults addObjectsFromArray:trackSubmissions];
+        
+        NSLog(@"%@",self.filteredResults);
+    }
+    
+    [self.tableView reloadData];
+}
 
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.submissions count];
+    int rowCount;
+    if(self.isFiltered){
+        rowCount = self.filteredResults.count;
+    }else {
+        rowCount = self.submissions.count;
+    }
+    
+    return rowCount;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -106,19 +145,24 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    
     AppModel *model = [AppModel sharedModel];
     NSUInteger row = [indexPath row];
-    Submission *submission = [self.submissions objectAtIndex:row];
+    Submission *submission;
+    
+    if(self.isFiltered == TRUE){
+        submission = [self.filteredResults objectAtIndex:row];
+    }else{      
+        submission = [self.submissions objectAtIndex:row];
+    }
+   
     NSArray *tracks   = [model getSubmissionTracks:submission];
     NSArray *contacts = [model getSubmissionContacts:submission];
     NSString *contactNames = @"";
     for(Contact *obj in contacts){
-        NSLog(@"Name: %@ - email: %@",obj.name,obj.email);
         contactNames = [contactNames stringByAppendingString:obj.email];
     }
-
-    cell.textLabel.text = [NSString stringWithFormat:@"On %@",submission.date];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@",submission.date];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%d Contact(s),%d Track(s)\nEmail(s): %@",contacts.count,tracks.count,contactNames];
     cell.detailTextLabel.numberOfLines = 0;
     cell.detailTextLabel.textColor = [UIColor blackColor];

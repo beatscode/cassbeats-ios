@@ -2,7 +2,7 @@
 //  Submission.m
 //  cassbeats1
 //
-//  Created by Alexander Casanova on 6/3/12.
+//  Created by Alexander Casanova on 10/26/12.
 //  Copyright (c) 2012 CassBeats LLC. All rights reserved.
 //
 
@@ -14,9 +14,10 @@
 @implementation Submission
 
 @dynamic date;
+@dynamic download;
 @dynamic message;
 @dynamic name;
-@dynamic download;
+@dynamic size;
 @dynamic submissionToContact;
 @dynamic submissionToTrack;
 

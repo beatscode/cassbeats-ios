@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#define registerURL @"http://localhost/personal/cassbeats4/public/mobile/register"
+#define registerURL @"http://www.cassbeats.com/mobile/register"
 #import "AppModel.h"
 #import "CustomRegisterViewController.h"
 

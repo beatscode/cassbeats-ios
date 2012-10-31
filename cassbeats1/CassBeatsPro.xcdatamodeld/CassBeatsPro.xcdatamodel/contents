@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C54" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C60" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Contact" representedClassName="Contact" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -10,6 +10,7 @@
         <attribute name="download" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="size" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="submissionToContact" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Contact" inverseName="contactToSubmission" inverseEntity="Contact" syncable="YES"/>
         <relationship name="submissionToTrack" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Track" inverseName="trackToSubmission" inverseEntity="Track" syncable="YES"/>
     </entity>
@@ -24,7 +25,7 @@
     </entity>
     <elements>
         <element name="Contact" positionX="160" positionY="192" width="128" height="75"/>
-        <element name="Submission" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="Submission" positionX="160" positionY="192" width="128" height="150"/>
         <element name="Track" positionX="160" positionY="192" width="128" height="75"/>
         <element name="User" positionX="160" positionY="192" width="128" height="75"/>
     </elements>

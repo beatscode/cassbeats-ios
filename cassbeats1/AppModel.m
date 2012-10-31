@@ -8,7 +8,7 @@
 
 #import "AppModel.h"
 
-#define saveServerSubmissionURL @"http://localhost/personal/cassbeats4/public/index.php/mobile/createSubmission/"
+#define saveServerSubmissionURL @"http://www.cassbeats.com/mobile/createSubmission/"
 @implementation AppModel
 
 @synthesize userData = _userData;
@@ -19,6 +19,7 @@
 @synthesize trackData = _trackData;
 @synthesize submissionMessage = _submissionMessage;
 @synthesize downloadable = _downloadable;
+@synthesize submissionSubject = _submissionSubject;
 
 #pragma Singleton
 static AppModel *sharedOject = nil;
@@ -113,10 +114,10 @@ NSMutableData *receivedData;
         NSString *dateString = [dateFormat stringFromDate:date];
             
         NSManagedObjectContext *context = [self managedObjectContext];
-        NSFetchRequest *request = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Submission"  inManagedObjectContext:context];
-        request.entity = entity;
-        NSMutableArray *mutableFetchResults = [[context executeFetchRequest:request error:nil] mutableCopy];
+//        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+//        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Submission"  inManagedObjectContext:context];
+//        request.entity = entity;
+//        NSMutableArray *mutableFetchResults = [[context executeFetchRequest:request error:nil] mutableCopy];
 
         Submission *submission = (Submission *)[NSEntityDescription insertNewObjectForEntityForName:@"Submission" inManagedObjectContext:context];
         User *usr  = self.user;
@@ -127,22 +128,20 @@ NSMutableData *receivedData;
         submission.download = [NSNumber numberWithBool:self.downloadable];
         
         NSMutableString *stringForPost  = [[NSMutableString alloc] init];
-        
-        NSLog(@"Number of Tracks : %d",[self.selectedTracks count]);
-        NSLog(@"Number of Contacts : %d",[self.selectedContacts count]);
-        
+              
         //Add Tracks to submission
         if([self.selectedTracks count] > 0){
-            NSInteger size = 0;
+            int size = 0;
             for(MyTrack *mytrack in self.selectedTracks){
                 [stringForPost appendString: [NSString stringWithFormat:@"tracks[]=%@&",  mytrack.name]];
-                NSLog(@"%@",mytrack.name);
                 Track *track = (Track *)[NSEntityDescription insertNewObjectForEntityForName:@"Track" inManagedObjectContext:context];
                 track.name = mytrack.name;
                 [submission addSubmissionToTrackObject:track]; 
-                size = size + [mytrack.size intValue]; 
+                size = size  + [mytrack.size intValue];
+               
             } 
-            [stringForPost appendString: [NSString stringWithFormat:@"size=%d&",  size]];
+            [stringForPost appendString: [NSString stringWithFormat:@"size=%d&", size]];
+            submission.size = [NSNumber numberWithInt:size];
         }
         
         
@@ -162,25 +161,24 @@ NSMutableData *receivedData;
         }
         //Add message to post string
         
-        [stringForPost appendString:[NSString stringWithFormat:@"download=%@&message=%@&user_id=%@", [NSNumber numberWithBool:self.downloadable], self.submissionMessage, usr.server_id]];
-        
-        if([mutableFetchResults count] > 0){
-            submission = [mutableFetchResults objectAtIndex:0];
-            NSSet *tracksOfSubmission = submission.submissionToTrack;
-            
-            for(Track *track in tracksOfSubmission.allObjects){
-                Submission *sub = (Submission *)track.trackToSubmission;
-                NSLog(@"track name = %@ & submission name is %@",track.name,sub.name);
-            }
-        }
-     
+        [stringForPost appendString:[NSString stringWithFormat:@"download=%@&message=%@&user_id=%@&subject=%@", [NSNumber numberWithBool:self.downloadable], self.submissionMessage, usr.server_id,self.submissionSubject]];
+//        
+//        if([mutableFetchResults count] > 0){
+//            submission = [mutableFetchResults objectAtIndex:0];
+//            NSSet *tracksOfSubmission = submission.submissionToTrack;
+//            
+//            for(Track *track in tracksOfSubmission.allObjects){
+//                Submission *sub = (Submission *)track.trackToSubmission;
+//            }
+//        }
+//     
         
         //Reset Ivars
         if(isValid){
-            //I need the emails / tracks / and selected messages to save the submission(s)
             [self saveSubmissionOnServer:stringForPost];
             [self saveContext];
-            self.submissionMessage = nil; 
+            self.submissionMessage = nil;
+            self.submissionSubject = nil;
             self.downloadable = NO;
             self.selectedContacts  = [[NSMutableArray alloc] initWithObjects:nil];
             self.selectedTracks    = [[NSMutableArray alloc] initWithObjects:nil];
@@ -207,6 +205,7 @@ NSMutableData *receivedData;
     return sharedOject;    
 }
 
+
 - (void)saveContext {
     NSError *error = nil;
     if (managedObjectContext != nil) {
@@ -231,7 +230,14 @@ NSMutableData *receivedData;
     
     BOOL isValid = YES;
     
-    if([self.submissionMessage isEqualToString:@""]){
+    if([self.submissionSubject isEqualToString:@""]){
+        //Alert
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Empty Subject line" message:@"You Must add a subject line to this submission" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Okay", nil];
+        [alertView show];
+        isValid = NO;
+    }
+    
+    if([self.submissionMessage length] == 0){
         //Alert 
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Empty Message" message:@"You Must add a message to this submission" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Okay", nil];
         [alertView show];        
@@ -268,6 +274,9 @@ NSMutableData *receivedData;
     if (!connection) {
         UIAlertView *connectFailMessage = [[UIAlertView alloc] initWithTitle:@"NSURLConnection " message:@"Failed Connection"  delegate: self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
 		[connectFailMessage show];
+    }else{
+        
+
     }
     
 }
@@ -286,32 +295,93 @@ NSMutableData *receivedData;
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
     
     [receivedData appendData:data];
-    NSLog(@"Received data is now %d bytes", [receivedData length]); 
 }
 
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     NSLog(@"Error receiving response: %@", error);
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle: @"An Error has occured"
+                          message: @"An error has orrcured"
+                          delegate: nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil];
+    [alert show];
+    
 }
 
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection{
-    NSLog(@"-void)connectionDidFinishLoading:(NSURLConnection*)connection");
+
     NSLog(@"Succeeded! Received %d bytes of data", [receivedData length]);
     NSLog(@"%@",[[NSString alloc] initWithData:receivedData encoding:NSASCIIStringEncoding]);
     
     NSLog(@"I received %@",[NSString stringWithFormat:@"%@",receivedData]);
     [UIApplication sharedApplication].networkActivityIndicatorVisible  = NO;
     // [self userSetup:receivedData];
-    UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle: @"CassBeats Status"
-                          message: @"Submission Sent!"
-                          delegate: nil
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil];
-    [alert show];
 }
 
 
 
+#pragma mark - search submissions
+
+- (NSMutableArray *)getSubmissionByContact:(NSString *)searchText{
+    
+    NSMutableArray *submissions = [[NSMutableArray alloc] init];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity =
+    [NSEntityDescription entityForName:@"Contact"
+                inManagedObjectContext:managedObjectContext];
+    [request setEntity:entity];
+    
+    NSPredicate *predicate =
+    [NSPredicate predicateWithFormat:@"name contains[c] %@ or email contains[c] %@", searchText,searchText];
+
+    [request setPredicate:predicate];
+    
+    NSError *error;
+    NSArray *contacts = [managedObjectContext executeFetchRequest:request error:&error];
+    NSLog(@"Contacts : %u", [contacts count]);
+    if (contacts != nil) {
+        for (Contact *c in contacts) {
+            [submissions addObject:c.contactToSubmission];
+        }
+    }
+    else {
+        // Deal with error.
+        NSLog(@"Error");
+    }
+       
+  
+    return submissions;
+}
+
+-(NSMutableArray *)getSubmissionByTrack:(NSString *)searchText{
+    
+    NSMutableArray *submissions = [[NSMutableArray alloc] init];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity =
+    [NSEntityDescription entityForName:@"Track"
+                inManagedObjectContext:managedObjectContext];
+    [request setEntity:entity];
+    
+    NSPredicate *predicate =
+    [NSPredicate predicateWithFormat:@"name contains[c] %@", searchText];
+    
+    [request setPredicate:predicate];
+    
+    NSError *error;
+    NSArray *tracks = [managedObjectContext executeFetchRequest:request error:&error];
+    NSLog(@"Tracks : %u", [tracks count]);
+    if (tracks != nil) {
+        for (Track *t in tracks) {
+            [submissions addObject:t.trackToSubmission];
+        }
+    }
+    else {
+        // Deal with error.
+        NSLog(@"Error");
+    }
+    return submissions;
+}
 
 #pragma mark - Core Data stack
 

@@ -11,8 +11,10 @@
 #import "Submission.h"
 #import "SubmissionDetailsViewController.h"
 
-@interface ViewPastSubmissionsController : UITableViewController
+@interface ViewPastSubmissionsController : UITableViewController<UISearchBarDelegate>
 
 @property (nonatomic,strong) NSMutableArray *submissions;
-
+@property(nonatomic,strong) NSMutableArray *filteredResults;
+@property(nonatomic) BOOL isFiltered;
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @end

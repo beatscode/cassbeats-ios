@@ -11,10 +11,9 @@
 
 @interface WriteSubmissionMessage : UIViewController
 
-
-@property (nonatomic,strong) IBOutlet UIButton *saveButton;
+@property (nonatomic, nonatomic) IBOutlet UITextField *subjectTxt;
 @property (nonatomic,strong) IBOutlet UITextView *messageBody;
-@property (unsafe_unretained, nonatomic) IBOutlet UIButton *saveMessageBtn;
+//@property (unsafe_unretained, nonatomic) IBOutlet UIButton *saveMessageBtn;
 
 - (IBAction)saveMessage:(id)sender;
 

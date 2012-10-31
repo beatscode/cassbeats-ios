@@ -94,12 +94,7 @@
 
 //Login 
 - (IBAction)login:(id)sender {
-    
-    NSLog(@"Logging in:%@ %@",emailTextField.text,passwordTextField.text);
-    // AppModel *model = [AppModel sharedModel];
-    [self authenticateUser:emailTextField.text :passwordTextField.text];
-    //[model saveUser:emailTextField.text :passwordTextField.text];
-    
+    [self authenticateUser:emailTextField.text :passwordTextField.text];    
 }
 //Register
 -(IBAction)registerUser{
@@ -149,7 +144,7 @@ NSMutableData *receivedData;
     
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
 
-    if(connection){
+    if(!connection){
         NSLog(@"connection failed");
     }else{
         NSLog(@"connection succeeded");
@@ -180,7 +175,6 @@ NSMutableData *receivedData;
     NSLog(@"Succeeded! Received %d bytes of data", [receivedData length]);
     NSLog(@"%@",[[NSString alloc] initWithData:receivedData encoding:NSASCIIStringEncoding]);
     
-    // NSLog(@"I received %@",[NSString stringWithFormat:@"%@",receivedData]);
     [UIApplication sharedApplication].networkActivityIndicatorVisible  = NO;
     [self userSetup:receivedData];
 }

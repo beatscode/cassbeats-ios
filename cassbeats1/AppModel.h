@@ -29,6 +29,7 @@
 @property(strong) NSArray *userData;
 @property(strong) NSArray *trackData;
 @property(strong) NSString *submissionMessage;
+@property(strong) NSString *submissionSubject;
 @property(nonatomic,strong) NSMutableArray *contacts;
 @property(nonatomic,strong) NSMutableArray *selectedContacts;
 @property(nonatomic,strong) NSMutableArray *selectedTracks;
@@ -51,5 +52,8 @@
 -(void)setSubmissionDownloadOption:(BOOL)option;
 -(NSArray *)getSubmissionTracks:(Submission *)submission;
 -(NSArray *)getSubmissionContacts:(Submission *)submission;
+-(NSArray *)getSubmissionByContact:(NSString *)searchText;
+-(NSArray *)getSubmissionByTrack:(NSString *)searchText;
+
 -(NSMutableArray *)makeTracks;
 @end

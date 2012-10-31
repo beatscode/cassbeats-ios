@@ -16,7 +16,7 @@
 #import "MyContact.h"
 #import "MyTrack.h"
 
-@interface CreateSubmissionViewController : UIViewController
+@interface CreateSubmissionViewController : UIViewController<UIAlertViewDelegate>
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *selectTracksBtn;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *selectContactsBtn;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *writeMessageBtn;
