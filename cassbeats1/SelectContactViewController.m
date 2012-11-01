@@ -111,18 +111,15 @@
     AppModel *model = [AppModel sharedModel];
     NSArray *contacts = [model contacts];
     MyContact *obj    = [contacts objectAtIndex:indexPath.row];
-    NSLog(@"Should Be in the array: %@", obj);
-    NSLog(@"In array? %d",[model.selectedContacts containsObject:obj]);
-    NSLog(@"Is it selected? %d",obj.selected);
     
     if([model.selectedContacts containsObject:obj]){
-        MyContact *pSC = [model.selectedContacts objectAtIndex:[model.selectedContacts indexOfObject:obj]];
-        cell.accessoryType = (pSC.selected == YES) ? UITableViewCellAccessoryCheckmark :UITableViewCellAccessoryNone;
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }else{
+        cell.accessoryType = UITableViewCellAccessoryNone;
     }
     cell.textLabel.text = obj.name;
     cell.detailTextLabel.text = [obj.emails objectAtIndex:0];
     
-    NSLog(@"Contacts Right now: \n\n %@", model.selectedContacts);
     return cell;
 }
 
@@ -136,30 +133,24 @@
     MyContact *sContact = [[model contacts] objectAtIndex:indexPath.row];
     [sContact toggleSelected];
     [self configureCheckMarkForCell:cell withSelectedContact:sContact];
-    
-//    NSLog(@"%@",[model contacts]);
-//    NSLog(@"%@",model.selectedContacts);       
+     
 }
 
 
 -(void)configureCheckMarkForCell:(UITableViewCell *)cell withSelectedContact:(MyContact *)sContact
 {
     AppModel *model = [AppModel sharedModel];
-    NSLog(@"Selected %@, selected? %d" ,sContact.name, sContact.selected);
     if ([[model selectedContacts] count] > 0) {
         MyContact *ob = [[model selectedContacts] objectAtIndex:0];
-        NSLog(@"First index: %@", ob.name);
     }
    
     if([[model selectedContacts] containsObject:sContact]){
-        NSLog(@"Just removed contact: %@" , sContact.name);
         [[model selectedContacts] removeObject:sContact];
         cell.accessoryType = UITableViewCellAccessoryNone;
     }else{
-        NSLog(@"Just added contact: %@" , sContact.name);
+        sContact.selected = YES;
         [[model selectedContacts] addObject:sContact];
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
-     NSLog(@"SContacts Right now: \n\n %@", model.selectedContacts);
 }
 @end
