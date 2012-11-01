@@ -50,12 +50,8 @@
         NSLog(@" email: %@ , id : %@",usr.email, usr.server_id);
         
        [self.emailTextField setText:[model.user email]];
-    }else{
-        //For Testing Purposes
-        NSLog(@"Just Testing");
-        [self.emailTextField setText:@"cassbeats@gmail.com"];
-        [self.passwordTextField setText:@"player9"];
     }
+    
     [self customizeAppearance];
     
     self.title = @"Login";
@@ -183,7 +179,7 @@ NSMutableData *receivedData;
     
     NSError *error = nil;
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-    //NSLog(@"%@",userArray);
+    NSLog(@"%@",json);
     if(!error){
         NSArray *errorArray = [json objectForKey:@"error"];
         if(errorArray){

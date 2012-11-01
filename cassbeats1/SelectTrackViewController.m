@@ -234,7 +234,7 @@ NSMutableData *receivedData;
     }else {
         track = [self.tracks objectAtIndex:row];
     }
-
+   
     if([model.selectedTracks containsObject:track]){
 
         MyTrack *sTrack = [model.selectedTracks objectAtIndex:[model.selectedTracks indexOfObject:track]];
@@ -298,6 +298,7 @@ NSMutableData *receivedData;
     MyTrack *track = [self.tracks objectAtIndex:indexPath.row];
 
     [track toggleSelected];
+     NSLog(@"Track size when selecting %@",track.size);
 
     if([[model selectedTracks] containsObject:track]){
         [[model selectedTracks] removeObject:track];

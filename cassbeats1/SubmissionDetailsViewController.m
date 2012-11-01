@@ -119,6 +119,7 @@
        
         Track *track = obj;        
         cell.textLabel.text = track.name;
+        NSLog(@"Track Size -> %@",track.size);
         cell.detailTextLabel.text = [NSString stringWithFormat:@"Size: %@",track.size];
         
     }else if([obj isKindOfClass:[Contact class]]){

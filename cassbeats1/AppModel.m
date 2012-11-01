@@ -69,13 +69,16 @@ NSMutableData *receivedData;
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:[self managedObjectContext]];
     request.entity = entity;
     NSError *error = nil;
+    BOOL found = NO;
     User *usr = [[[self managedObjectContext] executeFetchRequest:request error:&error] lastObject];
     if(usr != nil){
         self.user = usr;
-        return YES;
+        found = YES;
     }else{
-        return NO;
+        found = NO;
     }
+    
+    return found;
 }
 -(NSArray *)getUserData{
     return self.userData;
@@ -118,14 +121,9 @@ NSMutableData *receivedData;
         NSString *dateString = [dateFormat stringFromDate:date];
             
         NSManagedObjectContext *context = [self managedObjectContext];
-//        NSFetchRequest *request = [[NSFetchRequest alloc] init];
-//        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Submission"  inManagedObjectContext:context];
-//        request.entity = entity;
-//        NSMutableArray *mutableFetchResults = [[context executeFetchRequest:request error:nil] mutableCopy];
 
         Submission *submission = (Submission *)[NSEntityDescription insertNewObjectForEntityForName:@"Submission" inManagedObjectContext:context];
         User *usr  = self.user;
-        
         submission.name = [[NSString alloc] initWithFormat:@"Submission"];
         submission.date = dateString;
         submission.message = self.submissionMessage;
@@ -193,15 +191,28 @@ NSMutableData *receivedData;
 }
 
 -(void)saveUser:(NSArray *)user{
-    //TODO: get first user
-    User *usr = (User *)[NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:[self managedObjectContext]];
-    usr.email = [user valueForKey: @"email"];
+    
+    NSError *error = nil;
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:[self managedObjectContext]];
+    request.entity = entity;
+    //Get User ID
     NSString *server_id = [NSString stringWithFormat:@"%@",[user valueForKey:@"id"]];
-    usr.server_id = server_id;
-   [self saveContext];
+    User *usr = [[[self managedObjectContext] executeFetchRequest:request error:&error] lastObject];
+    if(usr != nil){
+         usr.email = [user valueForKey: @"email"];
+         usr.server_id = server_id;
+    }else{
+         User *usr = (User *)[NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:[self managedObjectContext]];
+         usr.email = [user valueForKey: @"email"];
+         usr.server_id = server_id;
+    }
+
+    [self saveContext];
+    usr = [[[self managedObjectContext] executeFetchRequest:request error:&error] lastObject];
+    self.user = usr;
 }
 +(id)sharedModel{
-    
     @synchronized(self){
         if(sharedOject == nil)            
             sharedOject = [[super allocWithZone:NULL] init];
@@ -212,12 +223,12 @@ NSMutableData *receivedData;
 
 - (void)saveContext {
     NSError *error = nil;
-    if (managedObjectContext != nil) {
-        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
+    //if (managedObjectContext != nil) {
+        if (![self.managedObjectContext save:&error]) {
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         } 
-    }
+    //}
 }
 
 -(void)updateUserData:(NSArray *)array{
@@ -234,28 +245,28 @@ NSMutableData *receivedData;
     
     BOOL isValid = YES;
     
-    if([self.submissionSubject isEqualToString:@""]){
+    if([self.submissionSubject length] == 0){
         //Alert
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Empty Subject line" message:@"You Must add a subject line to this submission" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Okay", nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Empty Subject line" message:@"You must add a subject line to this submission" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Okay", nil];
         [alertView show];
         isValid = NO;
     }
     
     if([self.submissionMessage length] == 0){
         //Alert 
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Empty Message" message:@"You Must add a message to this submission" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Okay", nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Empty Message" message:@"You must add a message to this submission" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Okay", nil];
         [alertView show];        
         isValid = NO;       
     }
     
     if([self.selectedTracks count] == 0){
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"No Tracks Selected" message:@"You Must Select Tracks Save this submission" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Okay",nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"No Tracks Selected" message:@"You must Select Tracks Save this submission" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Okay",nil];
         [alertView show];
         isValid = NO;
     }
     
     if([self.selectedContacts count] == 0){
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"No Contacts Selected" message:@"You Must Select Contacts to save submission" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Okay",nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"No Contacts Selected" message:@"You must Select Contacts to save submission" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Okay",nil];
         [alertView show];
         isValid =NO;
     }

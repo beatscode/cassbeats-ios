@@ -39,10 +39,9 @@
 					<object class="IBUITextView" id="542374602">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{17, 54}, {286, 123}}</string>
+						<string key="NSFrame">{{17, 54}, {286, 132}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:639</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -69,7 +68,7 @@
 					<object class="IBUITextField" id="48188590">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 16}, {280, 30}}</string>
+						<string key="NSFrame">{{17, 16}, {286, 30}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="542374602"/>
