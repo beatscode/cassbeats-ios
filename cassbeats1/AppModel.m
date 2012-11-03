@@ -138,7 +138,7 @@ NSMutableData *receivedData;
                 [stringForPost appendString: [NSString stringWithFormat:@"tracks[]=%@&",  mytrack.name]];
                 Track *track = (Track *)[NSEntityDescription insertNewObjectForEntityForName:@"Track" inManagedObjectContext:context];
                 track.name = mytrack.name;
-                track.size = mytrack.size;
+                track.size = [NSString stringWithFormat:@"%@", mytrack.size ];
                 
                 [submission addSubmissionToTrackObject:track]; 
                 size = size  + [mytrack.size intValue];
@@ -178,7 +178,7 @@ NSMutableData *receivedData;
 //     
         
         //Reset Ivars
-        if(!isValid){
+        if(isValid){
             [self saveSubmissionOnServer:stringForPost];
             [self saveContext];
             self.submissionMessage = nil;

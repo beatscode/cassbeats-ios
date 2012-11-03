@@ -103,10 +103,10 @@
 - (IBAction)saveSubmission:(id)sender {
     
     UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Confirm Submission"
-                                                      message:@"Please confirm your submission\nAllow for 2 - 3 minutes for this submission to complete"
+                                                      message:@"Please allow 2 to 3 minutes for this submission to complete"
                                                      delegate:self
                                             cancelButtonTitle:@"Cancel"
-                                            otherButtonTitles:@"I Understand", nil];
+                                            otherButtonTitles:@"Send", nil];
     [message show];
 }
 

@@ -133,17 +133,14 @@
     MyContact *sContact = [[model contacts] objectAtIndex:indexPath.row];
     [sContact toggleSelected];
     [self configureCheckMarkForCell:cell withSelectedContact:sContact];
-     
+    
 }
 
 
 -(void)configureCheckMarkForCell:(UITableViewCell *)cell withSelectedContact:(MyContact *)sContact
 {
     AppModel *model = [AppModel sharedModel];
-    if ([[model selectedContacts] count] > 0) {
-        MyContact *ob = [[model selectedContacts] objectAtIndex:0];
-    }
-   
+
     if([[model selectedContacts] containsObject:sContact]){
         [[model selectedContacts] removeObject:sContact];
         cell.accessoryType = UITableViewCellAccessoryNone;

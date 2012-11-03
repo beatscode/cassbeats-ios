@@ -40,7 +40,8 @@
     UIBarButtonItem *doneBtn = [[UIBarButtonItem alloc]initWithTitle:@"Finish" style:UIBarButtonItemStylePlain target:self action:@selector( confirmDropBoxAuth )];
     
     self.navigationItem.rightBarButtonItem = doneBtn;
-    self.navigationItem.hidesBackButton = YES;
+    //self.navigationItem.hidesBackButton = YES;
+    self.title = @"Register";
 }
 - (NSURL *)URLByAppendingQueryString:(NSString *)query:(NSString *)queryString {
     
