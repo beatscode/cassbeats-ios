@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7806AB8816454B4500CF77FB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7806AB8716454B4500CF77FB /* Default-568h@2x.png */; };
 		78111E09155D12B7000A3337 /* CreateSubmissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78111E07155D12B7000A3337 /* CreateSubmissionViewController.m */; };
 		78111E0A155D12B7000A3337 /* CreateSubmissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78111E08155D12B7000A3337 /* CreateSubmissionViewController.xib */; };
 		78111E0C155D14D6000A3337 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78111E0B155D14D6000A3337 /* AddressBook.framework */; };
@@ -30,7 +31,6 @@
 		789ACB041558A59200E6C53A /* SubmissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789ACB021558A59200E6C53A /* SubmissionViewController.xib */; };
 		78AB00841592A60500F625DE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AB00831592A60500F625DE /* Security.framework */; };
 		78AB00861592AD4300F625DE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AB00851592AD4300F625DE /* QuartzCore.framework */; };
-		78B56BF9162441E700CEEE31 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78B56BF8162441E700CEEE31 /* Default-568h@2x.png */; };
 		78B71A0F15965D9100C82D5F /* RegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B71A0D15965D9100C82D5F /* RegViewController.m */; };
 		78B71A1015965D9100C82D5F /* RegViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78B71A0E15965D9100C82D5F /* RegViewController.xib */; };
 		78C4897D16330EB4005B72BA /* 96-book.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C4895516330EB4005B72BA /* 96-book.png */; };
@@ -91,6 +91,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7806AB8716454B4500CF77FB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		78111E06155D12B7000A3337 /* CreateSubmissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateSubmissionViewController.h; sourceTree = "<group>"; };
 		78111E07155D12B7000A3337 /* CreateSubmissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateSubmissionViewController.m; sourceTree = "<group>"; };
 		78111E08155D12B7000A3337 /* CreateSubmissionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateSubmissionViewController.xib; sourceTree = "<group>"; };
@@ -126,7 +127,6 @@
 		789ACB021558A59200E6C53A /* SubmissionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubmissionViewController.xib; sourceTree = "<group>"; };
 		78AB00831592A60500F625DE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		78AB00851592AD4300F625DE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		78B56BF8162441E700CEEE31 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		78B71A0C15965D9100C82D5F /* RegViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegViewController.h; sourceTree = "<group>"; };
 		78B71A0D15965D9100C82D5F /* RegViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegViewController.m; sourceTree = "<group>"; };
 		78B71A0E15965D9100C82D5F /* RegViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegViewController.xib; sourceTree = "<group>"; };
@@ -218,6 +218,7 @@
 		78092CE4157A509200D4A870 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7806AB8716454B4500CF77FB /* Default-568h@2x.png */,
 				78E3E24416369F8D0033DBDD /* CassBeats-Mobile-Logo-text.png */,
 				78E3E24216369D900033DBDD /* cassbeats-case-logo2x_copy.png */,
 				78C489AF163361B0005B72BA /* appIcon@2x.png */,
@@ -303,7 +304,6 @@
 		78DFDF4115500177008FF2FF = {
 			isa = PBXGroup;
 			children = (
-				78B56BF8162441E700CEEE31 /* Default-568h@2x.png */,
 				78AB00851592AD4300F625DE /* QuartzCore.framework */,
 				78AB00831592A60500F625DE /* Security.framework */,
 				78DFDF5615500177008FF2FF /* cassbeats1 */,
@@ -443,7 +443,6 @@
 				78B71A1015965D9100C82D5F /* RegViewController.xib in Resources */,
 				787F665B159BAAB7001766B7 /* SubmissionDetailsViewController.xib in Resources */,
 				7874C5E4159E12D600A9A327 /* CustomRegisterViewController.xib in Resources */,
-				78B56BF9162441E700CEEE31 /* Default-568h@2x.png in Resources */,
 				78E83560162EA982009C8E35 /* TutorialViewController.xib in Resources */,
 				78C4897D16330EB4005B72BA /* 96-book.png in Resources */,
 				78C4897E16330EB4005B72BA /* backgroun_w_logo.png in Resources */,
@@ -483,6 +482,7 @@
 				78C489B0163361B0005B72BA /* appIcon@2x.png in Resources */,
 				78E3E24316369D900033DBDD /* cassbeats-case-logo2x_copy.png in Resources */,
 				78E3E24516369F8D0033DBDD /* CassBeats-Mobile-Logo-text.png in Resources */,
+				7806AB8816454B4500CF77FB /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
