@@ -115,16 +115,14 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
-    if([title isEqualToString:@"I Understand"])
+    if([title isEqualToString:@"Cancel"])
     {
+        NSLog(@"Canceled...");
+    }else{
         AppModel *model = [AppModel sharedModel];
         //will save to both the device and send
         //urlrequest
         [model saveSubmission];
-    }
-    else if([title isEqualToString:@"Cancel"])
-    {
-        NSLog(@"Canceled...");
     }
 }
 
