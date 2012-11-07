@@ -69,6 +69,8 @@
 }
 //Register user
 - (IBAction)registerUser:(id)sender {
+    
+    AppModel *model = [AppModel sharedModel];
     [self.registerBtn setEnabled:NO];
     [self.registerBtn setTitle:@"Waiting..." forState:UIControlStateNormal];
     
@@ -85,7 +87,7 @@
        [params appendFormat:@"%@=%@&",key,obj];
     }];
         
-    NSURL *url = [NSURL URLWithString:registerURL];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@register",[model getServerBase]]];
     NSMutableURLRequest *request= [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];    

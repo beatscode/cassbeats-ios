@@ -97,9 +97,7 @@ NSMutableData *receivedData;
 
     AppModel *model = [AppModel sharedModel];
     User *user = [model user];
-    NSLog(@"User ID ? %@",[model userData]);
     [model getUser];
-    NSLog(@"getUser:  %@", [model user]);
     [UIApplication sharedApplication].networkActivityIndicatorVisible  = YES;
     receivedData = [[NSMutableData alloc] init];
 
@@ -108,7 +106,7 @@ NSMutableData *receivedData;
 
     params = [[NSString alloc] initWithFormat:@"user_id=%@",user.server_id];
 
-    NSURL *url = [NSURL URLWithString:refreshTracksURL];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@refreshTracks",[model getServerBase]]];
     NSMutableURLRequest *request= [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
@@ -120,8 +118,6 @@ NSMutableData *receivedData;
     }else{
         NSLog(@"connection succeeded");
     }
-
-
 }
 
 

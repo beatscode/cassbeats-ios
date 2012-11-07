@@ -32,7 +32,7 @@
     AppModel *model = [AppModel sharedModel];
     NSArray *user = [model getUserData];
     NSLog(@"%@",user);
-    NSURL *url = [self URLByAppendingQueryString:registerViewURL :[NSString stringWithFormat:@"user_id=%@", [user valueForKey:@"id"]]];
+    NSURL *url = [self URLByAppendingQueryString:[NSString stringWithFormat:@"%@requestdropbox",[model getServerBase]]:[NSString stringWithFormat:@"user_id=%@", [user valueForKey:@"id"]]];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     NSLog(@"%@",url);
     [registerWebView loadRequest:requestObj];
@@ -44,8 +44,8 @@
     self.title = @"Register";
 }
 - (NSURL *)URLByAppendingQueryString:(NSString *)query:(NSString *)queryString {
-    
-    NSString *URLString = [[NSString alloc] initWithFormat:@"%@%@%@", registerViewURL,@"?", queryString];
+    AppModel *model = [AppModel sharedModel];
+    NSString *URLString = [[NSString alloc] initWithFormat:@"%@%@%@", [NSString stringWithFormat:@"%@requestdropbox",[model getServerBase]],@"?", queryString];
     NSURL *theURL = [NSURL URLWithString:URLString];
 
     return theURL;
@@ -76,7 +76,7 @@ NSMutableData *receivedData;
     
     params = [[NSString alloc] initWithFormat:@"user_id=%@",user.server_id];
     
-    NSURL *url = [NSURL URLWithString:confirmDropBoxOAuthURL];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@confirmDropBoxOAuthURL",[model getServerBase]]];
     NSMutableURLRequest *request= [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];    

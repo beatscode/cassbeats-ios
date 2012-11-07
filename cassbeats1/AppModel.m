@@ -7,8 +7,6 @@
 //
 
 #import "AppModel.h"
-
-#define saveServerSubmissionURL @"http://www.cassbeats.com/mobile/createSubmission/"
 @implementation AppModel
 
 @synthesize userData = _userData;
@@ -238,6 +236,15 @@ NSMutableData *receivedData;
     //}
 }
 
+#pragma mark serverEnvironment
+-(NSString *)getServerBase{
+    NSString *base = @"http://localhost/personal/cassbeats4/mobile/";
+    if ([serverenv isEqualToString:@"live"]) {
+        base = @"http://www.cassbeats.com/mobile/";
+    }
+    return base;
+}
+
 -(void)updateUserData:(NSArray *)array{
     self.userData  = array; 
     [self saveUser:array]; 
@@ -283,7 +290,8 @@ NSMutableData *receivedData;
 
 -(void)saveSubmissionOnServer:(NSString *)postString{
         
-    NSURL *url = [NSURL URLWithString:saveServerSubmissionURL];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@createSubmission",[self getServerBase]]];
+                  
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
     NSData *requestData = [postString dataUsingEncoding:NSUTF8StringEncoding];

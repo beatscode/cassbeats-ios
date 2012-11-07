@@ -106,7 +106,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "278"
          endingLineNumber = "278"
-         landmarkName = "-saveSubmissionOnServer:"
+         landmarkName = "-validateSubmission"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -119,8 +119,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "245"
          endingLineNumber = "245"
-         landmarkName = "-validateSubmission"
-         landmarkType = "5">
+         landmarkName = "@implementation AppModel"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"

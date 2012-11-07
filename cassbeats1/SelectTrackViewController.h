@@ -8,7 +8,6 @@
 #import <UIKit/UIKit.h>
 #import "AppModel.h"
 #import "MyTrack.h"
-#define refreshTracksURL @"http://www.cassbeats.com/mobile/refreshTracks"
 
 @interface SelectTrackViewController : UITableViewController<UISearchBarDelegate>
 

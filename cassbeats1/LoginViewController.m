@@ -117,6 +117,7 @@
 NSMutableData *receivedData;
 -(void)authenticateUser:(NSString *)email:(NSString *)password{
     
+    AppModel *model = [AppModel sharedModel];
     [UIApplication sharedApplication].networkActivityIndicatorVisible  = YES;
     receivedData = [[NSMutableData alloc] init];
 
@@ -133,7 +134,7 @@ NSMutableData *receivedData;
     
     params = [[NSString alloc] initWithFormat:@"email=%@&password=%@",email,password];
   
-    NSURL *url = [NSURL URLWithString:loginURL];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@login",[model getServerBase]]];
     NSMutableURLRequest *request= [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];    

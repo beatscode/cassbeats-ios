@@ -14,6 +14,7 @@
 #import "Contact.h"
 #import "MyContact.h"
 #import "MyTrack.h"
+#define serverenv @"live"
 
 @interface AppModel : NSObject<NSURLConnectionDelegate>{
     NSManagedObjectContext *managedObjectContext;
@@ -54,6 +55,6 @@
 -(NSArray *)getSubmissionContacts:(Submission *)submission;
 -(NSArray *)getSubmissionByContact:(NSString *)searchText;
 -(NSArray *)getSubmissionByTrack:(NSString *)searchText;
-
+-(NSString *)getServerBase;
 -(NSMutableArray *)makeTracks;
 @end

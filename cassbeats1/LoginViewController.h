@@ -11,7 +11,6 @@
 #import "CreateSubmissionViewController.h"
 #import "RegViewController.h"
 #import "AppDelegate.h"
-#define loginURL @"http://www.cassbeats.com/mobile/login"
 
 @interface LoginViewController : UIViewController<UITextFieldDelegate>
 
