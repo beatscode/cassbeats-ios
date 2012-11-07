@@ -10,6 +10,7 @@
         <attribute name="download" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nice_date" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="size" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="submissionToContact" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Contact" inverseName="contactToSubmission" inverseEntity="Contact" syncable="YES"/>
         <relationship name="submissionToTrack" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Track" inverseName="trackToSubmission" inverseEntity="Track" syncable="YES"/>
@@ -25,7 +26,7 @@
     </entity>
     <elements>
         <element name="Contact" positionX="160" positionY="192" width="128" height="75"/>
-        <element name="Submission" positionX="160" positionY="192" width="128" height="150"/>
+        <element name="Submission" positionX="160" positionY="192" width="128" height="165"/>
         <element name="Track" positionX="160" positionY="192" width="128" height="90"/>
         <element name="User" positionX="160" positionY="192" width="128" height="75"/>
     </elements>

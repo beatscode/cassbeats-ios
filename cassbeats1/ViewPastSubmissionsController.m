@@ -162,7 +162,7 @@
         contactNames = [contactNames stringByAppendingString:obj.email];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@",submission.date];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@",submission.nice_date];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%d Contact(s),%d Track(s)\nEmail(s): %@",contacts.count,tracks.count,contactNames];
     cell.detailTextLabel.numberOfLines = 0;
     cell.detailTextLabel.textColor = [UIColor blackColor];

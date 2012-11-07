@@ -111,21 +111,26 @@ NSMutableData *receivedData;
     
     BOOL isValid = YES;
     if([self validateSubmission] == YES){
-         //Get Date
+        
         // get the current date
         NSDate *date = [NSDate date];
+        
         // format it
         NSDateFormatter *dateFormat = [[NSDateFormatter alloc]init];
         [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        
+        NSString *orderDate = [dateFormat stringFromDate:date];
+        
         // convert it to a string
-        NSString *dateString = [dateFormat stringFromDate:date];
+        NSString *nice_date = [NSDateFormatter localizedStringFromDate:date dateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterShortStyle];
             
         NSManagedObjectContext *context = [self managedObjectContext];
 
         Submission *submission = (Submission *)[NSEntityDescription insertNewObjectForEntityForName:@"Submission" inManagedObjectContext:context];
         User *usr  = self.user;
         submission.name = [[NSString alloc] initWithFormat:@"Submission"];
-        submission.date = dateString;
+        submission.date = orderDate;
+        submission.nice_date = nice_date;
         submission.message = self.submissionMessage;
         submission.download = [NSNumber numberWithBool:self.downloadable];
         

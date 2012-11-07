@@ -33,6 +33,7 @@
 		78AB00861592AD4300F625DE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AB00851592AD4300F625DE /* QuartzCore.framework */; };
 		78B71A0F15965D9100C82D5F /* RegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B71A0D15965D9100C82D5F /* RegViewController.m */; };
 		78B71A1015965D9100C82D5F /* RegViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78B71A0E15965D9100C82D5F /* RegViewController.xib */; };
+		78C0ED76164A845D009E7F80 /* Submission.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C0ED75164A845D009E7F80 /* Submission.m */; };
 		78C4897D16330EB4005B72BA /* 96-book.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C4895516330EB4005B72BA /* 96-book.png */; };
 		78C4897E16330EB4005B72BA /* backgroun_w_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C4895616330EB4005B72BA /* backgroun_w_logo.png */; };
 		78C4897F16330EB4005B72BA /* backgroun_w_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C4895716330EB4005B72BA /* backgroun_w_logo@2x.png */; };
@@ -87,7 +88,6 @@
 		78E4B16915611D6100B0074A /* SelectContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E4B16715611D6100B0074A /* SelectContactViewController.xib */; };
 		78E83560162EA982009C8E35 /* TutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E8355E162EA982009C8E35 /* TutorialViewController.xib */; };
 		78E83570162FF5FC009C8E35 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E8356F162FF5FB009C8E35 /* TutorialViewController.m */; };
-		78FE926C163A904700EAC7DD /* Submission.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FE926B163A904700EAC7DD /* Submission.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +130,8 @@
 		78B71A0C15965D9100C82D5F /* RegViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegViewController.h; sourceTree = "<group>"; };
 		78B71A0D15965D9100C82D5F /* RegViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegViewController.m; sourceTree = "<group>"; };
 		78B71A0E15965D9100C82D5F /* RegViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegViewController.xib; sourceTree = "<group>"; };
+		78C0ED74164A845D009E7F80 /* Submission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Submission.h; sourceTree = "<group>"; };
+		78C0ED75164A845D009E7F80 /* Submission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Submission.m; sourceTree = "<group>"; };
 		78C4895516330EB4005B72BA /* 96-book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "96-book.png"; sourceTree = "<group>"; };
 		78C4895616330EB4005B72BA /* backgroun_w_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroun_w_logo.png; sourceTree = "<group>"; };
 		78C4895716330EB4005B72BA /* backgroun_w_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroun_w_logo@2x.png"; sourceTree = "<group>"; };
@@ -192,8 +194,6 @@
 		78E8355E162EA982009C8E35 /* TutorialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TutorialViewController.xib; sourceTree = "<group>"; };
 		78E8356E162FF5FB009C8E35 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		78E8356F162FF5FB009C8E35 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
-		78FE926A163A904700EAC7DD /* Submission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Submission.h; sourceTree = "<group>"; };
-		78FE926B163A904700EAC7DD /* Submission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Submission.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -369,9 +369,9 @@
 				783BFD041573FE4E00D4CC1E /* Track.m */,
 				78DFDF7115500738008FF2FF /* AppModel.h */,
 				78DFDF7215500738008FF2FF /* AppModel.m */,
+				78C0ED74164A845D009E7F80 /* Submission.h */,
+				78C0ED75164A845D009E7F80 /* Submission.m */,
 				78DFDFAE15528C15008FF2FF /* CassBeatsPro.xcdatamodeld */,
-				78FE926A163A904700EAC7DD /* Submission.h */,
-				78FE926B163A904700EAC7DD /* Submission.m */,
 				781B0EA8156671AC00FB45D3 /* MyContact.h */,
 				781B0EA9156671AC00FB45D3 /* MyContact.m */,
 				78759F47156C685000E24826 /* MyTrack.h */,
@@ -513,7 +513,7 @@
 				787F665A159BAAB7001766B7 /* SubmissionDetailsViewController.m in Sources */,
 				7874C5E3159E12D600A9A327 /* CustomRegisterViewController.m in Sources */,
 				78E83570162FF5FC009C8E35 /* TutorialViewController.m in Sources */,
-				78FE926C163A904700EAC7DD /* Submission.m in Sources */,
+				78C0ED76164A845D009E7F80 /* Submission.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

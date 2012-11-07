@@ -2,7 +2,7 @@
 //  Submission.h
 //  cassbeats1
 //
-//  Created by Alexander Casanova on 10/26/12.
+//  Created by Alexander Casanova on 11/7/12.
 //  Copyright (c) 2012 CassBeats LLC. All rights reserved.
 //
 
@@ -18,6 +18,7 @@
 @property (nonatomic, retain) NSString * message;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * size;
+@property (nonatomic, retain) NSString * nice_date;
 @property (nonatomic, retain) NSSet *submissionToContact;
 @property (nonatomic, retain) NSSet *submissionToTrack;
 @end
