@@ -17,7 +17,7 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    self.menuData = [NSArray arrayWithObjects:@"Create Submission",@"View Past Submissions",@"Play Tracks", nil];
+    self.menuData = [NSArray arrayWithObjects:@"Create Submission",@"View Past Submissions",@"Library", nil];
     [self setTitle:@"Options"];
 }
 
@@ -62,7 +62,7 @@
             [self.navigationController pushViewController:self.vpsController animated:YES];        
             break;
         case playtrackview:
-            [self buildTracks];
+            //[self buildTracks];
             self.ptController = [[PlayTracksViewController alloc] initWithNibName:@"PlayTracksViewController" bundle:nil];
             [self.navigationController pushViewController:self.ptController animated:YES];
             break;

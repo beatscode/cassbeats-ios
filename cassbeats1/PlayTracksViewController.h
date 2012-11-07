@@ -10,13 +10,14 @@
 #import "AppModel.h"
 #import "MyTrack.h"
 #import "TrackListeningViewController.h"
-#define pullTrackListeningURL @"http://localhost/personal/cassbeats4/public/mobile/pullTrackListeningURL"
+#define pullTrackListeningURL @"http://www.cassbeats.com/mobile/pullTrackListeningURL"
 
 @interface PlayTracksViewController : UITableViewController
 
 @property(nonatomic,strong) NSMutableArray *tracks;
 @property(nonatomic,strong) NSMutableArray *filteredTracks;
 @property(nonatomic) BOOL isFiltered;
-@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
-
+@property(strong, nonatomic) IBOutlet UISearchBar *searchBar;
+@property(strong,nonatomic) MyTrack *sTrack;
+@property(strong,nonatomic) NSDictionary *sTrackData;
 @end

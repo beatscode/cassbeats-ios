@@ -90,7 +90,6 @@ NSMutableData *receivedData;
 
 -(NSMutableArray *)makeTracks{
     NSMutableArray *tracks = [[NSMutableArray alloc] init];
-    NSLog(@"Track Data %@", self.trackData);
     if([self.trackData isKindOfClass:[NSArray class]]){
         [self.trackData enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             MyTrack *track = [[MyTrack alloc] init];
@@ -124,9 +123,9 @@ NSMutableData *receivedData;
 
         Submission *submission = (Submission *)[NSEntityDescription insertNewObjectForEntityForName:@"Submission" inManagedObjectContext:context];
         User *usr  = self.user;
-        submission.name = [[NSString alloc] initWithFormat:@"Submission"];
-        submission.date = dateString;
-        submission.message = self.submissionMessage;
+        submission.name     = [[NSString alloc] initWithFormat:@"Submission"];
+        submission.date     = dateString;
+        submission.message  = self.submissionMessage;
         submission.download = [NSNumber numberWithBool:self.downloadable];
         
         NSMutableString *stringForPost  = [[NSMutableString alloc] init];
@@ -239,7 +238,6 @@ NSMutableData *receivedData;
 }
 
 -(void)updateTrackData:(NSArray *)array{
-    NSLog(@"%@",array);
     self.trackData = array;   
 }
 

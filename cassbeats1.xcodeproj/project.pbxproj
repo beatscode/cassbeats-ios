@@ -24,6 +24,7 @@
 		783BFD1315741CD000D4CC1E /* WriteSubmissionMessage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783BFD1115741CD000D4CC1E /* WriteSubmissionMessage.xib */; };
 		783BFD1D15744A3500D4CC1E /* ViewPastSubmissionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 783BFD1B15744A3400D4CC1E /* ViewPastSubmissionsController.m */; };
 		783BFD1E15744A3500D4CC1E /* ViewPastSubmissionsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783BFD1C15744A3500D4CC1E /* ViewPastSubmissionsController.xib */; };
+		78563A081646D72E00B0F050 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78563A071646D72E00B0F050 /* MediaPlayer.framework */; };
 		7874C5E3159E12D600A9A327 /* CustomRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874C5E1159E12D600A9A327 /* CustomRegisterViewController.m */; };
 		7874C5E4159E12D600A9A327 /* CustomRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7874C5E2159E12D600A9A327 /* CustomRegisterViewController.xib */; };
 		78759F3E156C5E4700E24826 /* SelectTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78759F3C156C5E4700E24826 /* SelectTrackViewController.m */; };
@@ -121,6 +122,7 @@
 		783BFD1A15744A3400D4CC1E /* ViewPastSubmissionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPastSubmissionsController.h; sourceTree = "<group>"; };
 		783BFD1B15744A3400D4CC1E /* ViewPastSubmissionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPastSubmissionsController.m; sourceTree = "<group>"; };
 		783BFD1C15744A3500D4CC1E /* ViewPastSubmissionsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewPastSubmissionsController.xib; sourceTree = "<group>"; };
+		78563A071646D72E00B0F050 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		7874C5E0159E12D500A9A327 /* CustomRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomRegisterViewController.h; sourceTree = "<group>"; };
 		7874C5E1159E12D600A9A327 /* CustomRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomRegisterViewController.m; sourceTree = "<group>"; };
 		7874C5E2159E12D600A9A327 /* CustomRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomRegisterViewController.xib; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78563A081646D72E00B0F050 /* MediaPlayer.framework in Frameworks */,
 				78AB00861592AD4300F625DE /* QuartzCore.framework in Frameworks */,
 				78AB00841592A60500F625DE /* Security.framework in Frameworks */,
 				78111E0E155D14DB000A3337 /* AddressBookUI.framework in Frameworks */,
@@ -320,6 +323,7 @@
 		78DFDF4115500177008FF2FF = {
 			isa = PBXGroup;
 			children = (
+				78563A071646D72E00B0F050 /* MediaPlayer.framework */,
 				78AB00851592AD4300F625DE /* QuartzCore.framework */,
 				78AB00831592A60500F625DE /* Security.framework */,
 				78DFDF5615500177008FF2FF /* cassbeats1 */,

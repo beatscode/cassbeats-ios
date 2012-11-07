@@ -18,6 +18,9 @@
 @synthesize filteredTracks;
 @synthesize searchBar;
 @synthesize isFiltered;
+@synthesize sTrack = _sTrack;
+@synthesize sTrackData = _sTrackData;
+
 NSMutableData *receivedData;
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -55,7 +58,6 @@ NSMutableData *receivedData;
     }else{
         self.tracks = [[NSMutableArray alloc] init];
     }
-    NSLog(@"Count tracks %@", self.tracks);
 }
 
 - (void)viewDidUnload
@@ -79,8 +81,8 @@ NSMutableData *receivedData;
         self.isFiltered = true;
         self.filteredTracks = [[NSMutableArray alloc] init];
         
-        for(Track* track in self.tracks){
-            NSRange nameRange = [track.name rangeOfString:searchText options:NSCaseInsensitiveSearch];
+        for(NSDictionary *track in self.tracks){
+            NSRange nameRange = [[track objectForKey:@"path"] rangeOfString:searchText options:NSCaseInsensitiveSearch];
             if(nameRange.location != NSNotFound){
                 [self.filteredTracks addObject:track];
             }
@@ -115,7 +117,7 @@ NSMutableData *receivedData;
     // Configure the cell...
     //AppModel *model = [AppModel sharedModel];
     NSUInteger row = [indexPath row];
-    MyTrack *track;
+    NSDictionary *track;
     
     if(self.isFiltered){
         track = [self.filteredTracks objectAtIndex:row];
@@ -124,26 +126,10 @@ NSMutableData *receivedData;
     }
     
     cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.text = [track name];
-    
-    // Configure the cell...
-    // add friend button
-//    UIButton *addFriendButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-//    addFriendButton.frame = CGRectMake(200.0f, 5.0f, 75.0f, 30.0f);
-//    [addFriendButton setTitle:@"Add" forState:UIControlStateNormal];
-//    [cell addSubview:addFriendButton];
-//    
-//    [addFriendButton addTarget:self
-//                        action:@selector(playTrack:track *)
-//              forControlEvents:UIControlEventTouchUpInside];
+    cell.textLabel.text = [track objectForKey:@"path"];
 
     return cell;
 }
-
--(void)playTrack:(MyTrack *)track{
-    NSLog(@"%@",track);
-}
-
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -188,27 +174,28 @@ NSMutableData *receivedData;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    MyTrack *track = [self.tracks objectAtIndex:indexPath.row];
-    [self pullTrackToListen:track];
+    self.sTrack = [self.tracks objectAtIndex:indexPath.row];
+    
+    AppModel *model = [AppModel sharedModel];
+    self.sTrackData = [model.trackData objectAtIndex:indexPath.row];
+    NSLog(@"%@",self.sTrackData);
+    [self pullTrackToListen];
     
 }
 
 
 #pragma mark - Load Track URL
 
--(void)pullTrackToListen:(MyTrack *)track{
+-(void)pullTrackToListen{
     
     AppModel *model = [AppModel sharedModel];
     User *user = [model user];
     [model getUser];
-    NSLog(@"getUser:  %@", [model user]);
     [UIApplication sharedApplication].networkActivityIndicatorVisible  = YES;
     receivedData = [[NSMutableData alloc] init];
     
-    
-    NSString *params;
-    
-    params = [[NSString alloc] initWithFormat:@"user_id=%@&track=%@",user.server_id,track.name];
+    NSString *trackname = [self.sTrackData objectForKey:@"path"];
+    NSString *params = [[NSString alloc] initWithFormat:@"user_id=%@&track=%@",user.server_id, trackname ];
     
     NSURL *url = [NSURL URLWithString:pullTrackListeningURL];
     NSMutableURLRequest *request= [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0];
@@ -268,12 +255,12 @@ NSMutableData *receivedData;
             NSLog(@"%@",errorArray);
         }else{
             NSString *track_url = [json objectForKey:@"track_url"];
-            NSLog(@"%@",track_url);
             // Navigation logic may go here. Create and push another view controller.
             
              TrackListeningViewController *tlViewController = [[TrackListeningViewController alloc] initWithNibName:@"TrackListeningViewController" bundle:nil];
             
             tlViewController.track_url = track_url;
+            tlViewController.track = self.sTrackData;
             
              // Pass the selected object to the new view controller.
              [self.navigationController pushViewController:tlViewController animated:YES];
