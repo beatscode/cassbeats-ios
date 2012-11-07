@@ -10,7 +10,7 @@
 #import "AppModel.h"
 #import "MyTrack.h"
 #import "TrackListeningViewController.h"
-#define pullTrackListeningURL @"http://www.cassbeats.com/mobile/pullTrackListeningURL"
+#define pullTrackListeningURL @"http:///mobile/pullTrackListeningURL"
 
 @interface PlayTracksViewController : UITableViewController
 

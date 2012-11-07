@@ -10,9 +10,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 
 @interface TrackListeningViewController : UIViewController
-//@property (strong, nonatomic) IBOutlet UIWebView *TrackWebView;
-@property (strong, nonatomic) MPMoviePlayerController *player;
+@property (strong, nonatomic) IBOutlet UIWebView *TrackWebView;
 @property (strong, nonatomic) NSString *track_url;
-@property (strong, nonatomic) IBOutlet UIView *mpView;
 @property (strong, nonatomic) NSDictionary *track;
 @end
