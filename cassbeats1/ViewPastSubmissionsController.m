@@ -162,7 +162,7 @@
         contactNames = [contactNames stringByAppendingString:obj.email];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@",submission.nice_date];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@",submission.nicedate];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%d Contact(s),%d Track(s)\nEmail(s): %@",contacts.count,tracks.count,contactNames];
     cell.detailTextLabel.numberOfLines = 0;
     cell.detailTextLabel.textColor = [UIColor blackColor];
@@ -244,7 +244,7 @@
      [subDetailVC.sectionArray addObject:tracks];
      [subDetailVC.sectionArray addObject: msg];
     
-     subDetailVC.title = submission.date;
+     subDetailVC.title = submission.nicedate;
     
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:subDetailVC animated:YES];

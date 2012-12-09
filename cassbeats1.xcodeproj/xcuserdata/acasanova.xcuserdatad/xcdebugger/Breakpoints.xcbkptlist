@@ -14,7 +14,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "34"
          endingLineNumber = "34"
-         landmarkName = "-addSubmissionToTrack:"
+         landmarkName = "-removeSubmissionToTrackObject:"
          landmarkType = "4">
       </FileBreakpoint>
       <FileBreakpoint
@@ -120,6 +120,32 @@
          startingLineNumber = "184"
          endingLineNumber = "184"
          landmarkName = "-getFormattedDate:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "cassbeats1/LoginViewController.m"
+         timestampString = "376783615.82948"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "138"
+         endingLineNumber = "138"
+         landmarkName = "-authenticateUser::"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "cassbeats1/AppModel.m"
+         timestampString = "376784068.037013"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "185"
+         endingLineNumber = "185"
+         landmarkName = "-saveSubmission"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

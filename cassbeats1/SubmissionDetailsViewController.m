@@ -127,7 +127,7 @@
         cell.textLabel.text = contact.name;
         cell.detailTextLabel.text =  contact.email;       
     }else if([obj isKindOfClass:[NSString class]]){
-        cell.textLabel.text = @"You Wrote...";
+        //cell.textLabel.text = @"You Wrote...";
         cell.detailTextLabel.text = obj;
         cell.detailTextLabel.numberOfLines = 0;
         [cell.detailTextLabel setLineBreakMode:NSLineBreakByWordWrapping];

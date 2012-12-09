@@ -31,13 +31,13 @@
 		78759F49156C685000E24826 /* MyTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 78759F48156C685000E24826 /* MyTrack.m */; };
 		787F665A159BAAB7001766B7 /* SubmissionDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787F6658159BAAB7001766B7 /* SubmissionDetailsViewController.m */; };
 		787F665B159BAAB7001766B7 /* SubmissionDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 787F6659159BAAB7001766B7 /* SubmissionDetailsViewController.xib */; };
+		7893E86D167546D90034D48F /* Submission.m in Sources */ = {isa = PBXBuildFile; fileRef = 7893E86C167546D90034D48F /* Submission.m */; };
 		789ACB031558A59200E6C53A /* SubmissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789ACB011558A59200E6C53A /* SubmissionViewController.m */; };
 		789ACB041558A59200E6C53A /* SubmissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789ACB021558A59200E6C53A /* SubmissionViewController.xib */; };
 		78AB00841592A60500F625DE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AB00831592A60500F625DE /* Security.framework */; };
 		78AB00861592AD4300F625DE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AB00851592AD4300F625DE /* QuartzCore.framework */; };
 		78B71A0F15965D9100C82D5F /* RegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B71A0D15965D9100C82D5F /* RegViewController.m */; };
 		78B71A1015965D9100C82D5F /* RegViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78B71A0E15965D9100C82D5F /* RegViewController.xib */; };
-		78C0ED76164A845D009E7F80 /* Submission.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C0ED75164A845D009E7F80 /* Submission.m */; };
 		78C4897D16330EB4005B72BA /* 96-book.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C4895516330EB4005B72BA /* 96-book.png */; };
 		78C4897E16330EB4005B72BA /* backgroun_w_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C4895616330EB4005B72BA /* backgroun_w_logo.png */; };
 		78C4897F16330EB4005B72BA /* backgroun_w_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C4895716330EB4005B72BA /* backgroun_w_logo@2x.png */; };
@@ -133,6 +133,8 @@
 		787F6657159BAAB7001766B7 /* SubmissionDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmissionDetailsViewController.h; sourceTree = "<group>"; };
 		787F6658159BAAB7001766B7 /* SubmissionDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmissionDetailsViewController.m; sourceTree = "<group>"; };
 		787F6659159BAAB7001766B7 /* SubmissionDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubmissionDetailsViewController.xib; sourceTree = "<group>"; };
+		7893E86B167546D90034D48F /* Submission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Submission.h; sourceTree = "<group>"; };
+		7893E86C167546D90034D48F /* Submission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Submission.m; sourceTree = "<group>"; };
 		789ACB001558A59200E6C53A /* SubmissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmissionViewController.h; sourceTree = "<group>"; };
 		789ACB011558A59200E6C53A /* SubmissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmissionViewController.m; sourceTree = "<group>"; };
 		789ACB021558A59200E6C53A /* SubmissionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubmissionViewController.xib; sourceTree = "<group>"; };
@@ -141,8 +143,6 @@
 		78B71A0C15965D9100C82D5F /* RegViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegViewController.h; sourceTree = "<group>"; };
 		78B71A0D15965D9100C82D5F /* RegViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegViewController.m; sourceTree = "<group>"; };
 		78B71A0E15965D9100C82D5F /* RegViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegViewController.xib; sourceTree = "<group>"; };
-		78C0ED74164A845D009E7F80 /* Submission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Submission.h; sourceTree = "<group>"; };
-		78C0ED75164A845D009E7F80 /* Submission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Submission.m; sourceTree = "<group>"; };
 		78C4895516330EB4005B72BA /* 96-book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "96-book.png"; sourceTree = "<group>"; };
 		78C4895616330EB4005B72BA /* backgroun_w_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroun_w_logo.png; sourceTree = "<group>"; };
 		78C4895716330EB4005B72BA /* backgroun_w_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroun_w_logo@2x.png"; sourceTree = "<group>"; };
@@ -387,9 +387,9 @@
 				783BFD041573FE4E00D4CC1E /* Track.m */,
 				78DFDF7115500738008FF2FF /* AppModel.h */,
 				78DFDF7215500738008FF2FF /* AppModel.m */,
-				78C0ED74164A845D009E7F80 /* Submission.h */,
-				78C0ED75164A845D009E7F80 /* Submission.m */,
 				78DFDFAE15528C15008FF2FF /* CassBeatsPro.xcdatamodeld */,
+				7893E86B167546D90034D48F /* Submission.h */,
+				7893E86C167546D90034D48F /* Submission.m */,
 				781B0EA8156671AC00FB45D3 /* MyContact.h */,
 				781B0EA9156671AC00FB45D3 /* MyContact.m */,
 				78759F47156C685000E24826 /* MyTrack.h */,
@@ -533,10 +533,9 @@
 				787F665A159BAAB7001766B7 /* SubmissionDetailsViewController.m in Sources */,
 				7874C5E3159E12D600A9A327 /* CustomRegisterViewController.m in Sources */,
 				78E83570162FF5FC009C8E35 /* TutorialViewController.m in Sources */,
-				78FE926C163A904700EAC7DD /* Submission.m in Sources */,
 				783856F01645E3BF00E3A735 /* PlayTracksViewController.m in Sources */,
 				783856F61645F93700E3A735 /* TrackListeningViewController.m in Sources */,
-
+				7893E86D167546D90034D48F /* Submission.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

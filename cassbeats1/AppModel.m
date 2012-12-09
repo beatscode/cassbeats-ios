@@ -128,7 +128,7 @@ NSMutableData *receivedData;
 
         submission.name = [[NSString alloc] initWithFormat:@"Submission"];
         submission.date = orderDate;
-        submission.nice_date = nice_date;
+        submission.nicedate = nice_date;
         submission.message = self.submissionMessage;
         submission.download = [NSNumber numberWithBool:self.downloadable];
         
