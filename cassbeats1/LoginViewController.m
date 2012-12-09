@@ -56,9 +56,9 @@
     
     self.title = @"Login";
     
-    UIBarButtonItem *registerBtn = [[UIBarButtonItem alloc] initWithTitle:@"Register" style:UIBarButtonItemStylePlain target:self action:@selector(registerUser)];
+    //UIBarButtonItem *registerBtn = [[UIBarButtonItem alloc] initWithTitle:@"Register" style:UIBarButtonItemStylePlain target:self action:@selector(registerUser)];
 
-    self.navigationItem.leftBarButtonItem = registerBtn;
+    //self.navigationItem.leftBarButtonItem = registerBtn;
 
 }
 -(void)customizeAppearance{
