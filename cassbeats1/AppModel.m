@@ -88,7 +88,6 @@ NSMutableData *receivedData;
 
 -(NSMutableArray *)makeTracks{
     NSMutableArray *tracks = [[NSMutableArray alloc] init];
-    NSLog(@"Track Data %@", self.trackData);
     if([self.trackData isKindOfClass:[NSArray class]]){
         [self.trackData enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             MyTrack *track = [[MyTrack alloc] init];
@@ -126,6 +125,7 @@ NSMutableData *receivedData;
 
         Submission *submission = (Submission *)[NSEntityDescription insertNewObjectForEntityForName:@"Submission" inManagedObjectContext:context];
         User *usr  = self.user;
+
         submission.name = [[NSString alloc] initWithFormat:@"Submission"];
         submission.date = orderDate;
         submission.nice_date = nice_date;
@@ -251,7 +251,6 @@ NSMutableData *receivedData;
 }
 
 -(void)updateTrackData:(NSArray *)array{
-    NSLog(@"%@",array);
     self.trackData = array;   
 }
 

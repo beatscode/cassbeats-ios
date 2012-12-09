@@ -13,6 +13,10 @@
 		78111E0C155D14D6000A3337 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78111E0B155D14D6000A3337 /* AddressBook.framework */; };
 		78111E0E155D14DB000A3337 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78111E0D155D14DB000A3337 /* AddressBookUI.framework */; };
 		781B0EAA156671AC00FB45D3 /* MyContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 781B0EA9156671AC00FB45D3 /* MyContact.m */; };
+		783856F01645E3BF00E3A735 /* PlayTracksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 783856EE1645E3BF00E3A735 /* PlayTracksViewController.m */; };
+		783856F11645E3BF00E3A735 /* PlayTracksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783856EF1645E3BF00E3A735 /* PlayTracksViewController.xib */; };
+		783856F61645F93700E3A735 /* TrackListeningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 783856F41645F93700E3A735 /* TrackListeningViewController.m */; };
+		783856F71645F93700E3A735 /* TrackListeningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783856F51645F93700E3A735 /* TrackListeningViewController.xib */; };
 		783BFD051573FE4E00D4CC1E /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 783BFD041573FE4E00D4CC1E /* Track.m */; };
 		783BFD081573FE4F00D4CC1E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 783BFD071573FE4F00D4CC1E /* User.m */; };
 		783BFD0E1573FE5000D4CC1E /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 783BFD0D1573FE5000D4CC1E /* Contact.m */; };
@@ -99,6 +103,12 @@
 		78111E0D155D14DB000A3337 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		781B0EA8156671AC00FB45D3 /* MyContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyContact.h; sourceTree = "<group>"; };
 		781B0EA9156671AC00FB45D3 /* MyContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyContact.m; sourceTree = "<group>"; };
+		783856ED1645E3BF00E3A735 /* PlayTracksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayTracksViewController.h; sourceTree = "<group>"; };
+		783856EE1645E3BF00E3A735 /* PlayTracksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayTracksViewController.m; sourceTree = "<group>"; };
+		783856EF1645E3BF00E3A735 /* PlayTracksViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayTracksViewController.xib; sourceTree = "<group>"; };
+		783856F31645F93700E3A735 /* TrackListeningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackListeningViewController.h; sourceTree = "<group>"; };
+		783856F41645F93700E3A735 /* TrackListeningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackListeningViewController.m; sourceTree = "<group>"; };
+		783856F51645F93700E3A735 /* TrackListeningViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrackListeningViewController.xib; sourceTree = "<group>"; };
 		783BFD031573FE4E00D4CC1E /* Track.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Track.h; sourceTree = "<group>"; };
 		783BFD041573FE4E00D4CC1E /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
 		783BFD061573FE4F00D4CC1E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -111,6 +121,7 @@
 		783BFD1A15744A3400D4CC1E /* ViewPastSubmissionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPastSubmissionsController.h; sourceTree = "<group>"; };
 		783BFD1B15744A3400D4CC1E /* ViewPastSubmissionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPastSubmissionsController.m; sourceTree = "<group>"; };
 		783BFD1C15744A3500D4CC1E /* ViewPastSubmissionsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewPastSubmissionsController.xib; sourceTree = "<group>"; };
+		78563A071646D72E00B0F050 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		7874C5E0159E12D500A9A327 /* CustomRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomRegisterViewController.h; sourceTree = "<group>"; };
 		7874C5E1159E12D600A9A327 /* CustomRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomRegisterViewController.m; sourceTree = "<group>"; };
 		7874C5E2159E12D600A9A327 /* CustomRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomRegisterViewController.xib; sourceTree = "<group>"; };
@@ -264,6 +275,9 @@
 		78111DFF155C7597000A3337 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				783856ED1645E3BF00E3A735 /* PlayTracksViewController.h */,
+				783856EE1645E3BF00E3A735 /* PlayTracksViewController.m */,
+				783856EF1645E3BF00E3A735 /* PlayTracksViewController.xib */,
 				78E8355E162EA982009C8E35 /* TutorialViewController.xib */,
 				783BFD0F15741CCF00D4CC1E /* WriteSubmissionMessage.h */,
 				783BFD1015741CCF00D4CC1E /* WriteSubmissionMessage.m */,
@@ -297,6 +311,9 @@
 				7874C5E2159E12D600A9A327 /* CustomRegisterViewController.xib */,
 				78E8356E162FF5FB009C8E35 /* TutorialViewController.h */,
 				78E8356F162FF5FB009C8E35 /* TutorialViewController.m */,
+				783856F31645F93700E3A735 /* TrackListeningViewController.h */,
+				783856F41645F93700E3A735 /* TrackListeningViewController.m */,
+				783856F51645F93700E3A735 /* TrackListeningViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -304,6 +321,7 @@
 		78DFDF4115500177008FF2FF = {
 			isa = PBXGroup;
 			children = (
+				78563A071646D72E00B0F050 /* MediaPlayer.framework */,
 				78AB00851592AD4300F625DE /* QuartzCore.framework */,
 				78AB00831592A60500F625DE /* Security.framework */,
 				78DFDF5615500177008FF2FF /* cassbeats1 */,
@@ -483,6 +501,8 @@
 				78E3E24316369D900033DBDD /* cassbeats-case-logo2x_copy.png in Resources */,
 				78E3E24516369F8D0033DBDD /* CassBeats-Mobile-Logo-text.png in Resources */,
 				7806AB8816454B4500CF77FB /* Default-568h@2x.png in Resources */,
+				783856F11645E3BF00E3A735 /* PlayTracksViewController.xib in Resources */,
+				783856F71645F93700E3A735 /* TrackListeningViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,7 +533,10 @@
 				787F665A159BAAB7001766B7 /* SubmissionDetailsViewController.m in Sources */,
 				7874C5E3159E12D600A9A327 /* CustomRegisterViewController.m in Sources */,
 				78E83570162FF5FC009C8E35 /* TutorialViewController.m in Sources */,
-				78C0ED76164A845D009E7F80 /* Submission.m in Sources */,
+				78FE926C163A904700EAC7DD /* Submission.m in Sources */,
+				783856F01645E3BF00E3A735 /* PlayTracksViewController.m in Sources */,
+				783856F61645F93700E3A735 /* TrackListeningViewController.m in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

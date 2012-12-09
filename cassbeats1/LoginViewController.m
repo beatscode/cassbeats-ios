@@ -180,7 +180,7 @@ NSMutableData *receivedData;
     
     NSError *error = nil;
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-    NSLog(@"%@",json);
+   // NSLog(@"%@",json);
     if(!error){
         NSArray *errorArray = [json objectForKey:@"error"];
         if(errorArray){

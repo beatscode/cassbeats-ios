@@ -17,7 +17,7 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    self.menuData = [NSArray arrayWithObjects:@"Create Submission",@"View Past Submissions",nil];
+    self.menuData = [NSArray arrayWithObjects:@"Create Submission",@"View Past Submissions",@"Library", nil];
     [self setTitle:@"Options"];
 }
 
@@ -52,6 +52,7 @@
     
     switch (row) {
         case createsubmission:
+            [self buildTracks];
             self.cvController = [[CreateSubmissionViewController alloc] initWithNibName:@"CreateSubmissionViewController" bundle:nil];
             [self.navigationController pushViewController:self.cvController animated:YES];
             
@@ -60,10 +61,20 @@
             self.vpsController = [[ViewPastSubmissionsController alloc] initWithNibName:@"ViewPastSubmissionsController" bundle:nil];
             [self.navigationController pushViewController:self.vpsController animated:YES];        
             break;
+        case playtrackview:
+            //[self buildTracks];
+            self.ptController = [[PlayTracksViewController alloc] initWithNibName:@"PlayTracksViewController" bundle:nil];
+            [self.navigationController pushViewController:self.ptController animated:YES];
+            break;
         default:
             break;
     }
+}
+-(void)buildTracks{
+    AppModel *model = [AppModel sharedModel];
     
-    
+    if ([[model selectedTracks] count] == 0) {
+        model.trackData = [model makeTracks];
+    }
 }
 @end

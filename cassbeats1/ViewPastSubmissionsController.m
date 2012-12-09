@@ -173,7 +173,6 @@
 }
 
 -(NSString *)getFormattedDate:(NSString *)dateStr{
-   // NSString *dateStr = @"Tue, 25 May 2010 12:53:58 +0000";
 
     // Convert string to date object
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
