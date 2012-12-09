@@ -205,9 +205,9 @@ NSMutableData *receivedData;
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
     
     if(connection){
-        NSLog(@"connection failed");
-    }else{
         NSLog(@"connection succeeded");
+    }else{
+        NSLog(@"connection failed");
     }
     
     
@@ -255,16 +255,14 @@ NSMutableData *receivedData;
             NSLog(@"%@",errorArray);
         }else{
             NSString *track_url = [json objectForKey:@"track_url"];
-            // Navigation logic may go here. Create and push another view controller.
             
              TrackListeningViewController *tlViewController = [[TrackListeningViewController alloc] initWithNibName:@"TrackListeningViewController" bundle:nil];
             
             tlViewController.track_url = track_url;
-            tlViewController.track = self.sTrackData;
+            tlViewController.track = _sTrackData;
             
              // Pass the selected object to the new view controller.
              [self.navigationController pushViewController:tlViewController animated:YES];
-             
         }
     }
 }

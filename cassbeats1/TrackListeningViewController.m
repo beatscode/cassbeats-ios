@@ -15,7 +15,7 @@
 @implementation TrackListeningViewController
 
 @synthesize TrackWebView;
-
+@synthesize track;
 @synthesize track_url;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
