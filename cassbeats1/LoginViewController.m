@@ -54,7 +54,7 @@
     
     [self customizeAppearance];
     
-    self.title = @"Login";
+    self.title = @"CassBeats Login";
     
     //UIBarButtonItem *registerBtn = [[UIBarButtonItem alloc] initWithTitle:@"Register" style:UIBarButtonItemStylePlain target:self action:@selector(registerUser)];
 
