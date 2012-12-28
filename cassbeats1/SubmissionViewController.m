@@ -17,7 +17,7 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    self.menuData = [NSArray arrayWithObjects:@"Create Submission",@"View Past Submissions",@"Library", nil];
+    self.menuData = [NSArray arrayWithObjects:@"Create Submission",@"View Past Submissions", nil];
     [self setTitle:@"Options"];
 
 }
