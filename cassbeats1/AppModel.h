@@ -28,7 +28,7 @@
 
 @property(strong) User *user;
 @property(strong) NSArray *userData;
-@property(strong) NSArray *trackData;
+@property(strong) NSMutableArray *trackData;
 @property(strong) NSString *submissionMessage;
 @property(strong) NSString *submissionSubject;
 @property(nonatomic,strong) NSMutableArray *contacts;

@@ -19,6 +19,7 @@
     [super viewDidLoad];
     self.menuData = [NSArray arrayWithObjects:@"Create Submission",@"View Past Submissions",@"Library", nil];
     [self setTitle:@"Options"];
+
 }
 
 -(void)viewDidUnload{
@@ -52,7 +53,7 @@
     
     switch (row) {
         case createsubmission:
-            [self buildTracks];
+           //[self buildTracks];
             self.cvController = [[CreateSubmissionViewController alloc] initWithNibName:@"CreateSubmissionViewController" bundle:nil];
             [self.navigationController pushViewController:self.cvController animated:YES];
             
@@ -70,11 +71,5 @@
             break;
     }
 }
--(void)buildTracks{
-    AppModel *model = [AppModel sharedModel];
-    
-    if ([[model selectedTracks] count] == 0) {
-        model.trackData = [model makeTracks];
-    }
-}
+
 @end

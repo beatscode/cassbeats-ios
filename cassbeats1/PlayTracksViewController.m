@@ -81,8 +81,8 @@ NSMutableData *receivedData;
         self.isFiltered = true;
         self.filteredTracks = [[NSMutableArray alloc] init];
         
-        for(NSDictionary *track in self.tracks){
-            NSRange nameRange = [[track objectForKey:@"path"] rangeOfString:searchText options:NSCaseInsensitiveSearch];
+        for(MyTrack *track in self.tracks){
+            NSRange nameRange = [track.name rangeOfString:searchText options:NSCaseInsensitiveSearch];
             if(nameRange.location != NSNotFound){
                 [self.filteredTracks addObject:track];
             }
@@ -117,7 +117,7 @@ NSMutableData *receivedData;
     // Configure the cell...
     //AppModel *model = [AppModel sharedModel];
     NSUInteger row = [indexPath row];
-    NSDictionary *track;
+    MyTrack *track;
     
     if(self.isFiltered){
         track = [self.filteredTracks objectAtIndex:row];
@@ -126,7 +126,7 @@ NSMutableData *receivedData;
     }
     
     cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.text = [track objectForKey:@"path"];
+    cell.textLabel.text = track.name;
 
     return cell;
 }
@@ -194,7 +194,7 @@ NSMutableData *receivedData;
     [UIApplication sharedApplication].networkActivityIndicatorVisible  = YES;
     receivedData = [[NSMutableData alloc] init];
     
-    NSString *trackname = [self.sTrackData objectForKey:@"path"];
+    NSString *trackname = self.sTrackData.name;
     NSString *params = [[NSString alloc] initWithFormat:@"user_id=%@&track=%@",user.server_id, trackname ];
     
     NSURL *url = [NSURL URLWithString:pullTrackListeningURL];
@@ -261,8 +261,8 @@ NSMutableData *receivedData;
             tlViewController.track_url = track_url;
             tlViewController.track = _sTrackData;
             
-             // Pass the selected object to the new view controller.
-             [self.navigationController pushViewController:tlViewController animated:YES];
+            // Pass the selected object to the new view controller.
+            [self.navigationController pushViewController:tlViewController animated:YES];
         }
     }
 }

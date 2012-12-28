@@ -189,7 +189,8 @@ NSMutableData *receivedData;
         }else{            
             AppModel *model = [AppModel sharedModel];
             [model updateUserData:[json objectForKey:@"user"]];
-            [model updateTrackData:[json objectForKey:@"dropbox_tracks"]];            
+            [model updateTrackData:[json objectForKey:@"dropbox_tracks"]];
+         
             AppDelegate *appDelegate= (AppDelegate *)[[UIApplication sharedApplication] delegate];
             [appDelegate window].rootViewController = appDelegate.tabBarController;
 

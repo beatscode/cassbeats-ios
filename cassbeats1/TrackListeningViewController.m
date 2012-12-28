@@ -32,8 +32,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 
-    NSLog(@"%@",self.track);
-    self.title = [self.track objectForKey:@"path"];
+    NSLog(@"%@",self.track.name);
+    self.title = self.track.name;
     
     // self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background_plain"]];
     

@@ -128,13 +128,7 @@
 
 
 - (IBAction)selectTracks:(id)sender {
-    
-    AppModel *model = [AppModel sharedModel];
-    
-    if ([[model selectedTracks] count] == 0) {        
-        model.trackData = [model makeTracks];     
-    }
-    
+        
     SelectTrackViewController *sTVC = [[SelectTrackViewController alloc] initWithNibName:@"SelectTrackViewController" bundle:nil];
     // sTVC.tracks = ([tracks count] == 0) ? [model trackData] : tracks;
     [self.navigationController pushViewController:sTVC animated:YES];

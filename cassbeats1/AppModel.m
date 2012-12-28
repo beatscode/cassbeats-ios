@@ -86,9 +86,11 @@ NSMutableData *receivedData;
     self.downloadable = option;
 }
 
+/*
+    Used to change object to MyTrack classes
+*/
 -(NSMutableArray *)makeTracks{
-    NSMutableArray *tracks = [[NSMutableArray alloc] init];
-    if([self.trackData isKindOfClass:[NSArray class]]){
+    if([self.trackData isKindOfClass:[NSMutableArray class]]){
         [self.trackData enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             MyTrack *track = [[MyTrack alloc] init];
             if([obj isKindOfClass:[MyTrack class]]){
@@ -98,10 +100,11 @@ NSMutableData *receivedData;
                 track.name = [obj objectForKey:@"path"];
                 track.size = [obj objectForKey:@"size"];                
             }
-            [tracks addObject:track];
+            NSLog(@"%@",track);
+           [self.trackData replaceObjectAtIndex:idx withObject:track];
         }];
    }
-    return tracks;
+   return self.trackData;
 }
 
 -(BOOL)saveSubmission{
@@ -245,15 +248,31 @@ NSMutableData *receivedData;
     return base;
 }
 
+#pragma mark Update User Data
 -(void)updateUserData:(NSArray *)array{
     self.userData  = array; 
     [self saveUser:array]; 
 }
 
--(void)updateTrackData:(NSArray *)array{
-    self.trackData = array;   
+-(void)updateTrackData:(NSMutableArray *)array{
+    [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        MyTrack *track = [[MyTrack alloc] init];
+        if([obj isKindOfClass:[MyTrack class]]){
+            track = (MyTrack *)obj;
+            track.selected = NO;
+        }else{
+            track.name = [obj objectForKey:@"path"];
+            track.size = [obj objectForKey:@"size"];
+        }
+        NSLog(@"%@",track);
+        [self.trackData addObject:track];
+    }];
+    
+    NSLog(@"array data is a mutable array");
+    NSLog(@"%@",self.trackData);
 }
 
+#pragma mark Validation
 -(BOOL)validateSubmission{
     
     BOOL isValid = YES;

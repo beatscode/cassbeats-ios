@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 //#import <MediaPlayer/MediaPlayer.h>
-
+#import "MyTrack.h"
 @interface TrackListeningViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIWebView *TrackWebView;
 @property (strong, nonatomic) NSString *track_url;
-@property (strong, nonatomic) NSDictionary *track;
+@property (strong, nonatomic) MyTrack *track;
 @end

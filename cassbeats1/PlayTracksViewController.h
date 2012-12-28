@@ -19,5 +19,5 @@
 @property(nonatomic) BOOL isFiltered;
 @property(strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property(strong,nonatomic) MyTrack *sTrack;
-@property(strong,nonatomic) NSDictionary *sTrackData;
+@property(strong,nonatomic) MyTrack *sTrackData;
 @end

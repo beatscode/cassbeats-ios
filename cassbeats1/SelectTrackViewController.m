@@ -164,7 +164,7 @@ NSMutableData *receivedData;
             AppModel *model = [AppModel sharedModel];
             [model updateTrackData:[json objectForKey:@"dropbox_tracks"]];
 
-            model.trackData = [model makeTracks];
+         
             NSLog(@"Appmodel Track data %@", model.trackData);
             [self setTracks];
             // self.tracks = model.trackData;
