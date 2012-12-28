@@ -255,6 +255,8 @@ NSMutableData *receivedData;
 }
 
 -(void)updateTrackData:(NSMutableArray *)array{
+
+    self.trackData = [[NSMutableArray alloc] init];
     [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         MyTrack *track = [[MyTrack alloc] init];
         if([obj isKindOfClass:[MyTrack class]]){
@@ -264,12 +266,8 @@ NSMutableData *receivedData;
             track.name = [obj objectForKey:@"path"];
             track.size = [obj objectForKey:@"size"];
         }
-        NSLog(@"%@",track);
         [self.trackData addObject:track];
     }];
-    
-    NSLog(@"array data is a mutable array");
-    NSLog(@"%@",self.trackData);
 }
 
 #pragma mark Validation
