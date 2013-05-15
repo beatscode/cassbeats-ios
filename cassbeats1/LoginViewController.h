@@ -20,7 +20,7 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *loginBtn;
 
 -(IBAction)login:(id)sender;
--(void)authenticateUser:(NSString *)email:(NSString *)password;
+-(void)authenticateUser:(NSString *)email withPassword:(NSString *)password;
 -(void)userSetup:(NSData *)data;
 -(IBAction)registerUser;
 @end

@@ -90,7 +90,7 @@
 
 //Login 
 - (IBAction)login:(id)sender {
-    [self authenticateUser:emailTextField.text :passwordTextField.text];    
+    [self authenticateUser:emailTextField.text withPassword:passwordTextField.text];
 }
 //Register
 -(IBAction)registerUser{
@@ -115,7 +115,7 @@
 
 #pragma NDSURLConnection
 NSMutableData *receivedData;
--(void)authenticateUser:(NSString *)email:(NSString *)password{
+-(void)authenticateUser:(NSString *)email withPassword:(NSString *)password{
     
     AppModel *model = [AppModel sharedModel];
     [UIApplication sharedApplication].networkActivityIndicatorVisible  = YES;

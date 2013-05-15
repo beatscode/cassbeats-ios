@@ -43,7 +43,7 @@
     //self.navigationItem.hidesBackButton = YES;
     self.title = @"Register";
 }
-- (NSURL *)URLByAppendingQueryString:(NSString *)query:(NSString *)queryString {
+- (NSURL *)URLByAppendingQueryString:(NSString *)query :(NSString *)queryString {
     AppModel *model = [AppModel sharedModel];
     NSString *URLString = [[NSString alloc] initWithFormat:@"%@%@%@", [NSString stringWithFormat:@"%@requestdropbox",[model getServerBase]],@"?", queryString];
     NSURL *theURL = [NSURL URLWithString:URLString];

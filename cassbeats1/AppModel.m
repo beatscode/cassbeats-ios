@@ -241,9 +241,9 @@ NSMutableData *receivedData;
 
 #pragma mark serverEnvironment
 -(NSString *)getServerBase{
-    NSString *base = @"http://localhost/personal/cassbeats4/mobile/";
+    NSString *base = @"http://localhost/personal/cassbeats4/public/mobile/";
     if ([serverenv isEqualToString:@"live"]) {
-        base = @"http://www.cassbeats.com/mobile/";
+        base = @"http://app.cassbeats.com/mobile/";
     }
     return base;
 }
@@ -257,6 +257,7 @@ NSMutableData *receivedData;
 -(void)updateTrackData:(NSMutableArray *)array{
 
     self.trackData = [[NSMutableArray alloc] init];
+    NSLog(@"%@",self.trackData);
     [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         MyTrack *track = [[MyTrack alloc] init];
         if([obj isKindOfClass:[MyTrack class]]){
