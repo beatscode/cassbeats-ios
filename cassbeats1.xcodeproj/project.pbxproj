@@ -29,6 +29,8 @@
 		78759F3E156C5E4700E24826 /* SelectTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78759F3C156C5E4700E24826 /* SelectTrackViewController.m */; };
 		78759F3F156C5E4700E24826 /* SelectTrackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78759F3D156C5E4700E24826 /* SelectTrackViewController.xib */; };
 		78759F49156C685000E24826 /* MyTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 78759F48156C685000E24826 /* MyTrack.m */; };
+		787AE4821743B80700C75692 /* cassbeats-case-logo@2x-72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 787AE4811743B80700C75692 /* cassbeats-case-logo@2x-72x72.png */; };
+		787AE4841743B8B600C75692 /* cassbeats-case-logo-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 787AE4831743B8B600C75692 /* cassbeats-case-logo-144.png */; };
 		787F665A159BAAB7001766B7 /* SubmissionDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787F6658159BAAB7001766B7 /* SubmissionDetailsViewController.m */; };
 		787F665B159BAAB7001766B7 /* SubmissionDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 787F6659159BAAB7001766B7 /* SubmissionDetailsViewController.xib */; };
 		7893E86D167546D90034D48F /* Submission.m in Sources */ = {isa = PBXBuildFile; fileRef = 7893E86C167546D90034D48F /* Submission.m */; };
@@ -130,6 +132,8 @@
 		78759F3D156C5E4700E24826 /* SelectTrackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectTrackViewController.xib; sourceTree = "<group>"; };
 		78759F47156C685000E24826 /* MyTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTrack.h; sourceTree = "<group>"; };
 		78759F48156C685000E24826 /* MyTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTrack.m; sourceTree = "<group>"; };
+		787AE4811743B80700C75692 /* cassbeats-case-logo@2x-72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cassbeats-case-logo@2x-72x72.png"; sourceTree = "<group>"; };
+		787AE4831743B8B600C75692 /* cassbeats-case-logo-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cassbeats-case-logo-144.png"; sourceTree = "<group>"; };
 		787F6657159BAAB7001766B7 /* SubmissionDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmissionDetailsViewController.h; sourceTree = "<group>"; };
 		787F6658159BAAB7001766B7 /* SubmissionDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmissionDetailsViewController.m; sourceTree = "<group>"; };
 		787F6659159BAAB7001766B7 /* SubmissionDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubmissionDetailsViewController.xib; sourceTree = "<group>"; };
@@ -321,6 +325,8 @@
 		78DFDF4115500177008FF2FF = {
 			isa = PBXGroup;
 			children = (
+				787AE4831743B8B600C75692 /* cassbeats-case-logo-144.png */,
+				787AE4811743B80700C75692 /* cassbeats-case-logo@2x-72x72.png */,
 				78563A071646D72E00B0F050 /* MediaPlayer.framework */,
 				78AB00851592AD4300F625DE /* QuartzCore.framework */,
 				78AB00831592A60500F625DE /* Security.framework */,
@@ -503,6 +509,8 @@
 				7806AB8816454B4500CF77FB /* Default-568h@2x.png in Resources */,
 				783856F11645E3BF00E3A735 /* PlayTracksViewController.xib in Resources */,
 				783856F71645F93700E3A735 /* TrackListeningViewController.xib in Resources */,
+				787AE4821743B80700C75692 /* cassbeats-case-logo@2x-72x72.png in Resources */,
+				787AE4841743B8B600C75692 /* cassbeats-case-logo-144.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,7 +620,7 @@
 				INFOPLIST_FILE = "cassbeats1/cassbeats1-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = CassBeats;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -629,7 +637,7 @@
 				INFOPLIST_FILE = "cassbeats1/cassbeats1-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = CassBeats;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
