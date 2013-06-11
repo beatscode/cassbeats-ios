@@ -241,7 +241,7 @@ NSMutableData *receivedData;
 
 #pragma mark serverEnvironment
 -(NSString *)getServerBase{
-    NSString *base = @"http://localhost/personal/cassbeats4/public/mobile/";
+    NSString *base = @"http://cassbeats.dev/mobile/";
     if ([serverenv isEqualToString:@"live"]) {
         base = @"http://app.cassbeats.com/mobile/";
     }
