@@ -14,10 +14,11 @@
 @synthesize menuData;
 @synthesize cvController;
 @synthesize vpsController;
+@synthesize cusController;
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    self.menuData = [NSArray arrayWithObjects:@"Create Submission",@"View Past Submissions", nil];
+    self.menuData = [NSArray arrayWithObjects:@"Create Submission",@"View Past Submissions", @"Dropbox Registration",nil];
     [self setTitle:@"Options"];
 
 }
@@ -50,7 +51,7 @@
     NSUInteger row = [indexPath row];
     
   // NSString *selection = [self.menuData objectAtIndex:row];
-    
+
     switch (row) {
         case createsubmission:
            //[self buildTracks];
@@ -62,12 +63,14 @@
             self.vpsController = [[ViewPastSubmissionsController alloc] initWithNibName:@"ViewPastSubmissionsController" bundle:nil];
             [self.navigationController pushViewController:self.vpsController animated:YES];        
             break;
+        case dropboxregistration:
+            self.cusController = [[CustomRegisterViewController alloc] initWithNibName:@"CustomRegisterViewController" bundle:nil];
+            [self.navigationController pushViewController:self.cusController animated:YES];
+            break;
         case playtrackview:
             //[self buildTracks];
             self.ptController = [[PlayTracksViewController alloc] initWithNibName:@"PlayTracksViewController" bundle:nil];
             [self.navigationController pushViewController:self.ptController animated:YES];
-            break;
-        default:
             break;
     }
 }

@@ -126,19 +126,6 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "cassbeats1/LoginViewController.m"
-         timestampString = "376783615.82948"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "138"
-         endingLineNumber = "138"
-         landmarkName = "-authenticateUser:withPassword:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "cassbeats1/AppModel.m"
          timestampString = "378386806.289013"
          startingColumnNumber = "9223372036854775807"
@@ -152,26 +139,13 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "cassbeats1/PlayTracksViewController.m"
-         timestampString = "378381376.415331"
+         filePath = "cassbeats1/RegViewController.m"
+         timestampString = "392651485.441685"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "59"
-         endingLineNumber = "59"
-         landmarkName = "-setTracks"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "cassbeats1/PlayTracksViewController.m"
-         timestampString = "378381377.623003"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "57"
-         endingLineNumber = "57"
-         landmarkName = "-setTracks"
+         startingLineNumber = "145"
+         endingLineNumber = "145"
+         landmarkName = "-registrationResponse:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

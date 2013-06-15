@@ -117,36 +117,44 @@
 NSMutableData *receivedData;
 -(void)authenticateUser:(NSString *)email withPassword:(NSString *)password{
     
-    AppModel *model = [AppModel sharedModel];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible  = YES;
-    receivedData = [[NSMutableData alloc] init];
-
-    NSString *params;
     
-    NSMutableDictionary *authData = [NSMutableDictionary dictionary];
-    
-    [authData setObject:email forKey:@"email"];
-    [authData setObject:password forKey:@"password"];
-    
-    [authData enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        [params stringByAppendingFormat:@"%@=%@&",key,obj];
-    }];
-    
-    params = [[NSString alloc] initWithFormat:@"email=%@&password=%@",email,password];
-  
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@login",[model getServerBase]]];
-    NSMutableURLRequest *request= [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0];
-    [request setHTTPMethod:@"POST"];
-    [request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];    
-    
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
-
-    if(!connection){
-        NSLog(@"connection failed");
+    if ([email length] == 0 || [password length] == 0) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You Must Supply a valid email and password" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
     }else{
-        NSLog(@"connection succeeded");
-    } 
-}
+        
+        AppModel *model = [AppModel sharedModel];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible  = YES;
+        receivedData = [[NSMutableData alloc] init];
+        
+        NSString *params;
+        
+        NSMutableDictionary *authData = [NSMutableDictionary dictionary];
+        
+        [authData setObject:email forKey:@"email"];
+        [authData setObject:password forKey:@"password"];
+        
+        [authData enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+            [params stringByAppendingFormat:@"%@=%@&",key,obj];
+        }];
+        
+        params = [[NSString alloc] initWithFormat:@"email=%@&password=%@",email,password];
+        
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@login",[model getServerBase]]];
+        NSMutableURLRequest *request= [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0];
+        [request setHTTPMethod:@"POST"];
+        [request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
+        
+        NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
+        
+        if(!connection){
+            NSLog(@"connection failed");
+        }else{
+            NSLog(@"connection succeeded");
+        } 
+
+    }
+  }
 
 -(NSURLRequest *)connection:(NSURLConnection *)connection willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)response{
     return request;    

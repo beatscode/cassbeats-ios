@@ -31,10 +31,11 @@
     // Do any additional setup after loading the view from its nib.
     AppModel *model = [AppModel sharedModel];
     NSArray *user = [model getUserData];
-    NSLog(@"%@",user);
+    
     NSURL *url = [self URLByAppendingQueryString:[NSString stringWithFormat:@"%@requestdropbox",[model getServerBase]]:[NSString stringWithFormat:@"user_id=%@", [user valueForKey:@"id"]]];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     NSLog(@"%@",url);
+    NSLog(@"%@",user);
     [registerWebView loadRequest:requestObj];
     
     UIBarButtonItem *doneBtn = [[UIBarButtonItem alloc]initWithTitle:@"Finish" style:UIBarButtonItemStylePlain target:self action:@selector( confirmDropBoxAuth )];
